@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_complete_confirm {
+    .btn_group {
+        margin-top: 3.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        .btn {
+            flex: 1;
+            display: block;
+            box-sizing: border-box;
+            border-radius: .5rem;
+            &.coral {
+                border: .1rem solid $coral;
+                background-color: $coral;
+                color: rgb(255, 255, 255);
+            }
+            &.gray_border {
+                border: .1rem solid rgb(204, 204, 204);
+                background-color: rgb(255, 255, 255);
+                color: $primary;
+            }
+            &+.btn {
+                margin-left: .5rem;
+            }
+            span {
+                min-width: 5.8rem;
+                height: 5.4rem;
+                box-sizing: border-box;
+                font-size: 1.8rem;
+                font-weight: bold;
+                line-height: 5.4rem;
+                vertical-align: top;
+            }
+        }
+    }
+}

@@ -1,0 +1,814 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+$nspay: $images + "/nspay";
+.web_view {
+    .order_sheet_payment_method_select {
+        background-color: rgb(255, 255, 255);
+    }
+}
+.order_sheet_payment_method_select {
+    padding: 3.2rem 1.6rem 9rem;
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 9rem);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 9rem);
+    .input_field {
+        &.line {
+            .text {
+                border: 0;
+                &.border {
+                    border: .1rem solid $lightGray;
+                }
+            }
+        }
+    }
+    .payment_change_tab {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1.6rem;
+        border-top: .1rem solid $lightGray;
+        li {
+            position: relative;
+            width: calc(33.33% - .1rem);
+            height: 7rem;
+            border-right: .1rem solid $lightGray;
+            border-left: 0;
+            text-align: center;
+            line-height: 7rem;
+            font-size: 1.8rem;
+            color: rgb(170, 170, 170);
+            &:nth-child(3n - 2) {
+                width: calc(33.33% - .2rem);
+                border-left: .1rem solid $lightGray;
+            }
+            &:nth-child(n-4) {
+                border-bottom: .1rem solid $lightGray;
+            }
+            &:nth-child(3) {
+                background-image: url("#{$common}/icons_npay.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 5.6rem;
+                text-indent: -999rem;
+            }
+            &:nth-child(4) {
+                background-image: url("#{$common}/icons_payco.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 6.2rem;
+                text-indent: -999rem;
+            }
+            &.active {
+                font-weight: bold;
+                color: $primary;
+                &:nth-child(3) {
+                    background-image: url("#{$common}/icons_npay_active.png");
+                }
+                &:nth-child(4) {
+                    background-image: url("#{$common}/icons_payco_active.png");
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -.1rem;
+                    left: -.1rem;
+                    width: 100%;
+                    height: 100%;
+                    border: .1rem solid $primary;
+                }
+            }
+            &.disabled {
+                background-color: rgb(240, 240, 240);
+                color: $lightGray;
+            }
+        }
+    }
+    .nspay_box {
+        margin-bottom: .8rem;
+        background: #f8f8f8;
+        .swiper_nspay {
+            position: relative;
+            width: 100%;
+            height: 21.5rem;
+            padding-top: 4rem;
+            .swiper-slide {
+                width: 27rem;
+            }
+            .slide {
+                width: 100% !important;
+                margin: 0 2.5rem 0 0;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-flex-shrink: 0;
+                flex-shrink: 0;
+            }
+            .swiper-pagination {
+                bottom: 1.5rem;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                line-height: 0;
+                .swiper-pagination-bullet {
+                    margin: 0 .2rem;
+                    width: .8rem;
+                    height: .8rem;
+                    border-radius: 100%;
+                    background: #cfcfcf;
+                    opacity: 1;
+                    &.swiper-pagination-bullet-active {
+                        background: #888;
+                        &:last-child {
+                            &::before {
+                                background: #888;
+                            }
+                            &::after {
+                                background: #888;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        position: relative;
+                        width: .8rem;
+                        height: .8rem;
+                        background: transparent;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: .9rem;
+                            height: .1rem;
+                            background: #cfcfcf;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: .9rem;
+                            height: .1rem;
+                            background: #cfcfcf;
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+            .basic_check {
+                position: absolute;
+                bottom: 1.7rem;
+                left: 1.5rem;
+                label {
+                    position: relative;
+                    height: 100%;
+                    border: 0;
+                }
+                label input[type="checkbox"] {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border: 0;
+                }
+                label input[type="checkbox"]::before {
+                    content: "";
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 2rem;
+                    height: 2rem;
+                    border: .1rem solid #ccc;
+                    border-radius: 3rem;
+                    background: #fff;
+                }
+                label input[type="checkbox"]:checked::before {
+                    content: "";
+                    border: .1rem solid #dc0a0a;
+                }
+                label input[type="checkbox"]:checked::after {
+                    content: "";
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: .5rem;
+                    left: .5rem;
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: 3rem;
+                    background: #dc0a0a;
+                }
+                label span {
+                    display: inline-block;
+                    margin-left: 2.5rem;
+                    color: #333;
+                    font-size: 1.4rem;
+                    line-height: 1.8rem;
+                }
+            }
+            .card .basic_check label span {
+                color: #fff;
+            }
+            .card {
+                position: relative;
+                width: calc(100% - 3rem);
+                height: 15.9rem;
+                padding: 1.8rem 1.5rem 0;
+                border-radius: 1.5rem;
+            }
+            .account {
+                position: relative;
+                width: calc(100% - 3.2rem);
+                height: 15.7rem;
+                padding: 1.8rem 1.5rem 0;
+                border-radius: 1.5rem;
+                background: #fff;
+                border: .1rem solid #cfcfcf;
+            }
+            .account .card_num {
+                color: #333;
+            }
+
+            // 카드
+            .card .logo {
+                height: 3rem;
+                font-size: 0;
+                background-repeat: no-repeat;
+                background-size: 11rem 2.7rem;
+            }
+
+            // 신한
+            .c1 {
+                background: #318dde;
+            }
+            .c1 .logo {
+                background-image: url("#{$nspay}/card01.png");
+            }
+
+            // 국민
+            .c2 {
+                background: #f8b500;
+            }
+            .c2 .logo {
+                background-image: url("#{$nspay}/card02.png");
+            }
+
+            // 비씨
+            .c3 {
+                background: #fa3246;
+            }
+            .c3 .logo {
+                background-image: url("#{$nspay}/card03.png");
+            }
+
+            // 현대
+            .c4 {
+                background: #989898;
+            }
+            .c4 .logo {
+                background-image: url("#{$nspay}/card04.png");
+            }
+
+            // 삼성
+            .c5 {
+                background: #1f7fd6;
+            }
+            .c5 .logo {
+                background-image: url("#{$nspay}/card05.png");
+            }
+
+            // 하나
+            .c6 {
+                background: #009987;
+            }
+            .c6 .logo {
+                background-image: url("#{$nspay}/card06.png");
+            }
+
+            // 롯데
+            .c7 {
+                background: #816573;
+            }
+            .c7 .logo {
+                background-image: url("#{$nspay}/card07.png");
+            }
+
+            // 농협
+            .c8 {
+                background: #35b558;
+            }
+            .c8 .logo {
+                background-image: url("#{$nspay}/card08.png");
+            }
+
+            // 계좌
+            .account .logo {
+                height: 3rem;
+                font-size: 0;
+                background-repeat: no-repeat;
+                background-size: 11rem 2.7rem;
+            }
+
+            // 농협
+            .b1 .logo {
+                background-image: url("#{$nspay}/bank01.png");
+            }
+
+            // 국민
+            .b2 .logo {
+                background-image: url("#{$nspay}/bank02.png");
+            }
+
+            // 우리
+            .b3 .logo {
+                background-image: url("#{$nspay}/bank03.png");
+            }
+
+            // 신한
+            .b4 .logo {
+                background-image: url("#{$nspay}/bank04.png");
+            }
+
+            // 하나
+            .b5 .logo {
+                background-image: url("#{$nspay}/bank05.png");
+            }
+
+            // 기업
+            .b6 .logo {
+                background-image: url("#{$nspay}/bank06.png");
+            }
+
+            // 산업
+            .b7 .logo {
+                background-image: url("#{$nspay}/bank07.png");
+            }
+
+            // SC
+            .b8 .logo {
+                background-image: url("#{$nspay}/bank08.png");
+            }
+
+            // 수협
+            .b9 .logo {
+                background-image: url("#{$nspay}/bank09.png");
+            }
+
+            // 전북
+            .b10 .logo {
+                background-image: url("#{$nspay}/bank10.png");
+            }
+
+            // 시티
+            .b11 .logo {
+                background-image: url("#{$nspay}/bank11.png");
+            }
+
+            // 제주
+            .b12 .logo {
+                background-image: url("#{$nspay}/bank12.png");
+            }
+
+            // 새마을
+            .b13 .logo {
+                background-image: url("#{$nspay}/bank13.png");
+            }
+
+            // 신협
+            .b14 .logo {
+                background-image: url("#{$nspay}/bank14.png");
+            }
+
+            // 대구
+            .b15 .logo {
+                background-image: url("#{$nspay}/bank15.png");
+            }
+
+            // 부산
+            .b16 .logo {
+                background-image: url("#{$nspay}/bank16.png");
+            }
+
+            // 광주
+            .b17 .logo {
+                background-image: url("#{$nspay}/bank17.png");
+            }
+
+            // 경남
+            .b18 .logo {
+                background-image: url("#{$nspay}/bank18.png");
+            }
+
+            // 우체국
+            .b19 .logo {
+                background-image: url("#{$nspay}/bank19.png");
+            }
+
+            // NS페이
+            .b20 .logo {
+                background-image: url("#{$nspay}/bank20.png");
+            }
+
+            // K뱅크
+            .b21 .logo {
+                background-image: url("#{$nspay}/bank21.png");
+            }
+            .card_account_add {
+                position: relative;
+                width: calc(100% - 3.2rem);
+                height: 17.5rem;
+                padding: 0 1.5rem;
+                border-radius: 1.5rem;
+                background: #fff;
+                border: .1rem solid #efefef;
+                .btn_ty2 {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                }
+                .list_add {
+                    width: 100%;
+                    padding: 5rem 0 0 0;
+                    li {
+                        border: .1rem dashed #999;
+                        border-radius: .5rem;
+                        text-align: center;
+                        margin-bottom: 1rem;
+                    }
+                    .btn_add {
+                        position: relative;
+                        display: inline-block;
+                        padding: 1rem 3rem 1rem 6rem;
+                        text-decoration: none;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 3rem;
+                            margin-top: -.1rem;
+                            width: 1.5rem;
+                            height: .2rem;
+                            background: #999;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 3rem;
+                            margin-top: -.1rem;
+                            width: 1.5rem;
+                            height: .2rem;
+                            background: #999;
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+            .combo_box {
+                position: relative;
+                .select:disabled {
+                    text-indent: 1rem;
+                    color: rgba(255, 255, 255, .8);
+                    border: none;
+                    background: rgba(0, 0, 0, .3) url("#{$nspay}/ico_select2.png") no-repeat calc(100% - 1rem) center;
+                    background-size: 1.6rem auto;
+                    cursor: pointer;
+                }
+                .select {
+                    color: #333;
+                    background: #fff url("#{$nspay}/ico_select1.png") no-repeat calc(100% - 1rem) center;
+                    background-size: 1.6rem auto;
+                }
+                .select.active,
+                .select:focus {
+                    color: #333;
+                    background: #fff url("#{$nspay}/ico_select1.png") no-repeat calc(100% - 1rem) center;
+                    background-size: 1.6rem auto;
+                }
+            }
+            .card_num {
+                margin: .5rem 0 1rem;
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: #fff;
+            }
+            .btn_delete {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 1.3rem;
+                height: 1.3rem;
+                background: none;
+                font-size: 0;
+            }
+            .btn_delete::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 1.3rem;
+                height: .1rem;
+                background: #333;
+                transform: rotate(45deg);
+            }
+            .btn_delete::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 1.3rem;
+                height: .1rem;
+                background: #333;
+                transform: rotate(-45deg);
+            }
+            .select {
+                width: 100%;
+                height: 3rem;
+                margin: 0;
+                padding: 0;
+                color: #555;
+                border: .1rem solid #ccc;
+                font-size: 1.3rem;
+                white-space: normal;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background: #fff url("#{$nspay}/ico_select1.png") no-repeat calc(100% - 1rem) center;
+                background-size: 1.6rem auto;
+                cursor: pointer;
+                text-indent: 1rem;
+            }
+            .select::-ms-expand {
+                display: none;
+            }
+            .select option,
+            .select option:checked,
+            .select option:hover {
+                background: #fff;
+                color: #000;
+            }
+            .btn_ty2 {
+                display: inline-block;
+                width: 4rem;
+                height: 2rem;
+                font-size: 1.2rem;
+                color: #555;
+                border: .1rem solid #cdcdcd;
+                text-decoration: none;
+                text-align: center;
+                background: #fff;
+            }
+        }
+        .onetouch_area {
+            box-sizing: border-box;
+            position: relative;
+            padding: 0 1.5rem;
+            border-bottom: .1rem solid #eee;
+            .onetouch_tit_wrap {
+                display: table;
+                span {
+                    display: table-cell;
+                    color: #111;
+                    font-size: 1.5rem;
+                    vertical-align: middle;
+                }
+                .info_btn {
+                    display: inline-block;
+                    position: relative;
+                    width: 5rem;
+                    height: 4.7rem;
+                    span {
+                        box-sizing: border-box;
+                        position: absolute;
+                        top: -.2rem;
+                        left: .6rem;
+                        bottom: 0;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        margin: auto 0;
+                        color: $secondary;
+                        font-size: 1.2rem;
+                        line-height: 1.3;
+                        border: .1rem solid $secondary;
+                        border-radius: 1.5rem;
+                        // vertical-align: .1rem;
+                    }
+                }
+            }
+        }
+        .check_switches {
+            position: absolute;
+            top: 50%;
+            right: 1.6rem;
+            transform: translateY(-50%);
+            line-height: 100%;
+            text-align: right;
+            font-size: 0;
+            label {
+                display: inline-block;
+                border: 0;
+            }
+        }
+        .check_switches input[type="checkbox"] {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            font-size: 0;
+            &:active {
+                &+.custom_switch {
+                    background-color: rgb(207, 207, 207);
+                }
+            }
+            &:checked {
+                &+.custom_switch {
+                    .rail {
+                        background-color: $coral;
+                        margin-left: 0;
+                        border-radius: 1rem;
+                    }
+                }
+            }
+            &+.custom_switch {
+                width: 5rem;
+                height: 2rem;
+                overflow: hidden;
+                background: #cfcfcf;
+                border-radius: 1rem;
+                .rail {
+                    position: relative;
+                    width: 6.2rem;
+                    height: 2rem;
+                    margin-left: -3rem;
+                    border-radius: 1rem;
+                    -webkit-transition: margin-left .3s ease-in-out;
+                    transition: margin-left .3s ease-in-out;
+                }
+                .switch_label,
+                .switchLabel {
+                    position: absolute;
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                    color: rgb(255, 255, 255);
+                    text-transform: uppercase;
+                    &.switch_on {
+                        left: .8rem;
+                    }
+                    &.switch_off {
+                        right: -1.1rem;
+                    }
+                }
+                .handle {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    bottom: 0;
+                    margin: auto 0;
+                    display: block;
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    border-radius: 50%;
+                    background-color: rgb(255, 255, 255);
+                    -webkit-transition: background .3s linear;
+                    transition: background .3s linear;
+                    span {
+                        display: block;
+                        margin: 1.2rem 0 0 1.2rem;
+                        width: 3.6rem;
+                        height: 3.6rem;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, .3);
+                        -webkit-transition: background .3s linear;
+                        transition: background .3s linear;
+                    }
+                }
+            }
+        }
+    }
+    .guide {
+        margin: 1.6rem 0 .8rem;
+        padding: 1.2rem;
+        background-color: rgb(247, 247, 247);
+        font-size: 1.3rem;
+        color: rgb(102, 102, 102);
+        line-height: 1.9rem;
+        &.no_dot {
+            dd {
+                padding-left: 0;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        dt {
+            padding: .6rem 0 .2rem;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: $primary;
+        }
+        dd {
+            position: relative;
+            padding: .4rem 0;
+            padding-left: 1.2rem;
+            font-size: 1.4rem;
+            color: $secondary;
+            line-height: 2rem;
+            &::before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 1.1rem;
+                left: 0;
+                width: .4rem;
+                height: .4rem;
+                border-radius: .4rem;
+                background-color: rgb(153, 153, 153);
+                vertical-align: middle;
+            }
+            &.only {
+                padding-left: 0;
+                color: $primary;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .checkbox_field {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3.2rem 0 1.6rem;
+        em {
+            font-size: 1.4rem;
+            color: $secondary;
+        }
+    }
+    .receipt {
+        margin: 1.6rem 0 3.2rem;
+        padding: 2rem 1.6rem;
+        background-color: rgb(247, 247, 247);
+        .radio_wrap {
+            margin-bottom: .8rem;
+            background-color: rgb(255, 255, 255);
+            .radio:checked {
+                &+.radio_label {
+                    color: $primary;
+                }
+            }
+            .radio_label {
+                height: 4.8rem;
+                line-height: 4.6rem;
+                font-size: 1.8rem;
+                color: rgb(170, 170, 170,);
+            }
+        }
+        .input_field {
+            .border {
+                padding: 1.4rem 1.6rem;
+                border: .1rem solid $lightGray;
+            }
+        }
+    }
+    .select {
+        &.mt8 {
+            margin-top: .8rem;
+        }
+        &.mb8 {
+            margin-bottom: .8rem;
+        }
+    }
+    .bottom_button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: calc(100% - 3.2rem);
+        margin: 1.6rem 1.6rem 0;
+        padding-bottom: calc(constant(safe-area-inset-bottom) + 1.6rem);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 1.6rem);
+        background-color: rgb(255, 255, 255);
+        .btn  {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: .5rem;
+            border: .1rem solid $coral;
+            background-color: $coral;
+            color: rgb(255, 255, 255);
+            span {
+                min-width: 5.8rem;
+                height: 5.4rem;
+                box-sizing: border-box;
+                font-size: 1.8rem;
+                font-weight: bold;
+                line-height: 5.4rem;
+                vertical-align: top;
+            }
+        }
+    }
+}

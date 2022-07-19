@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.exhibition_detail {
+    .title_wrap {
+        position: relative;
+        padding: 2rem 1.6rem;
+        .name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 4.3rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .share_wrap {
+            position: absolute;
+            top: calc(50% - 2rem);
+            right: .6rem;
+            .button_share {
+                position: relative;
+                display: block;
+                width: 4rem;
+                height: 4rem;
+                background-image: url("#{$common}/icons_share.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 3.2rem;
+                font-size: 0;
+            }
+        }
+    }
+    .exhibition_content {
+        border-bottom: .8rem solid rgb(240, 240, 240);
+        table {
+            width: 100%;
+        }
+    }
+}

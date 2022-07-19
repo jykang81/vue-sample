@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.store_home {
+    padding: 4.8rem 0 3.2rem;
+    section {
+        position: relative;
+    }
+    .categories {
+        position: relative;
+        padding: 0 1.7rem 1.4rem;
+        border-top: .8rem solid rgb(240, 240, 240);
+        border-bottom: .1rem solid #eee;
+        .swiper-wrapper {
+            margin-top: 3rem;
+            align-items: center;
+            .swiper-slide {
+                position: relative;
+                width: auto;
+                font-size: 1.8rem;
+                color: $secondary;
+                letter-spacing: 0;
+                span {
+                    vertical-align: top;
+                    line-height: 2.4rem;
+                }
+                &.active {
+                    border-bottom: .1rem solid rgb(0, 0, 0);
+                    font-weight: bold;
+                    font-size: 2.4rem;
+                    color: $primary;
+                    line-height: 3rem;
+                }
+            }
+        }
+    }
+}

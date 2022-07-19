@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.app_bottom_navi {
+    &.active {
+        &>.dimmed_all {
+            visibility: visible;
+            opacity: .6;
+            transition: opacity .4s ease-in;
+        }
+    }
+    .dimmed_all {
+        visibility: hidden;
+        background-color: rgb(0, 0, 0);
+        opacity: 0;
+        transition: visibility .4s, opacity .4s ease-out;
+    }
+    .tv_live_box {
+        position: fixed;
+        top: auto;
+        bottom: -100vh;
+        z-index: 300;
+        width: 100%;
+        border-top: .1rem solid #dedede;
+        border-radius: 1rem 1rem 0 0;
+        background-color: rgb(255, 255, 255);
+        transition: all .3s;
+        .top_bar {
+            position: relative;
+            width: 4rem;
+            height: .4rem;
+            margin: 1.6rem auto 2.4rem;
+            border-radius: .2rem;
+            background-color: $primary;
+            opacity: .3;
+            text-indent: -999rem;
+        }
+        .swiper_tvlive {
+            .swiper-pagination {
+                display: flex;
+                justify-content: space-evenly;
+                position: relative;
+                bottom: 0;
+                padding-top: 7.6rem;
+                .swiper-pagination-bullet {
+                    position: relative;
+                    width: 10rem;
+                    height: 2.4rem;
+                    margin: 0;
+                    background-color: transparent;
+                    font-weight: lighter;
+                    font-size: 2.4rem;
+                    color: $secondary;
+                    opacity: 1;
+                    &:focus {
+                        outline: none;
+                    }
+                    &.swiper-pagination-bullet-active {
+                        font-weight: bold;
+                        color: $primary;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -2rem;
+                            left: calc(50% - .4rem);
+                            width: .8rem;
+                            height: .8rem;
+                            background-color: $baseRed;
+                            border-radius: .8rem;
+                        }
+                    }
+                    &:nth-child(1) {
+                        &::after {
+                            content: "띵라이브";
+                        }
+                    }
+                    &:nth-child(2) {
+                        position: relative;
+                        top: -3.6rem;
+                        &::after {
+                            content: "NS LIVE";
+                        }
+                    }
+                    &:nth-child(3) {
+                        &::after {
+                            content: "Shop+";
+                        }
+                    }
+                }
+            }
+        }
+        .btn_close {
+            position: relative;
+            width: 20rem;
+            height: 4.8rem;
+            margin: .8rem auto 0;
+            text-indent: -999rem;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: calc(50% - 12.5rem);
+                width: 25rem;
+                height: 25rem;
+                border-radius: 25rem;
+                box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 1.6rem;
+                left: calc(50% - .9rem);
+                width: 1.8rem;
+                height: 1.4rem;
+                background-image: url("#{$common}/icons_medium.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 1.8rem;
+            }
+        }
+    }
+    .navigation {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 270;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 1rem 1rem 0 0;
+        box-shadow: 0 -.5rem .5rem -.5rem rgba(0, 0, 0, .3);
+        transition: all .3s;
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+        &.hide {
+            bottom: -7rem;
+            padding-bottom: 0;
+        }
+        ul {
+            display: flex;
+            height: 4.8rem;
+            align-items: center;
+            padding-top: .8rem;
+            li {
+                position: relative;
+                flex: 1;
+                button,
+                a {
+                    position: relative;
+                    display: block;
+                    height: 4.8rem;
+                    margin: 0 auto;
+                    box-sizing: border-box;
+                    text-align: center;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 4.8rem;
+                        height: 4.8rem;
+                        margin: auto;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 3.2rem;
+                    }
+                    span {
+
+                        @include blind;
+                    }
+                }
+                &.home_link {
+                    button {
+                        &::after {
+                            background-image: url("#{$common}/icons_home.png");
+                        }
+                        &.pressed,
+                        &.selected {
+                            &::after {
+                                background-image: url("#{$common}/icons_homeActive.png");
+                            }
+                        }
+                    }
+                }
+                &.side {
+                    button {
+                        &::after {
+                            background-image: url("#{$common}/icons_sideBottom.png");
+                        }
+                    }
+                }
+                &.tv_live {
+                    button {
+                        &::after {
+                            background-image: url("#{$common}/icons_tvLive.png");
+                            background-size: 3.2rem;
+                        }
+                    }
+                }
+                &.mypage {
+                    a {
+                        &::after {
+                            background-image: url("#{$common}/icons_mypage.png");
+                        }
+                        &.pressed,
+                        &.selected {
+                            &::after {
+                                background-image: url("#{$common}/icons_mypageActive.png");
+                            }
+                        }
+                    }
+                }
+                &.history {
+                    position: relative;
+                    a::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin: -1.3rem 0 0 -1.3rem;
+                        width: 2.6rem;
+                        height: 2.6rem;
+                        border: .2rem solid $primary;
+                        border-radius: .6rem;
+                        box-sizing: border-box;
+                    }
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: block;
+                        width: 2.6rem;
+                        height: 2.6rem;
+                        margin: -1.3rem 0 0 -1.3rem;
+                        border-radius: .6rem;
+                    }
+                }
+            }
+        }
+    }
+}

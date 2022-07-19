@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.app_footer {
+    position: relative;
+    clear: both;
+    border-top: .1rem solid rgb(204, 204, 204);
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    &.bottom_height {
+        padding-bottom: calc(env(safe-area-inset-bottom) + 6rem);
+    }
+    .policy_wrap {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: .1rem solid rgb(204, 204, 204);
+        align-items: center;
+        &>a {
+            position: relative;
+            flex: 1;
+            padding: 1.5rem 0 1.4rem;
+            text-align: center;
+            color: rgb(32, 32, 32);
+            &+a::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: .1rem;
+                height: 3rem;
+                margin-top: -1.5rem;
+                background-color: rgb(204, 204 , 204);
+            }
+        }
+    }
+    .corp_info {
+        padding: 2.4rem 1.6rem 4rem;
+        font-size: 1.3rem;
+        line-height: 1.9rem;
+        box-sizing: border-box;
+        text-align: center;
+        color: $secondary;
+        address {
+            font-style: normal;
+        }
+        a {
+            display: inline-block;
+            font-weight: bold;
+            color: $primary;
+            &.info_cfrm {
+                margin-left: .4rem;
+            }
+            &.send_email {
+                font-weight: normal;
+                color: $secondary;
+            }
+        }
+        .btn_wrap {
+            display: flex;
+            padding: 2.4rem 0;
+            a {
+                flex: 1;
+            }
+        }
+        .customer_call {
+            padding: 1.2rem 2.4rem;
+            border: .1rem solid rgb(177, 177, 177);
+            border-radius: 4.8rem;
+            font-size: 1.6rem;
+            font-weight: normal;
+            line-height: 2.4rem;
+            color: rgb(32, 32, 32);
+        }
+        .copyright {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            color: $secondary;
+        }
+    }
+}

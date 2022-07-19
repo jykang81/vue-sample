@@ -1,0 +1,111 @@
+{
+	// prefix: 스니펫 단축어
+	// body: 스니펫 내용
+	// description: 스니펫 설명
+	// $1, $2, $3...: tab 순서 
+	// Example:
+	"jsdoc template": {
+		"prefix": "@jsdoc",
+		"body": [
+      "/**",
+			" * $1",
+      " * @param {$2} $3",
+      " * @returns {$4} $5",
+      " */"
+		],
+		"description": "jsdoc 형식의 주석을 생성합니다"
+	},
+	"basic unit test template": {
+		"prefix": "@utb",
+		"body": [
+			"import { assert } from 'chai'",
+			"",
+			"describe('$1${TM_FILENAME}', () => {",
+			"  it('', () => {",
+			"    ",
+			"  })",
+			"})",
+			""
+		],
+		"description": "기본 형태의 유닛 테스트 템플릿"
+	},
+	"component unit test template": {
+		"prefix": "@utc",
+		"body": [
+			"import { assert } from 'chai'",
+			"import { mount, createLocalVue } from '@vue/test-utils'",
+			"import Vuex from 'vuex'",
+			"import store from '@/vuex'",
+			"import router from '@/router'",
+			"",
+			"describe('$1${TM_FILENAME}', () => {",
+			"  let localVue",
+			"  let options",
+			"",
+			"  before(() => {",
+			"    localVue = createLocalVue()",
+			"    localVue.use(Vuex)",
+			"    options = {",
+			"      localVue,",
+			"      store,",
+			"      router",
+			"    }",
+			"  })",
+			"",
+			"  beforeEach(() => {",
+			"",
+			"  })",
+			"",
+			"  it('', () => {",
+			"",
+			"  })",
+			"})",
+			""
+		],
+		"description": "컴포넌트 유닛 테스트 템플릿"
+	},
+	"component with axios unit test template": {
+		"prefix": "@utca",
+		"body": [
+			"import { assert } from 'chai'",
+			"import { mount, createLocalVue } from '@vue/test-utils'",
+			"import Vue from 'Vue'",
+			"import Vuex from 'vuex'",
+			"import store from '@/vuex'",
+			"import axios from 'axios'",
+			"import nsaxios from '@frameworks/axiosUtil'",
+			"import MockAdapter from 'axios-mock-adapter'",
+			"import flushPromises from 'flush-promises'",
+			"",
+			"describe('$1${TM_FILENAME}', () => {",
+			"  let localVue",
+			"  let options",
+			"  let mock",
+			"",
+			"  before(() => {",
+			"    localVue = createLocalVue()",
+			"    localVue.use(Vuex)",
+			"",
+			"    Vue.prototype.$nsaxios = nsaxios",
+			"",
+			"    mock = new MockAdapter(axios)",
+			"  })",
+			"",
+			"  beforeEach(() => {",
+			"    options = {",
+			"      localVue,",
+			"      store",
+			"    }",
+			"",
+			"    mock.reset()",
+			"  })",
+			"",
+			"  it('', () => {",
+			"    ",
+			"  })",
+			"})",
+			""
+		],
+		"description": "컴포넌트와 axios 유닛 테스트 템플릿"
+	},
+}

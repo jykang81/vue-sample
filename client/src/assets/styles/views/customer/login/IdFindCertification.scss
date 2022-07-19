@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.id_find_certification {
+    min-height: calc(100vh - 4.8rem);
+    padding: 0 1.6rem;
+    .msg_box {
+        padding: 3.2rem 0;
+        text-align: center;
+        .subject {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: normal;
+            line-height: 2.5rem;
+            text-align: center;
+            color: $primary;
+        }
+        .msg {
+            margin-top: .4rem;
+            font-size: 1.6rem;
+            color: rgb(119, 119, 119);
+            word-break: keep-all;
+        }
+    }
+    .btn_phone_auth {
+        display: block;
+        height: 5.6rem;
+        border: .1rem solid rgb(204, 204, 204);
+        border-radius: .5rem;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        text-align: center;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 5.6rem;
+            color: $primary;
+        }
+    }
+    .btn_email_auth {
+        display: block;
+        height: 5.6rem;
+        margin-top: .8rem;
+        border: .1rem solid rgb(204, 204, 204);
+        border-radius: .5rem;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        text-align: center;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 5.6rem;
+            color: $primary;
+        }
+    }
+}

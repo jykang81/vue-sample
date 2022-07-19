@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_complete_message {
+    .msg_box {
+        text-align: center;
+        .subject {
+            margin: 0;
+            font-weight: bold;
+            font-size: 2.2rem;
+            line-height: 3rem;
+            &.red {
+                color: $baseRed;
+            }
+            &+.msg {
+                margin-top: .4rem;
+            }
+        }
+        .msg {
+            color: $primary;
+            &.lg {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .bank_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 20rem;
+        margin-top: 1.6rem;
+        border: .1rem solid $lightGray;
+        border-radius: .5rem;
+        text-align: center;
+        box-sizing: border-box;
+        dt {
+            font-size: 2.4rem;
+            font-weight: bold;
+            line-height: 3.4rem;
+        }
+        dd {
+            margin-top: .6rem;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+            strong {
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+            }
+            &.account {
+                display: flex;
+                margin: 2.4rem 3.2rem 0;
+                padding-bottom: .8rem;
+                border-bottom: .1rem solid $lightGray;
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                .btn {
+                    display: block;
+                    margin-left: auto;
+                    box-sizing: border-box;
+                    border-radius: .5rem;
+                    border: .1rem solid $coral;
+                    color: $coral;
+                    span {
+                        min-width: 5.8rem;
+                        height: 3rem;
+                        box-sizing: border-box;
+                        font-size: 1.4rem;
+                        line-height: 3rem;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+    .order_banner_list {
+        margin: 0 -1.6rem;
+        padding: 1.6rem 0 .8rem;
+        img {
+            width: 100%;
+        }
+    }
+}

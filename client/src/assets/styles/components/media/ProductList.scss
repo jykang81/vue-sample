@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.product_list {
+    &.multi {
+        .prd_list {
+            max-height: 43.5rem;
+        }
+        figure {
+            width: 11.2rem;
+            height: 11.2rem;
+        }
+        .price_title {
+            width: calc(100% - 12.4rem);
+        }
+        .benefit {
+            position: absolute;
+            bottom: 1.4rem;
+            left: 14rem;
+            margin: 0;
+        }
+    }
+    &.open {
+        .prd_list {
+            overflow: visible;
+            max-height: none !important;
+            border-top: none;
+        }
+        .btn_collapse {
+            border-top: none;
+            &>span {
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .prd_list {
+        overflow: hidden;
+        box-sizing: border-box;
+        max-height: 48.3rem;
+    }
+    .item {
+        position: relative;
+        padding: 1.6rem;
+        border-bottom: .1rem solid rgb(240, 240, 240);
+        box-sizing: border-box;
+        a,
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    figure {
+        flex: 1;
+        position: relative;
+        width: 8.8rem;
+        height: 8.8rem;
+        margin-right: 1.2rem;
+        line-height: 0;
+        img {
+            width: 100%;
+            border-radius: .5rem;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: .5rem;
+            background-color: rgba(0, 0, 0, .03);
+        }
+    }
+    .label {
+        position: absolute;
+        top: 1.6rem;
+        left: 1.6rem;
+        z-index: 1;
+        width: 6.5rem;
+        padding: .3rem 0;
+        background-color: $primary;
+        border-radius: .5rem 0 .5rem 0;
+        color: rgb(255, 255, 255);
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .price_title {
+        width: calc(100% - 10rem);
+        .price_product {
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            .price_counsel {
+                flex: 0 0 100%;
+                font-size: 1.6rem;
+                font-weight: bold;
+                line-height: 2.6rem;
+                color: $primary;
+            }
+            .price_month {
+                font-size: 1.4rem;
+                font-weight: normal;
+                padding-right: .4rem;
+                color: $primary;
+            }
+            .price_current {
+                display: flex;
+                align-items: flex-end;
+                height: 2.6rem;
+                padding-right: .4rem;
+                font-size: 2.2rem;
+                color: $primary;
+
+                @media (max-width: 320px) {
+                    flex: 0 0 100%;
+                }
+            }
+            .price_unit {
+                font-size: 1.8rem;
+                font-weight: normal;
+            }
+            .price_sale {
+                padding-right: .2rem;
+                font-size: 1.4rem;
+                color: $coral;
+            }
+            .price_base {
+                font-size: 1.4rem;
+                color: rgb(177, 177, 177);
+            }
+        }
+    }
+    .title {
+
+        @include line-clamp(2);
+        padding: .4rem 0 0;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $primary;
+    }
+    .benefit_button {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: .8rem;
+    }
+    .benefit {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        margin: -.2rem;
+        li {
+            height: 2rem;
+            margin: .2rem;
+            padding: 0 .4rem;
+            border: .1rem solid $lightGray;
+            border-radius: .2rem;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            color: $secondary;
+            letter-spacing: -.03rem;
+        }
+    }
+    .btn_buy {
+        height: 3.2rem;
+        margin-left: .4rem;
+        padding: 0 1.3rem;
+        border-radius: .5rem;
+        border: .1rem solid $coral;
+        box-sizing: border-box;
+        font-weight: bold;
+        font-size: 1.7rem;
+        color: $coral;
+        vertical-align: middle;
+    }
+    .btn_collapse {
+        display: block;
+        width: 100%;
+        padding: 1.3rem 0;
+        border-top: none;
+        text-align: center;
+        line-height: 2.4rem;
+        &>span {
+            position: relative;
+            padding-right: 2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-top: -.6rem;
+                background-image: url("#{$common}/icons_arrow_black.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 1.2rem;
+                transition: all .5s;
+            }
+        }
+    }
+}

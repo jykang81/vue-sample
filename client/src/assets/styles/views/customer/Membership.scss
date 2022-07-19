@@ -1,0 +1,507 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+$mypage: $images + "/mypage";
+.membership {
+    overflow: hidden;
+    section {
+        padding: 0 1.6rem;
+        &+section {
+            margin-top: 1.6rem;
+            border-top: .8rem solid rgb(240, 240, 240);
+        }
+    }
+    .my_grade {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+        margin-bottom: 3.2rem;
+        padding: 3.2rem 0;
+        border-bottom: .1rem solid rgb(240, 240, 240);
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+    }
+    .grade_guide {
+
+        @include line-clamp(2);
+        height: 4.8rem;
+        background: none;
+        text-align: center;
+        line-height: 2.4rem;
+    }
+    .grade_list {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 3.2rem -1.6rem 0;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1.6rem;
+            right: 10%;
+            left: 10%;
+            height: .05rem;
+            background-color: rgb(204, 204, 204);
+        }
+        li {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            padding-top: 4rem;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 3.4rem;
+            &.active {
+                &>span {
+                    color: $primary;
+                }
+            }
+            &>span {
+                font-size: 1.3rem;
+                line-height: 2rem;
+                color: rgb(177, 177, 177);
+            }
+        }
+        .family {
+            background-image: url("#{$mypage}/icons_familyStroke.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_family.png");
+            }
+        }
+        .silver {
+            background-image: url("#{$mypage}/icons_silverStroke.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_silver.png");
+            }
+        }
+        .gold {
+            background-image: url("#{$mypage}/icons_goldStroke.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_gold.png");
+            }
+        }
+        .diamond {
+            background-image: url("#{$mypage}/icons_diamondStroke.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_diamond.png");
+            }
+        }
+        .markloven {
+            background-image: url("#{$mypage}/icons_markLoveNStroke.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_markLoveN.png");
+            }
+        }
+    }
+    .my_shopping {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 7.6rem;
+        border: .1rem solid rgb(240, 240, 240);
+        margin-top: 1.6rem;
+        box-sizing: border-box;
+        dl {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            &+dl {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: .1rem;
+                    height: 2.4rem;
+                    margin-top: -1.2rem;
+                    background-color: rgb(240, 240, 240);
+                }
+            }
+        }
+        dt {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        dd {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            strong {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+        }
+    }
+    .info_guide {
+        margin-top: .8rem;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        color: rgb(177, 177, 177);
+    }
+    .subject {
+        position: relative;
+        display: block;
+        margin: 3.2rem 0 1.6rem;
+        text-align: left;
+        color: $primary;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+    }
+    .tabs {
+        display: flex;
+        margin: 0 -1.6rem;
+        border-top: .1rem solid $lightGray;
+        .family {
+            background-image: url("#{$mypage}/icons_family_off.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_family.png");
+            }
+            .unit {
+                color: rgb(82, 120, 206);
+            }
+        }
+        .silver {
+            background-image: url("#{$mypage}/icons_silver_off.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_silver.png");
+            }
+            .unit {
+                color: rgb(153, 153, 159);
+            }
+        }
+        .gold {
+            background-image: url("#{$mypage}/icons_gold_off.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_gold.png");
+            }
+            .unit {
+                color: rgb(246, 195, 12);
+            }
+        }
+        .diamond {
+            background-image: url("#{$mypage}/icons_diamond_off.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_diamond.png");
+            }
+            .unit {
+                color: rgb(137, 115, 210);
+            }
+        }
+        .markloven {
+            background-image: url("#{$mypage}/icons_markLoveN_off.png");
+            &.active {
+                background-image: url("#{$mypage}/icons_markLoveN.png");
+            }
+            .unit {
+                color: rgb(235, 110, 101);
+            }
+        }
+        .tab {
+            position: relative;
+            flex: 1;
+            align-items: center;
+            height: 6rem;
+            background-color: rgb(240, 240, 240);
+            margin: 0 -.1rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 4rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: rgb(177, 177, 177);
+            line-height: 2.4rem;
+            &.active {
+                position: relative;
+                z-index: 1;
+                background-color: rgb(255, 255, 255);
+                color: $coral;
+                &>span {
+                    border-color: rgb(255, 255, 255);
+                }
+            }
+            &>span {
+                display: block;
+                height: 100%;
+                border: .1rem solid $lightGray;
+                border-width: 0 .1rem;
+                font-size: 0;
+            }
+        }
+    }
+    .tab_content {
+        padding: 3.2rem 0 2.4rem;
+        background: none;
+        text-align: center;
+        .title {
+            line-height: 2.4rem;
+        }
+        .sub_copy {
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+        .btn_download {
+            display: block;
+            width: 100%;
+            height: 4.8rem;
+            margin: 2.4rem auto .8rem;
+            border: .1rem solid rgb(204, 204, 204);
+            border-radius: .5rem;
+            box-sizing: border-box;
+            &>span {
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+            &.in_active {
+                border: .1rem solid rgb(224, 224, 224) !important;
+                background-color: rgb(224, 224, 224)  !important;
+                color: rgb(255, 255, 255) !important;
+                &>span {
+                    color: rgb(255, 255, 255) !important;
+                }
+            }
+        }
+    }
+    .coupon_list {
+        overflow: hidden;
+        width: 30.4rem;
+        margin: .8rem auto 0;
+        li {
+            float: left;
+            margin: .8rem;
+        }
+        .item {
+            position: relative;
+            width: 13.6rem;
+            height: 7.7rem;
+            padding: 1.6rem 0 0 1.6rem;
+            background-image: url("#{$common}/bg_coupon.png");
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 1.4rem;
+            em {
+                display: block;
+                margin-bottom: .4rem;
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+            }
+            strong {
+                font-size: 2rem;
+                line-height: 2.4rem;
+                vertical-align: bottom;
+            }
+            &.tv {
+                background-image: url("#{$common}/bg_coupon_tv.png");
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background-image: url("#{$common}/icons_tv.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 100%;
+                }
+            }
+            &.toll_point {
+                background-image: url("#{$common}/bg_coupon_tollPoint.png");
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background-image: url("#{$common}/icons_point.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 100%;
+                }
+            }
+        }
+    }
+    .special_list {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: auto;
+        margin: 0 auto;
+        padding: 3.9rem 6rem 0;
+        &::before {
+            content: "";
+            position: absolute;
+            top: .8rem;
+            left: 50%;
+            width: .2rem;
+            height: 1.7rem;
+            background-color: $primary;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: .8rem;
+            left: 50%;
+            width: .2rem;
+            height: 1.7rem;
+            background-color: $primary;
+            transform: rotate(90deg);
+        }
+        li {
+            width: 50%;
+            margin: .8rem 0;
+        }
+        .icons_special {
+            display: block;
+            width: 7.2rem;
+            height: 7.2rem;
+            margin: 0 auto;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 100%;
+            &.gift {
+                background-image: url("#{$mypage}/icons_specialBenefit1.png");
+            }
+            &.toll_point {
+                background-image: url("#{$mypage}/icons_specialBenefit2.png");
+            }
+            &.vip_lounge {
+                background-image: url("#{$mypage}/icons_specialBenefit3.png");
+            }
+            &.free_delivery_third {
+                background-image: url("#{$mypage}/icons_specialBenefit4.png");
+            }
+            &.counsel {
+                background-image: url("#{$mypage}/icons_specialBenefit5.png");
+            }
+            &.free_delivery_first {
+                background-image: url("#{$mypage}/icons_specialBenefit6.png");
+            }
+        }
+        p {
+            margin-top: .8rem;
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+            text-align: center;
+        }
+    }
+    .vip_benefit {
+        margin: 0 -1.6rem;
+        .banner_link {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+        .txt_list {
+            &+.txt_list {
+                border-top: .1rem solid rgb(240, 240, 240);
+            }
+            dt {
+                .btn_collapse {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    width: 100%;
+                    height: 7rem;
+                    box-sizing: border-box;
+                    text-align: left;
+                    transition: all .5s;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 2.4rem;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        margin: -.6rem;
+                        background-image: url("#{$common}/icons_arrow_gray.png");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 1.2rem;
+                    }
+                    &>span {
+                        text-indent: 2.4rem;
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                        color: $secondary;
+                    }
+                }
+            }
+            dd {
+                display: none;
+                position: relative;
+                margin: 0 2.4rem;
+                padding-left: .9rem;
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+                color: $secondary;
+                &+dd {
+                    margin-top: .8rem;
+                }
+                &:last-child {
+                    margin-bottom: 2.4rem;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: .6rem;
+                    right: 0;
+                    left: 0;
+                    width: .3rem;
+                    height: .3rem;
+                    border-radius: .3rem;
+                    background-color: $secondary;
+                }
+            }
+            &.active {
+                dd {
+                    display: block;
+                }
+                .btn_collapse {
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
+.family {
+    .unit {
+        color: rgb(82, 120, 206);
+    }
+}
+.silver {
+    .unit {
+        color: rgb(153, 153, 159);
+    }
+}
+.gold {
+    .unit {
+        color: rgb(246, 195, 12);
+    }
+}
+.diamond {
+    .unit {
+        color: rgb(137, 115, 210);
+    }
+}
+.markloven {
+    .unit {
+        color: rgb(235, 110, 101);
+    }
+}

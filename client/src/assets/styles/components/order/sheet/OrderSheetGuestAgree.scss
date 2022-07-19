@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_sheet_guest_agree {
+    .contents {
+        padding: 2.4rem 1.6rem 1.6rem;
+        .title {
+            padding: .8rem 0;
+            font-size: 2rem;
+        }
+        .agree_frame {
+            overflow: auto;
+            height: 32rem;
+            margin: 0;
+            padding: 1.6rem;
+            border: .1rem solid #ddd;
+            text-align: left;
+            dl {
+                dt {
+                    padding-bottom: .5rem;
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                    color: rgb(51, 51, 51);
+                    letter-spacing: -.05rem;
+                }
+                dd {
+                    padding-bottom: 2rem;
+                    font-size: 1.3rem;
+                    color: rgb(51, 51, 51);
+                    line-height: 1.9rem;
+                    letter-spacing: -.05rem;
+                }
+            }
+        }
+    }
+}

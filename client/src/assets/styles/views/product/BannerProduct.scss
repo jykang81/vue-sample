@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.banner_product {
+    overflow: hidden;
+    position: relative;
+    border-top: .8rem solid rgb(240, 240, 240);
+    .banner_product_wrap {
+        position: relative;
+        overflow: hidden;
+        a {
+            display: block;
+        }
+        img {
+            display: block;
+        }
+        .link_more {
+            display: block;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .wrap_notice .row_header {
+            white-space: normal;
+        }
+    }
+}

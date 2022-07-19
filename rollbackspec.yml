@@ -1,0 +1,92 @@
+version: 0.2
+
+env:
+  parameter-store:
+    NSM_MOBILEWEB: /nsm/mobileweb/deploy
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      # UTC -> KST
+      - ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+      # Checkout for target tag number
+      # - git checkout tags/${VERSION}
+
+      # Install Library
+      - npm i --silent --progress=false -g --unsafe-perm serverless
+      - npm i serverless-finch --save
+      - npm i --no-optional
+
+      # Settings for codecommit
+      # - git config --global user.email "kyc890418_einz@einz.co.kr"
+      # - git config --global user.name "CodeBuild"
+
+  pre_build:
+    commands:
+      # Check stage
+      - echo -n "STAGE:" && echo ${STAGE}
+
+      # Check parameter store value
+      - echo $NSM_MOBILEWEB
+
+      # Set Environments
+      - |
+        if [ "$STAGE" = "dev" ]; then
+          echo 'Stage is dev'
+          DISTRIBUTION_ID=$(echo $NSM_MOBILEWEB | jq -r .dev.DISTRIBUTION_ID)
+          echo $DISTRIBUTION_ID
+        fi
+      - |
+        if [ "$STAGE" = "test" ]; then
+          DISTRIBUTION_ID=$(echo $NSM_MOBILEWEB | jq -r .test.DISTRIBUTION_ID)
+          ACCESS_KEY=$(echo $NSM_MOBILEWEB | jq -r .test.ACCESS_KEY)
+          SECRET_KEY=$(echo $NSM_MOBILEWEB | jq -r .test.SECRET_KEY)
+          ROLE_NAME=$(echo $NSM_MOBILEWEB | jq -r .test.ROLE_NAME)
+
+          CRED=`aws sts assume-role --role-arn arn:aws:iam::524041017321:role/$ROLE_NAME --role-session-name serverless-deploy-access`
+          echo $CRED
+          AWS_ACCESS_KEY_ID=`node -pe 'JSON.parse(process.argv[1]).Credentials.AccessKeyId' "$CRED"`
+          AWS_SECRET_ACCESS_KEY=`node -pe 'JSON.parse(process.argv[1]).Credentials.SecretAccessKey' "$CRED"`
+          AWS_SESSION_TOKEN=`node -pe 'JSON.parse(process.argv[1]).Credentials.SessionToken' "$CRED"`
+          AWS_EXPIRATION=`node -pe 'JSON.parse(process.argv[1]).Credentials.Expiration' "$CRED"`
+        fi
+      - |
+        if [ "$STAGE" = "prod" ]; then
+          DISTRIBUTION_ID=$(echo $NSM_MOBILEWEB | jq -r .prod.DISTRIBUTION_ID)
+          ACCESS_KEY=$(echo $NSM_MOBILEWEB | jq -r .prod.ACCESS_KEY)
+          SECRET_KEY=$(echo $NSM_MOBILEWEB | jq -r .prod.SECRET_KEY)
+          ROLE_NAME=$(echo $NSM_MOBILEWEB | jq -r .prod.ROLE_NAME)
+
+          CRED=`aws sts assume-role --role-arn arn:aws:iam::419808536006:role/$ROLE_NAME --role-session-name serverless-deploy-access`
+          echo $CRED
+          AWS_ACCESS_KEY_ID=`node -pe 'JSON.parse(process.argv[1]).Credentials.AccessKeyId' "$CRED"`
+          AWS_SECRET_ACCESS_KEY=`node -pe 'JSON.parse(process.argv[1]).Credentials.SecretAccessKey' "$CRED"`
+          AWS_SESSION_TOKEN=`node -pe 'JSON.parse(process.argv[1]).Credentials.SessionToken' "$CRED"`
+          AWS_EXPIRATION=`node -pe 'JSON.parse(process.argv[1]).Credentials.Expiration' "$CRED"`
+        fi
+
+  build:
+    commands:
+      # Build
+      # - npm run cicd:build:${STAGE}
+      # Build Dist Download
+      - aws s3 cp s3://nsm-dev-serverless-cicd-bucket/ui-mobile-$STAGE/artifact/$VERSION.gz .
+      - tar -xvzf $VERSION.gz
+      # - ls -al
+      # - cd client/
+      # - ls -al
+
+  post_build:
+    commands:
+      # S3 Deploy
+      - cd client && sls client deploy --no-confirm --no-config-change --no-policy-change --no-cors-change --stage ${STAGE}
+
+      # CloudFront Invalidation
+      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths /js/* /index.html /gate.html /gate.jsp /images/* /img/* /css/*
+
+cache:
+  paths:
+    - client/dist

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<title>NS홈쇼핑</title>
+		<!-- 앱미설치시 모바일웹으로 랜딩적용 -->
+		
+		<style type="text/css">
+			*{margin:0; padding:0;}
+			html	{height: 100%;}
+			body	{height: auto; overflow-x: hidden;/*  letter-spacing: -1px;  */font-family: AppleSDGothicNeo, 'Droid Sans', dotum, '돋움', sans-serif; font-size:15px; line-height:1.25; color: #555; webkit-text-size-adjust: none;}
+			ul,ol,dl {list-style:none;}
+			.wrap {background-color: #fff; margin:15px; letter-spacing:-1px; }
+			.wrap .cont {text-align:center; font-family:Malgun Gothic; margin-bottom:0}
+			.cont p {padding: 0}
+			.cont .title {font-weight:bold; font-size:17px; color: #343434; line-height:24px}
+			.cont .title span {color:#0ca8d0}
+			.cont .titSub {width: 70%; font-size:14px; color: #8b8b8b; line-height:22px; margin: 0 auto}
+			.cont .img {margin:0; padding:0; line-height:0;}
+			.cont .img img {display:block; width:100%; float:none; clear:none;}
+		</style>
+	</head>
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+
+			<!-- 텍스트 Area -->
+			<div class="cont">
+				<div class="img">
+					<p><img src="http://image.nsmall.com/ec_comimages/nsupload/espot/images/mobile/19_DeepLink/appdeeplink.jpg" alt="" /></p>
+				</div>
+			</div>
+		</div>
+    <!-- //wrap -->
+    <a id="dplnk" style="display: none;"></a>
+	</body>
+
+  <script type="text/javascript">
+    const AIRBRIDGE_JS_PATH = '//static.airbridge.io/sdk/latest/airbridge.min.js'
+    const airbridgeLoadScriptFunc = (a_, i_, r_, _b, _r, _i, _d, _g, _e) => {
+      if (!a_[_b]) {
+          const d = {
+          queue: []
+        }
+        _r.concat(_i).forEach(function (a) {
+          const i_ = a.split('.')
+          const a_ = i_.pop()
+          i_.reduce(function (a, i_) {
+            a[i_] = a[i_] || {}
+            return a[i_]
+          }, d)[a_] = function () {
+            d.queue.push([a, arguments])
+          }
+        })
+        a_[_b] = d
+        a_ = i_.getElementsByTagName(r_)[0]
+        i_ = i_.createElement(r_)
+        i_.onerror = function () {
+          d.queue.filter(function (a) {
+            return _i.indexOf(a[0]) >= 0
+          }).forEach(function (a) {
+            a = a[1]
+            a = a[a.length - 1]
+            typeof a === 'function' && a('error occur when load airbridge')
+          })
+        }
+        i_.async = 1
+        i_.src = AIRBRIDGE_JS_PATH
+        a_.parentNode.insertBefore(i_, a_)
+      }
+    }
+    airbridgeLoadScriptFunc(window, document, 'script', 'airbridge', 'init setBanner setDownload setDownloads setDeeplinks sendSMS sendWeb setUserAgent setUserAlias addUserAlias setMobileAppData setUserId setUserEmail setUserPhone setUserAttributes setDeviceIFV setDeviceIFA setDeviceGAID events.send events.signIn events.signUp events.signOut events.purchased events.addedToCart events.productDetailsViewEvent events.homeViewEvent events.productListViewEvent events.searchResultViewEvent'.split(' '), ['events.wait'])
+    const hostType = window.location.host
+    const DEV_APP_NAME = 'nsmall'
+    const DEV_WEB_TOKEN = '0806667fb5474393a928b23b8e4d00c0'
+    const TEST_APP_NAME = 'nsmall'
+    const TEST_WEB_TOKEN = '0806667fb5474393a928b23b8e4d00c0'
+    const PROD_APP_NAME = 'nsmall'
+    const PROD_WEB_TOKEN = '0806667fb5474393a928b23b8e4d00c0'
+    let appName = ''
+    let webToken = ''
+    if (hostType === 'local.nsmall.com') {
+      appName = DEV_APP_NAME
+      webToken =DEV_WEB_TOKEN
+    } else if (hostType === 'devm2.nsmall.com' || hostType.type === 'unit') {
+      appName = DEV_APP_NAME
+      webToken = DEV_WEB_TOKEN
+    } else if (hostType.type === 'testm2.nsmall.com') {
+      appName = TEST_APP_NAME
+      webToken = TEST_WEB_TOKEN
+    } else if (hostType.type === 'mw.nsmall.com') {
+      appName = PROD_APP_NAME
+      webToken = PROD_WEB_TOKEN
+    }
+    window.airbridge.init({
+      app: appName,
+      webToken: webToken
+    })
+    window.airbridge.setDeeplinks({
+      buttonID: 'dplnk',
+      deeplinks: {
+        ios: 'nsmall://',
+        android: 'nsmall://'
+      },
+      fallbacks: {
+        ios: 'itunes-appstore',
+        android: 'google-play'
+      }
+    })
+    const dplink = document.getElementById('dplnk')
+    dplink.click()
+	</script>
+</html>

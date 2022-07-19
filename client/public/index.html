@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
+    <%= htmlWebpackPlugin.options.metaTags %>
+    <%= htmlWebpackPlugin.options.dnsPrefetchTags %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      var linkback = linkback|| {};
+      (function() {
+          var d = document, scr = d.createElement('script'),
+          tar = d.getElementsByTagName('head')[0];
+          scr.type = 'text/javascript';  scr.async = true;
+          scr.src = 'https://linkback.contentsfeed.com/src/lb4nsmall.min.js';
+          scr.charset='utf-8';
+          if(!linkback.l){linkback.l=true; tar.insertBefore(scr, tar.firstChild);}
+      })();
+    </script>
+  </body>
+</html>

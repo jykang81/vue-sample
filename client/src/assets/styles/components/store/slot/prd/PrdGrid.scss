@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.prd_grid {
+    .title_tag {
+        padding: 2.4rem 1.6rem 0;
+        &.border_bold {
+            border-top: .8rem solid rgb(240, 240, 240);
+        }
+        img {
+            width: 100%;
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 2.2rem;
+            letter-spacing: 0;
+            line-height: 3.4rem;
+            &:only-child {
+                padding-bottom: 0;
+            }
+        }
+        .tag {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 1.6rem;
+            color: $secondary;
+            letter-spacing: 0;
+            span {
+                padding-right: .5rem;
+            }
+        }
+    }
+    .product_list {
+        overflow: hidden;
+        &.grid {
+            padding: 1.6rem 0;
+            .list {
+                position: relative;
+                float: left;
+                width: calc(50% - 2.4rem);
+                margin-left: 1.6rem;
+                padding: 0;
+                padding-bottom: 1.8rem;
+                border-bottom: 0;
+                &:nth-child(2n - 1) {
+                    clear: both;
+                }
+                .product_info {
+                    display: block;
+                    padding: 0;
+                    figure {
+                        width: 100%;
+                        height: calc(50vw - 2.4rem);
+                    }
+                    .field {
+                        width: 100%;
+                        height: 9.9rem;
+                        padding: .8rem 0 0;
+                        .price_product {
+                            align-items: baseline;
+                            height: 4.8rem;
+                            .price_counsel {
+                                padding: .6rem 0 0;
+                            }
+                            .price_current {
+                                flex: 0 0 100%;
+                                height: 2.6rem;
+                                font-size: 2.2rem;
+                            }
+                            .price_unit {
+                                font-size: 1.8rem;
+                            }
+                        }
+                        .star_wrap {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .list {
+            position: relative;
+            padding: 0 1.6rem;
+            border-bottom: .1rem solid rgb(229, 229, 229);
+            .product_info {
+                display: flex;
+                padding: 1.6rem 0 .8rem;
+                figure {
+                    position: relative;
+                    width: 11.2rem;
+                    height: 11.2rem;
+                    text-align: center;
+                    line-height: 0;
+                    img {
+                        width: 100%;
+                        border-radius: .5rem;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: .5rem;
+                        background-color: rgba(0, 0, 0, .03);
+                    }
+                }
+                .field {
+                    width: calc(100% - 12.8rem);
+                    padding-left: 1.2rem;
+                    .price {
+                        padding-bottom: .4rem;
+                        font-size: 1.7rem;
+                        color: rgb(34, 34, 34);
+                        ins {
+                            text-decoration: none;
+                            .month {
+                                padding-right: .4rem;
+                                font-size: 1.4rem;
+                                color: $primary;
+                            }
+                            strong {
+                                position: relative;
+                                top: .15rem;
+                                padding-right: .1rem;
+                                font-size: 2rem;
+                            }
+                        }
+                        .discount {
+                            display: inline-block;
+                        }
+                        span {
+                            font-size: 1.4rem;
+                            color: $coral;
+                        }
+                        del {
+                            padding-left: .5rem;
+                            font-size: 1.4rem;
+                            color: rgb(177, 177, 177);
+                        }
+                    }
+                    .price_product {
+                        display: flex;
+                        align-items: flex-end;
+                        flex-wrap: wrap;
+                        .price_counsel {
+                            flex: 0 0 100%;
+                            padding-bottom: .4rem;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            color: $primary;
+                        }
+                        .price_month {
+                            font-size: 1.4rem;
+                            font-weight: normal;
+                            padding-right: .4rem;
+                            color: $primary;
+                        }
+                        .price_current {
+                            display: flex;
+                            align-items: flex-end;
+                            height: 2.4rem;
+                            padding-right: .4rem;
+                            font-size: 2rem;
+                            color: $primary;
+
+                            @media (max-width: 320px) {
+                                flex: 0 0 100%;
+                            }
+                        }
+                        .price_unit {
+                            font-size: 1.7rem;
+                            font-weight: normal;
+                        }
+                        .price_sale {
+                            padding-right: .4rem;
+                            font-size: 1.4rem;
+                            color: $coral;
+                        }
+                        .price_base {
+                            font-size: 1.4rem;
+                            color: rgb(177, 177, 177);
+                        }
+                    }
+                    .title {
+
+                        @include line-clamp(2);
+                        height: 4.4rem;
+                        margin: .4rem 0;
+                        font-size: 1.6rem;
+                        color: $primary;
+                        line-height: 2.2rem;
+                    }
+                }
+            }
+        }
+    }
+    .btn_total_view {
+        margin-bottom: 1.6rem;
+        border-top: .1rem solid rgb(240, 240, 240);
+        text-align: right;
+        button {
+            display: inline-block;
+            height: 4.8rem;
+            padding: 0 1.6rem;
+            font-size: 1.4rem;
+            letter-spacing: 0;
+            color: $secondary;
+            line-height: 4.8rem;
+            i {
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: .4rem;
+                background-image: url("#{$common}/icons_smallRight.png");
+                background-repeat: no-repeat;
+                background-size: 1.2rem;
+                vertical-align: -2%;
+            }
+        }
+    }
+}

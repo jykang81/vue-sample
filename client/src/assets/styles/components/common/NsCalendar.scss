@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.ns_calendar {
+    .ns_calendar_datepicker {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 14.4rem;
+        background-color: rgb(255, 255, 255);
+        touch-action: none;
+        -webkit-user-select: none;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10.1rem;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 4.8rem;
+            background-color: rgb(149, 155, 165);
+        }
+    }
+    .btn_group {
+        display: flex;
+        flex-wrap: wrap;
+        .btn_cancel {
+            flex: 1;
+            height: 5.6rem;
+            border-radius: 0 0 0 .5rem;
+            background-color: rgb(224, 224, 224);
+            color: $primary;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .btn_confirm {
+            flex: 1;
+            height: 5.6rem;
+            border-radius: 0 0 .5rem 0;
+            background-color: $coral;
+            color: rgb(255, 255, 255);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,336 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+$nspay: $images + "/nspay";
+.ns_pay_list {
+    min-height: calc(100vh - 112px);
+    padding: 3.2rem 1.6rem;
+    background-color: rgb(247, 247, 247);
+    .nspay_list {
+        dt {
+            padding-top: 4rem;
+            font-weight: bold;
+            font-size: 2rem;
+            line-height: 2.8rem;
+            &:first-child {
+                padding: 0;
+            }
+        }
+        dd {
+            display: flex;
+            align-items: center;
+            margin-top: .8rem;
+            padding: 1.6rem;
+            background-color: rgb(255, 255, 255);
+            border: .1rem solid $lightGray;
+            border-radius: .5rem;
+            .logo {
+                position: relative;
+                width: 10rem;
+                height: 6.4rem;
+                margin-right: 1.4rem;
+                border: .2rem solid rgb(229, 229, 229);
+                border-radius: .5rem;
+                &.card {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 2.2rem;
+                        left: 1.3rem;
+                        width: 8rem;
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                    }
+
+                    // 신한
+                    &.c1 {
+                        background: rgb(64, 153, 230);
+                        border: .2rem solid rgb(64, 153, 230);
+                        &::before {
+                            background-image: url("#{$nspay}/card01.png");
+                        }
+                    }
+
+                    // 국민
+                    &.c2 {
+                        background: rgb(248, 181, 0);
+                        border: .2rem solid rgb(248, 181, 0);
+                        &::before {
+                            background-image: url("#{$nspay}/card02.png");
+                        }
+                    }
+
+                    // 비씨
+                    &.c3 {
+                        background: rgb(246, 57, 78);
+                        border: .2rem solid rgb(246, 57, 78);
+                        &::before {
+                            background-image: url("#{$nspay}/card03.png");
+                        }
+                    }
+
+                    // 현대
+                    &.c4 {
+                        background: rgb(162, 162, 162);
+                        border: .2rem solid rgb(162, 162, 162);
+                        &::before {
+                            background-image: url("#{$nspay}/card04.png");
+                        }
+                    }
+
+                    // 삼성
+                    &.c5 {
+                        background-color: rgb(45, 139, 223);
+                        border: .2rem solid rgb(45, 139, 223);
+                        &::before {
+                            background-image: url("#{$nspay}/card05.png");
+                        }
+                    }
+
+                    // 하나
+                    &.c6 {
+                        background: rgb(33, 158, 142);
+                        border: .2rem solid rgb(33, 158, 142);
+                        &::before {
+                            background-image: url("#{$nspay}/card06.png");
+                        }
+                    }
+
+                    // 롯데
+                    &.c7 {
+                        background: rgb(133, 102, 119);
+                        border: .2rem solid rgb(133, 102, 119);
+                        &::before {
+                            background-image: url("#{$nspay}/card07.png");
+                        }
+                    }
+
+                    // 농협
+                    &.c8 {
+                        background: rgb(135, 164, 105);
+                        border: .2rem solid rgb(135, 164, 105);
+                        &::before {
+                            background-image: url("#{$nspay}/card08.png");
+                        }
+                    }
+                }
+                &.bank {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 2.2rem;
+                        left: 1.3rem;
+                        width: 8rem;
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                    }
+
+                    // 농협
+                    &.b1 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank01.png");
+                        }
+                    }
+
+                    // 국민
+                    &.b2 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank02.png");
+                        }
+                    }
+
+                    // 우리
+                    &.b3 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank03.png");
+                        }
+                    }
+
+                    // 신한
+                    &.b4 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank04.png");
+                        }
+                    }
+
+                    // 하나
+                    &.b5 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank05.png");
+                        }
+                    }
+
+                    // 기업
+                    &.b6 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank06.png");
+                        }
+                    }
+
+                    // 산업
+                    &.b7 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank07.png");
+                        }
+                    }
+
+                    // SC
+                    &.b8 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank08.png");
+                        }
+                    }
+
+                    // 수협
+                    &.b9 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank09.png");
+                        }
+                    }
+
+                    // 전북
+                    &.b10 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank10.png");
+                        }
+                    }
+
+                    // 시티
+                    &.b11 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank11.png");
+                        }
+                    }
+
+                    // 제주
+                    &.b12 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank12.png");
+                        }
+                    }
+
+                    // 새마을
+                    &.b13 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank13.png");
+                        }
+                    }
+
+                    // 신협
+                    &.b14 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank14.png");
+                        }
+                    }
+
+                    // 대구
+                    &.b15 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank15.png");
+                        }
+                    }
+
+                    // 부산
+                    &.b16 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank16.png");
+                        }
+                    }
+
+                    // 광주
+                    &.b17 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank17.png");
+                        }
+                    }
+
+                    // 경남
+                    &.b18 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank18.png");
+                        }
+                    }
+
+                    // 우체국
+                    &.b19 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank19.png");
+                        }
+                    }
+
+                    // NS페이
+                    &.b20 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank20.png");
+                        }
+                    }
+
+                    // K뱅크
+                    &.b21 {
+                        &::before {
+                            background-image: url("#{$nspay}/bank21.png");
+                        }
+                    }
+                }
+            }
+            .name_number {
+                flex: 1;
+                .name {
+                    padding-bottom: .8rem;
+                    font-size: 1.6rem;
+                }
+                .number {
+                    font-size: 1.3rem;
+                    color: $secondary;
+                }
+            }
+            .btn_group {
+                button {
+                    display: block;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    background-repeat: no-repeat;
+                    background-size: 3.2rem;
+                    text-indent: -999rem;
+                }
+                .btn_star {
+                    margin-bottom: 1.6rem;
+                    background-image: url("#{$common}/icons_star_off.png");
+                    &.on {
+                        background-image: url("#{$common}/icons_star_on.png");
+                    }
+                }
+                .btn_delete {
+                    background-image: url("#{$common}/icons_trash_darkgray.png");
+                }
+            }
+        }
+    }
+    .btn_group_block {
+        .btn {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            vertical-align: middle;
+            text-align: center;
+            white-space: nowrap;
+            background-color: rgb(255, 255, 255);
+            border: .1rem solid rgb(177, 177, 177);
+            border-radius: .5rem;
+            color: $primary;
+            span {
+                min-width: 5.8rem;
+                height: 5.4rem;
+                box-sizing: border-box;
+                font-size: 1.8rem;
+                font-weight: bold;
+                line-height: 5.4rem;
+                vertical-align: top;
+            }
+        }
+    }
+}

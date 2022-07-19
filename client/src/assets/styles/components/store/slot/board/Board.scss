@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.swiper_live {
+    padding: 1.6rem;
+    border-bottom: .1rem solid rgb(240, 240, 240);
+    .swiper-slide {
+        width: 28rem;
+        .live_title {
+            padding-bottom: .8rem;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .img_box {
+            position: relative;
+            figure {
+                position: relative;
+                line-height: 0;
+                img {
+                    width: 100%;
+                    border-radius: .5rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .5rem;
+                    background-color: rgba(0, 0, 0, .03);
+                }
+            }
+            .live {
+                position: absolute;
+                top: .8rem;
+                left: .8rem;
+                height: 1.6rem;
+                padding-right: .5rem;
+                background-color: rgb(255, 255, 255);
+                border-radius: 1.6rem;
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+                letter-spacing: 0;
+                .icons_live {
+                    display: inline-block;
+                    width: 3.2rem;
+                    height: 1.6rem;
+                    background-image: url("#{$common}/icons_live.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 100%;
+                    margin-right: .2rem;
+                    vertical-align: top;
+                }
+                span {
+                    margin-right: .2rem;
+                    padding: 0 .6rem;
+                    background-color: $baseRed;
+                    border-radius: 1.6rem;
+                    font-size: 1rem;
+                    color: rgb(255, 255, 255);
+                    letter-spacing: 0;
+                }
+            }
+        }
+        .price {
+            padding: .8rem 0;
+            font-size: 1.8rem;
+            strong {
+                padding-right: .1rem;
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+                color: $primary;
+            }
+            span {
+                font-size: 1.4rem;
+                color: $coral;
+            }
+            del {
+                padding-left: .5rem;
+                font-size: 1.4rem;
+                color: rgb(177, 177, 177);
+            }
+            .month {
+                padding-right: .4rem;
+                color: $primary;
+            }
+        }
+        .price_product {
+            height: 3.5rem;
+            padding-top: .8rem;
+            font-size: 1.8rem;
+            .price_current {
+                padding-right: .1rem;
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+                color: $primary;
+            }
+            .price_unit {
+                padding: 0 .3rem 0 .1rem;
+                font-weight: normal;
+                font-size: 1.8rem;
+            }
+            .price_sale {
+                padding-right: .5rem;
+                font-size: 1.4rem;
+                color: $coral;
+            }
+            .price_base {
+                font-size: 1.4rem;
+                color: rgb(177, 177, 177);
+            }
+            .price_month {
+                padding-right: .4rem;
+                font-weight: normal;
+                font-size: 1.4rem;
+                color: $primary;
+            }
+            .price_counsel {
+                padding-top: .4rem;
+                font-size: 1.4rem;
+                color: $primary;
+            }
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-bottom: .8rem;
+            font-size: 1.7rem;
+            line-height: 2rem;
+            color: $primary;
+            letter-spacing: 0;
+        }
+        .button_box {
+            .buy {
+                height: 3.2rem;
+                padding: 0 1.3rem;
+                background-color: $coral;
+                border-radius: .5rem;
+                border: .1rem solid $coral;
+                box-sizing: border-box;
+                font-weight: bold;
+                font-size: 1.7rem;
+                color: rgb(255, 255, 255);
+                letter-spacing: 0;
+                vertical-align: middle;
+            }
+            .nstalk {
+                height: 3rem;
+                margin-left: .4rem;
+                border: .1rem solid $lightGray;
+                border-radius: .5rem;
+                background-color: rgb(255, 255, 255);
+                font-weight: bold;
+                font-size: 0;
+                vertical-align: middle;
+                i {
+                    display: inline-block;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    background-image: url("#{$common}/icons_nstalk.png");
+                    background-repeat: no-repeat;
+                    background-size: 3.2rem;
+                    vertical-align: -10%;
+                }
+            }
+        }
+    }
+}

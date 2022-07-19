@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_consult_sheet_confirm {
+    .agree_consult {
+        display: flex;
+        margin-top: 1.6rem;
+        padding: 1.6rem 0;
+        border-top: .1rem solid $lightGray;
+        .check_label {
+            font-size: 1.4rem;
+        }
+    }
+    .btn_consult {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: .5rem;
+        border: .1rem solid $coral;
+        background-color: $coral;
+        color: rgb(255, 255, 255);
+        span {
+            min-width: 5.8rem;
+            height: 5.4rem;
+            box-sizing: border-box;
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 5.4rem;
+            vertical-align: top;
+        }
+    }
+    .consult_guide {
+        position: relative;
+        margin-top: 4rem;
+        padding-top: 4rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -1.6rem;
+            left: -1.6rem;
+            border-top: .8rem solid rgb(240, 240, 240);
+        }
+        .title {
+            font-weight: bold;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+        .change {
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+        }
+        ol {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: .6rem;
+            border: .2rem solid rgb(240, 240, 240);
+            border-radius: .5rem;
+            li {
+                width: calc(50% - 3.2rem);
+                height: 11rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+                padding: 1.6rem;
+                &:nth-child(1) {
+                    border-bottom: .1rem solid $lightGray;
+                }
+                &:nth-child(2) {
+                    width: calc(50% - 3.3rem);
+                    border-bottom: .1rem solid $lightGray;
+                    border-left: .1rem solid $lightGray;
+                }
+                &:nth-child(4) {
+                    width: calc(50% - 3.3rem);
+                    border-left: .1rem solid $lightGray;
+                }
+                .title {
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                    color: rgb(36, 130, 211);
+                    line-height: 2rem;
+                }
+                .content {
+                    font-size: 1.3rem;
+                    line-height: 1.9rem;
+                }
+            }
+        }
+        .promise {
+            padding-top: 1.6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+    }
+}

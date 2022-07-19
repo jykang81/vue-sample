@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.mypage_setting {
+    min-height: 100vh;
+    background-color: rgb(247, 247, 247);
+    .set_box {
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        &+.set_box {
+            margin-top: .8rem;
+        }
+        .title {
+            display: block;
+            padding: 4rem 1.6rem .8rem;
+            border-top: .1rem solid rgb(247, 247, 247);
+            font-size: 2.2rem;
+            line-height: 3rem;
+        }
+    }
+    .user_login {
+        display: inline-block;
+        padding: 2rem 1.6rem;
+        background-image: url("#{$common}/icons_smallRight.png");
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 1.2rem;
+        font-size: 2.2rem;
+        font-weight: bold;
+        line-height: 3rem;
+    }
+    .user_logout {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.7rem 1.6rem;
+        .user_id {
+            flex: 1;
+            margin-right: 2.4rem;
+            word-break: break-word;
+            font-size: 1.8rem;
+            line-height: 3rem;
+        }
+    }
+    .btn_logout {
+        width: 8rem;
+        height: 3.6rem;
+        border: .1rem solid rgb(204, 204, 204);
+        border-radius: .5rem;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        &>span {
+            font-size: 1.4rem;
+            color: $primary;
+        }
+    }
+    .menu_list {
+        border-top: .1rem solid rgb(247, 247, 247);
+        li {
+            border-bottom: .1rem solid rgb(247, 247, 247);
+        }
+    }
+    .switches_area {
+        display: flex;
+        align-items: center;
+        height: 4.8rem;
+        padding: 0 1.6rem;
+    }
+    .switches_title {
+        span {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            vertical-align: middle;
+        }
+    }
+    .check_switches {
+        height: 2rem;
+        margin-left: auto;
+        vertical-align: top;
+        text-align: right;
+        font-size: 0;
+        label {
+            display: inline-block;
+            border: 0;
+        }
+    }
+    .check_switches input[type="checkbox"] {
+        display: none;
+        &:active {
+            &+.custom_switch {
+                background-color: rgb(207, 207, 207);
+            }
+        }
+        &:checked {
+            &+.custom_switch {
+                .rail {
+                    background-color: $coral;
+                    margin-left: 0;
+                    border-radius: 1rem;
+                }
+            }
+        }
+        &+.custom_switch {
+            width: 5rem;
+            height: 2rem;
+            overflow: hidden;
+            background: #cfcfcf;
+            border-radius: 1rem;
+            .rail {
+                position: relative;
+                width: 6.2rem;
+                height: 2rem;
+                margin-left: -3rem;
+                border-radius: 1rem;
+                -webkit-transition: margin-left .3s ease-in-out;
+                transition: margin-left .3s ease-in-out;
+            }
+            .switch_label {
+                position: absolute;
+                font-size: 1.2rem;
+                line-height: 2rem;
+                color: rgb(255, 255, 255);
+                text-transform: uppercase;
+                &.switch_on {
+                    left: .8rem;
+                }
+                &.switch_off {
+                    right: -1.1rem;
+                }
+            }
+            .handle {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                bottom: 0;
+                margin: auto 0;
+                display: block;
+                width: 1.8rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                background-color: rgb(255, 255, 255);
+                -webkit-transition: background .3s linear;
+                transition: background .3s linear;
+                span {
+                    display: block;
+                    margin: 1.2rem 0 0 1.2rem;
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, .3);
+                    -webkit-transition: background .3s linear;
+                    transition: background .3s linear;
+                }
+            }
+        }
+    }
+    .txt_list {
+        padding: .8rem 1.6rem  2.6rem;
+        li {
+            margin-bottom: .6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: $secondary;
+        }
+    }
+    //광고성 정보 수신
+    .switches_area{
+        background-color: rgb(255, 255, 255);
+        &.margin {
+            margin-top: .9rem;
+        }
+        &.border {
+            border-top: .1rem solid rgb(247, 247, 247);
+        }
+    }
+    .receive_info_text {
+        border-top: .1rem solid rgb(247, 247, 247);
+        padding: .8rem 1.6rem  3.2rem;
+        background-color: rgb(255, 255, 255);
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $secondary;
+    }
+    // 버전 area
+    .version_box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: .9rem 1.6rem 4rem;
+        .now_version {
+            line-height: 3.6rem;
+            font-size: 1.6rem;
+            color: $secondary;
+            span {
+                font-weight: bold;
+            }
+        }
+        .update_btn {
+            button{
+                width: 8rem;
+                height: 3.6rem;
+                border: .1rem solid rgb(252, 84, 96);
+                border-radius: .5rem;
+                background-color: rgb(255, 255, 255);
+                box-sizing: border-box;
+                &>span {
+                    font-size: 1.4rem;
+                    color: rgb(252, 84, 96);
+                }
+            }
+        }
+        .latest_version {
+            line-height: 3.6rem;
+            font-size: 1.4rem;
+            color: $secondary;
+        }
+    }
+}

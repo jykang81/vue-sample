@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$member: $images + "/member";
+.member_join {
+    padding: 3.2rem 1.6rem 4rem;
+    .btn_group_flex {
+        display: flex;
+        flex-wrap: wrap;
+        margin: .8rem 0 1.6rem;
+    }
+    .btn_login {
+        flex: 1;
+        display: block;
+        height: 4rem;
+        border: .1rem solid rgb(204, 204, 204);
+        border-radius: .5rem;
+        box-sizing: border-box;
+        text-align: center;
+        &>span {
+            color: $primary;
+            font-size: 1.5rem;
+            line-height: 4rem;
+        }
+    }
+    .btn_find_password {
+        flex: 1;
+        display: block;
+        height: 4rem;
+        border: .1rem solid rgb(204, 204, 204);
+        border-radius: .5rem;
+        box-sizing: border-box;
+        text-align: center;
+        margin-left: .5rem;
+        &>span {
+            color: $primary;
+            font-size: 1.5rem;
+            line-height: 4rem;
+        }
+    }
+    .btn_send_phone {
+        flex: 1;
+        display: block;
+        height: 4rem;
+        border: .1rem solid $coral;
+        border-radius: .5rem;
+        box-sizing: border-box;
+        text-align: center;
+        margin-left: .5rem;
+        &>span {
+            color: $coral;
+            font-size: 1.5rem;
+            line-height: 4rem;
+        }
+    }
+    .collapse_wrap {
+        padding: 2.4rem 0 0;
+        dl {
+            dt {
+                position: relative;
+                padding: .8rem 0;
+                &.active {
+                    .btn_collapse {
+                        &::before {
+                            content: "접기";
+                        }
+                    }
+                }
+                .agree_title {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    color: $primary;
+                }
+                .error_msg {
+                    padding-left: 3.3rem;
+                    color: rgb(220, 10, 10);
+                }
+                .title {
+                    display: block;
+                    font-size: 1.8rem;
+                    font-weight: normal;
+                    color: $primary;
+                }
+                .btn_layer {
+                    position: absolute;
+                    top: 1rem;
+                    right: 0;
+                    width: auto;
+                    line-height: 1;
+                    font-size: 1.6rem;
+                    color: $primary;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        bottom: -.5rem;
+                        left: 0;
+                        height: .1rem;
+                        background-color: $primary;
+                    }
+                }
+                .btn_collapse {
+                    position: absolute;
+                    top: 1rem;
+                    right: 0;
+                    width: auto;
+                    line-height: 1;
+                    font-size: 0;
+                    color: $primary;
+                    &::before {
+                        content: "펼치기";
+                        display: inline-block;
+                        font-size: 1.6rem;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        bottom: -.5rem;
+                        left: 0;
+                        height: .1rem;
+                        background-color: $primary;
+                    }
+                }
+            }
+            dd {
+                overflow: hidden;
+                height: 0;
+                font-size: 1.2rem;
+                transition: .5s;
+                .table {
+                    margin-top: .9rem;
+                    background-color: rgb(247, 247, 247);
+                    color: rgb(119, 119, 119);
+                    th:first-child {
+                        width: 6.3rem;
+                    }
+                    tr:nth-child(2n) {
+                        .table_content {
+                            border-top: none;
+                        }
+                    }
+                    .table_title {
+                        text-align: center;
+                    }
+                    .table_content {
+                        vertical-align: top;
+                    }
+                    .table_msg {
+                        position: relative;
+                        padding: 1.2rem 0 1.6rem 2.5rem;
+                        &::before {
+                            content: "※";
+                            position: absolute;
+                            top: 0;
+                            left: 1.2rem;
+                            transform: rotateZ(-50%);
+                            line-height: 4.2rem;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                .agree_msg {
+                    padding-top: 1.2rem;
+                    font-size: 1.3rem;
+                    line-height: 1.9rem;
+                }
+            }
+        }
+    }
+    .agree_join {
+        margin-top: 4rem;
+        text-align: center;
+        .btn_join {
+            width: 100%;
+            height: 5.6rem;
+            background-color: $coral;
+            border-radius: .5rem;
+            text-align: center;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
+            &.active {
+                border-color: currentColor;
+                background-color: $coral;
+            }
+            &:focus {
+                border-color: currentColor;
+                background-color: $coral;
+            }
+        }
+    }
+    .icons_check_success {
+        position: absolute;
+        top: 50%;
+        right: 1.6rem;
+        display: block;
+        width: 2.4rem;
+        height: 1.8rem;
+        margin-top: -.9rem;
+        background-image: url("#{$member}/icons_check_success.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100%;
+    }
+    .icons_check_error {
+        position: absolute;
+        top: 50%;
+        right: 1.6rem;
+        display: block;
+        width: 2.4rem;
+        height: 1.8rem;
+        margin-top: -.9rem;
+        background-image: url("#{$member}/icons_check_error.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100%;
+    }
+}

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.id_find_complete {
+    padding: 3.2rem 1.6rem 12rem;
+    .id_result {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 3.4rem;
+        font-size: 1.8rem;
+        text-align: center;
+        &::after {
+            content: "입니다.";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        dt {
+            margin-bottom: .7rem;
+        }
+        dd {
+            display: block;
+            span {
+                position: relative;
+                padding-right: .4rem;
+                font-weight: bold;
+                line-height: 2.5rem;
+                color: $coral;
+                &::after {
+                    content: ",";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    color: $coral;
+                }
+            }
+            &:last-child {
+                span {
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+            &.ns_id {
+                display: inline-block;
+            }
+        }
+    }
+    .btn_group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 3.2rem;
+        .btn_find_password {
+            flex: 1;
+            height: 5.6rem;
+            border: .1rem solid rgb(204, 204, 204);
+            border-radius: .5rem;
+            text-align: center;
+            box-sizing: border-box;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: $primary;
+                line-height: 5.6rem;
+            }
+        }
+        .btn_login {
+            flex: 1;
+            height: 5.6rem;
+            background-color: $coral;
+            border-radius: .5rem;
+            text-align: center;
+            margin-left: .5rem;
+            &>span {
+                margin-left: .5rem;
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                line-height: 5.6rem;
+            }
+        }
+    }
+}

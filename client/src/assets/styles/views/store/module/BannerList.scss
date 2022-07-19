@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.banner_list {
+    .top_banner {
+        position: relative;
+        margin: 0 1.6rem;
+        figure {
+            img {
+                width: 100%;
+            }
+        }
+        .btn_banner_view_open {
+            right: .8rem;
+        }
+    }
+    .splide_top_banner {
+        &.before {
+            margin: 0;
+        }
+        .splide__slide {
+            font-size: 0;
+            line-height: 0;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .btn_banner_view_open {
+        position: absolute;
+        bottom: .8rem;
+        right: 2.4rem;
+        z-index: 10;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: rgba(17, 17, 17, .7);
+        border-radius: .5rem;
+        text-indent: -999rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: .5rem;
+            left: .8rem;
+            height: .8rem;
+            border-right: .2rem solid rgb(255, 255, 255);
+            pointer-events: none;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: .8rem;
+            left: .5rem;
+            width: .8rem;
+            border-bottom: .2rem solid rgb(255, 255, 255);
+            pointer-events: none;
+        }
+    }
+    .banner_all_view_layer {
+        position: fixed;
+        right: 0;
+        bottom: -100%;
+        left: 0;
+        z-index: 300;
+        overflow: auto;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        text-align: right;
+        transition: all .3s;
+        &.active {
+            bottom: 0;
+        }
+        .btn_banner_view_close {
+            padding: .8rem;
+            img {
+                width: 3.2rem;
+            }
+        }
+        .banner_list {
+            padding: 1.6rem;
+            &.basics {
+                padding: 0;
+                li {
+                    padding-bottom: 0;
+                    img {
+                        border-radius: 0;
+                    }
+                }
+            }
+            &.space {
+                li {
+                    padding-bottom: .8rem;
+                }
+            }
+            li {
+                padding-bottom: .4rem;
+                font-size: 0;
+                line-height: 0;
+                figure {
+                    img {
+                        width: 100%;
+                        border-radius: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_sheet_discount {
+    .subject {
+        margin: 4rem 0 .8rem;
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+    .discount {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        dt {
+            clear: both;
+            float: left;
+            width: calc(100% - 11rem);
+            margin-top: 1.4rem;
+            .guide {
+                margin: 0 .8rem 0 0;
+                padding: .5rem 0 0 0;
+                background: none;
+                font-size: 1.2rem;
+                color: $secondary;
+                line-height: 1.4rem;
+                vertical-align: top;
+            }
+            .checkbox {
+                vertical-align: top;
+            }
+            div {
+                display: inline-block;
+                width: calc(100% - 3.2rem);
+                font-size: 1.4rem;
+            }
+            label {
+                font-size: 1.4rem;
+                .check_label {
+                    height: 3rem;
+                    margin-right: .8rem;
+                }
+            }
+            .btn {
+                display: inline-block;
+                box-sizing: border-box;
+                border-radius: .5rem;
+                vertical-align: middle;
+                &.dark_gray_border {
+                    border: .1rem solid rgb(177, 177, 177);
+                    color: $primary;
+                }
+                &.coral_border {
+                    border: .1rem solid $coral;
+                    color: $coral;
+                }
+                span {
+                    min-width: 4.5rem;
+                    height: 2.2rem;
+                    box-sizing: border-box;
+                    font-size: 1.3rem;
+                    line-height: 2.2rem;
+                    vertical-align: top;
+                }
+            }
+        }
+        dd {
+            position: relative;
+            float: right;
+            margin: .6rem 0;
+            &.coupon {
+                overflow: hidden;
+                clear: both;
+                float: none;
+                height: 0;
+                margin: 0;
+                padding: 0 1.6rem;
+                background-color: rgb(247, 247, 247);
+                transition: .5s;
+                &.active {
+                    height: 100%;
+                    margin: 1rem 0 2rem;
+                }
+                .coupon_list {
+                    padding-top: 2rem;
+                    li {
+                        padding-bottom: 2rem;
+                        .title {
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                        .select {
+                            margin-top: .8rem;
+                            background-color: rgb(255, 255, 255);
+                            &.disabled {
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+            input {
+                width: 7.6rem;
+                height: 3.8rem;
+                padding-right: 1.8rem;
+                background-color: transparent;
+                border: .1rem solid $lightGray;
+                border-radius: 0;
+                font-weight: bold;
+                font-size: 1.4rem;
+                color: $primary;
+                text-align: right;
+                line-height: 2.2rem;
+                vertical-align: middle;
+                &:read-only {
+                    width: 8.4rem;
+                    padding-right: 1.2rem;
+                    border: 0;
+                    +span {
+                        right: .2rem;
+                    }
+                }
+                &::placeholder {
+                    color: rgb(160, 160, 160);
+                }
+            }
+            span {
+                position: absolute;
+                right: .9rem;
+                bottom: .8rem;
+                font-size: 1.2rem;
+                color: $primary;
+                &.empty {
+                    color: rgb(160, 160, 160);
+                }
+            }
+        }
+    }
+}

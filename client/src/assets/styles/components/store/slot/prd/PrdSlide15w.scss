@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.prd_slide_15w {
+    .title_tag {
+        padding: 2.4rem 1.6rem 0;
+        &.border_bold {
+            border-top: .8rem solid rgb(240, 240, 240);
+        }
+        img {
+            width: 100%;
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 2.2rem;
+            letter-spacing: 0;
+            line-height: 3.4rem;
+            &:only-child {
+                padding-bottom: 0;
+            }
+        }
+        .tag {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 1.6rem;
+            color: $secondary;
+            letter-spacing: 0;
+            span {
+                padding-right: .5rem;
+            }
+        }
+    }
+    .product_wide {
+        position: relative;
+        padding: 1.6rem;
+        .swiper-slide {
+            width: 28rem;
+        }
+        figure {
+            position: relative;
+            text-align: center;
+            line-height: 0;
+            img {
+                width: 100%;
+                border-radius: .5rem;
+                &.square {
+                    width: 50%;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: .5rem;
+                background-color: rgba(0, 0, 0, .03);
+            }
+            .sticker {
+                position: absolute;
+                top: 0;
+                left: 0;
+                img {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+            .benefit {
+                display: flex;
+                position: absolute;
+                bottom: -1.2rem;
+                right: 0;
+                z-index: 1;
+                li {
+                    position: relative;
+                    height: 2.4rem;
+                    padding: 0 1.2rem;
+                    background-color: $coral;
+                    color: rgb(255, 255, 255);
+                    font-size: 1.4rem;
+                    line-height: 2.4rem;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: .6rem;
+                        right: 0;
+                        height: 1.3rem;
+                        border-right: .1rem solid rgba(255, 255, 255, .2);
+                    }
+                    &:first-child {
+                        border-top-left-radius: 2.4rem;
+                        border-bottom-left-radius: 2.4rem;
+                    }
+                    &:last-child {
+                        border-top-right-radius: 2.4rem;
+                        border-bottom-right-radius: 2.4rem;
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .price_product {
+            height: 2.6rem;
+            padding-top: .8rem;
+            text-align: left;
+            font-size: 1.8rem;
+            .price_current {
+                padding-right: .5rem;
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+            }
+            .price_sale {
+                padding-right: .5rem;
+                font-size: 1.4rem;
+                color: $coral;
+            }
+            .price_base {
+                font-size: 1.4rem;
+                color: rgb(177, 177, 177);
+            }
+            .price_month {
+                padding-right: .4rem;
+                font-weight: normal;
+                font-size: 1.4rem;
+            }
+            .price_unit {
+                padding-left: .1rem;
+                font-weight: normal;
+                font-size: 1.8rem;
+            }
+            .price_counsel {
+                padding-top: .4rem;
+                font-size: 1.4rem;
+                line-height: 2.6rem;
+            }
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding-top: .8rem;
+            font-size: 1.7rem;
+            line-height: 2rem;
+            color: $primary;
+            letter-spacing: 0;
+        }
+    }
+    .btn_total_view {
+        margin-bottom: 1.6rem;
+        border-top: .1rem solid rgb(240, 240, 240);
+        text-align: right;
+        button {
+            display: inline-block;
+            height: 4.8rem;
+            padding: 0 1.6rem;
+            font-size: 1.4rem;
+            letter-spacing: 0;
+            color: $secondary;
+            line-height: 4.8rem;
+            i {
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: .4rem;
+                background-image: url("#{$common}/icons_smallRight.png");
+                background-repeat: no-repeat;
+                background-size: 1.2rem;
+                vertical-align: -2%;
+            }
+        }
+    }
+}

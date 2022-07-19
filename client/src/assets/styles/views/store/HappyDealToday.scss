@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$main: $images + "/main";
+.happy_deal_today {
+    .happydeal_banner {
+        padding: 0 1.6rem;
+        line-height: 0;
+        img {
+            width: 100%;
+        }
+    }
+    .title_tag {
+        padding: 2.4rem 1.6rem 0;
+        img {
+            width: 100%;
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 2.2rem;
+            letter-spacing: 0;
+            line-height: 3.4rem;
+            &:only-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+    .product_wide {
+        position: relative;
+        padding-bottom: 1.6rem;
+        >li {
+            padding: 1.6rem;
+            border-bottom: .1rem solid rgb(240, 240, 240);
+            text-align: center;
+            font-size: 0;
+            line-height: 0;
+            p {
+                text-align: left;
+            }
+            &.large {
+                figure {
+                    >img {
+                        width: 20rem;
+                        height: 20rem;
+                    }
+                    &::after {
+                        left: calc(50% - 10rem);
+                        width: 20rem;
+                    }
+                }
+            }
+        }
+        figure {
+            position: relative;
+            text-align: center;
+            line-height: 0;
+            img {
+                width: 100%;
+                border-radius: .5rem;
+                &.square {
+                    width: 50%;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: .5rem;
+                background-color: rgba(0, 0, 0, .03);
+            }
+            .benefit {
+                display: flex;
+                position: absolute;
+                bottom: -1.2rem;
+                right: 0;
+                z-index: 1;
+                li {
+                    position: relative;
+                    height: 2.4rem;
+                    padding: 0 1.2rem;
+                    background-color: $coral;
+                    color: rgb(255, 255, 255);
+                    font-size: 1.4rem;
+                    line-height: 2.4rem;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: .6rem;
+                        right: 0;
+                        height: 1.3rem;
+                        border-right: .1rem solid rgba(255, 255, 255, .2);
+                    }
+                    &:first-child {
+                        border-top-left-radius: 2.4rem;
+                        border-bottom-left-radius: 2.4rem;
+                    }
+                    &:last-child {
+                        border-top-right-radius: 2.4rem;
+                        border-bottom-right-radius: 2.4rem;
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .sticker {
+                position: absolute;
+                top: 0;
+                left: 0;
+                img {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+        }
+        .price_product {
+            height: 2.6rem;
+            padding-top: .8rem;
+            text-align: left;
+            font-size: 1.8rem;
+            .price_current {
+                padding-right: .5rem;
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+            }
+            .price_sale {
+                padding-right: .5rem;
+                font-size: 1.4rem;
+                color: $coral;
+            }
+            .price_base {
+                font-size: 1.4rem;
+                color: rgb(177, 177, 177);
+            }
+            .price_month {
+                padding-right: .4rem;
+                font-weight: normal;
+                font-size: 1.4rem;
+            }
+            .price_unit {
+                padding-left: .1rem;
+                font-weight: normal;
+                font-size: 1.8rem;
+            }
+            .price_counsel {
+                padding-top: .4rem;
+                font-size: 1.4rem;
+                line-height: 2.6rem;
+            }
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding-top: .8rem;
+            font-size: 1.7rem;
+            line-height: 2rem;
+            color: $primary;
+            letter-spacing: 0;
+        }
+        .benefit_button {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: .8rem;
+            &.right {
+                justify-content: flex-end;
+            }
+            &.center {
+                align-items: center;
+            }
+            .benefit {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1;
+                margin: -.2rem;
+                min-height: 2.6rem;
+                li {
+                    height: 2rem;
+                    margin: .2rem;
+                    padding: 0 .4rem;
+                    border: .1rem solid $lightGray;
+                    border-radius: .2rem;
+                    font-size: 1.3rem;
+                    line-height: 2rem;
+                    color: $secondary;
+                    letter-spacing: -.03rem;
+                    &.tv {
+                        border: .1rem solid $baseRed;
+                        color: $baseRed;
+                    }
+                    &.happydeal {
+                        border: .1rem solid rgb(246, 131, 12);
+                        color: rgb(246, 131, 12);
+                    }
+                }
+            }
+            .count {
+                font-size: 1.2rem;
+                color: rgb(177, 177, 177);
+            }
+        }
+    }
+    .happydeal_tomorrow {
+        padding: 1.6rem 1.6rem 0;
+        li {
+            padding-bottom: 1.6rem;
+            figure {
+                position: relative;
+                line-height: 0;
+                img {
+                    width: 100%;
+                    border-radius: .5rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .5rem;
+                    background-color: rgba(0, 0, 0, .03);
+                }
+                &::before {
+                    content: "Coming Soon";
+                    position: absolute;
+                    top: calc(50% - 4.8rem);
+                    left: calc(50% - 4.8rem);
+                    width: 9.6rem;
+                    height: 2.6rem;
+                    padding-top: 7rem;
+                    border-radius: 9.6rem;
+                    background-color: rgba(0, 0, 0, .6);
+                    background-image: url("#{$main}/icons_happydeal_comingsoon.png");
+                    background-repeat: no-repeat;
+                    background-position: top 1.8rem center;
+                    background-size: 4rem;
+                    font-style: italic;
+                    font-size: 1.1rem;
+                    color: $lightGray;
+                    text-align: center;
+                    letter-spacing: 0;
+                }
+            }
+            .title {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding-top: .8rem;
+                font-size: 1.7rem;
+                letter-spacing: 0;
+            }
+        }
+    }
+}

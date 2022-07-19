@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.prd_slide_square_25w {
+    .title_tag {
+        padding: 2.4rem 1.6rem 0;
+        &.border_bold {
+            border-top: .8rem solid rgb(240, 240, 240);
+        }
+        img {
+            width: 100%;
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 2.2rem;
+            letter-spacing: 0;
+            line-height: 3.4rem;
+            &:only-child {
+                padding-bottom: 0;
+            }
+        }
+        .tag {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 1.6rem;
+            color: $secondary;
+            letter-spacing: 0;
+            span {
+                padding-right: .5rem;
+            }
+        }
+    }
+    .swiper_product {
+        padding: 1.6rem 1.6rem 3.2rem;
+        .swiper-slide {
+            width: 16rem;
+            figure {
+                position: relative;
+                width: 16rem;
+                height: 16rem;
+                img {
+                    width: 100%;
+                    border-radius: .5rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .5rem;
+                    background-color: rgba(0, 0, 0, .03);
+                }
+            }
+            .price_product {
+                padding-top: .8rem;
+                font-size: 1.7rem;
+                color: rgb(34, 34, 34);
+                .price_counsel {
+                    padding-right: .4rem;
+                    font-size: 1.4rem;
+                }
+                .price_month {
+                    padding-right: .4rem;
+                    font-weight: normal;
+                    font-size: 1.4rem;
+                }
+                .price_current {
+                    position: relative;
+                    top: .15rem;
+                    padding-right: .1rem;
+                    font-size: 2rem;
+                    color: rgb(34, 34, 34);
+                }
+                .price_unit {
+                    padding-left: .1rem;
+                    font-weight: normal;
+                    font-size: 1.7rem;
+                }
+            }
+            .title {
+
+                @include line-clamp(2);
+                width: 13.6rem;
+                padding-top: .8rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                letter-spacing: 0;
+            }
+        }
+        .swiper-pagination {
+            position: relative;
+            bottom: 0;
+            padding: 2.4rem 0;
+            line-height: 0;
+            text-align: left;
+            .swiper-pagination-progressbar-fill {
+                background-color: $primary;
+                border-radius: .4rem;
+            }
+            .swiper-pagination-bullet {
+                width: .5rem;
+                height: .5rem;
+                margin: 0;
+                margin-right: .5rem;
+                background-color: rgb(224, 224, 224);
+                opacity: 1;
+                &.swiper-pagination-bullet-active {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+    .btn_total_view {
+        margin-bottom: 1.6rem;
+        border-top: .1rem solid rgb(240, 240, 240);
+        text-align: right;
+        button {
+            display: inline-block;
+            height: 4.8rem;
+            padding: 0 1.6rem;
+            font-size: 1.4rem;
+            letter-spacing: 0;
+            color: $secondary;
+            line-height: 4.8rem;
+            i {
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: .4rem;
+                background-image: url("#{$common}/icons_smallRight.png");
+                background-repeat: no-repeat;
+                background-size: 1.2rem;
+                vertical-align: -2%;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.privacy_policy {
+    padding: 0 1.6rem 1.6rem;
+    font-size: 1.2rem;
+}
+.terms_frame {
+    h5 {
+        margin-top: 3.2rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: rgb(102, 102, 102);
+    }
+    p {
+        margin-top: .1rem;
+        color: rgb(138, 140, 145);
+        line-height: 1.7rem;
+    }
+    .num_list {
+        li {
+            padding-left: 1.3rem;
+            color: rgb(138, 140, 145);
+            text-indent: -1.3rem;
+            line-height: 1.7rem;
+        }
+    }
+    .num_list1 li {
+        padding-left: .9rem;
+        color: rgb(138, 140, 145);
+        text-indent: -.9rem;
+        line-height: 1.7rem;
+    }
+    .num_list2 li {
+        padding-left: .6rem;
+        color: rgb(138, 140, 145);
+        text-indent: -.6rem;
+        line-height: 1.7rem;
+    }
+    .num_sublist1 li {
+        padding-left: 5.3rem;
+        text-indent: -5.3rem;
+    }
+    .num_sublist2 li {
+        padding-left: .6rem;
+        text-indent: -.6rem;
+    }
+    .num_sublist3 li {
+        margin-left: .5rem;
+        padding-left: .1rem;
+        text-indent: -.1rem;
+    }
+    table {
+        width: 100%;
+        margin-top: .1rem;
+        border: .1rem solid rgb(204, 204, 204);
+        text-indent: 0;
+        border-collapse: collapse;
+        caption {
+            display: none;
+        }
+        th {
+            padding: .9rem .1rem .6rem;
+            color: rgb(119, 119, 119);
+            font-weight: bold;
+            text-align: center;
+            background: #eaeaea;
+            border-left: .1rem solid rgb(204, 204, 204);
+        }
+        td {
+            padding: .7rem .1rem .4rem;
+            color: rgb(138, 140, 145);
+            line-height: 1.7rem;
+            border-left: .1rem solid rgb(204, 204, 204);
+            border-top: .1rem solid rgb(204, 204, 204);
+        }
+    }
+    a {
+        color: rgb(102, 102, 102);
+        text-decoration: none;
+    }
+    .partner_wrap {
+        .partner_info {
+            margin-top: 1.5rem;
+            color: #999999;
+        }
+        table tr th,
+        table tr td {
+            padding: .8rem .1rem .6rem;
+        }
+        table tr th {
+            font-weight: bold;
+            color: #111;
+            text-align: left;
+        }
+        table tr td {
+            color: rgb(119, 119, 119);
+        }
+    }
+}
+.enforcement_date {
+    margin-top: .1rem;
+    p {
+        margin: 0;
+        line-height: 1.7rem;
+    }
+    a {
+        font-weight: bold;
+        color: rgb(102, 102, 102);
+        text-decoration: none;
+    }
+}

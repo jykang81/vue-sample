@@ -1,0 +1,455 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+$mypage: $images + "/mypage";
+.mypage_main {
+    overflow: hidden;
+    padding: 0 0 12rem;
+    .user_if {
+        overflow: hidden;
+        padding: 3.2rem 1.6rem 0;
+        box-sizing: border-box;
+        .user_login {
+            display: inline-block;
+            padding-right: 1.6rem;
+            background-image: url("#{$common}/icons_smallRight.png");
+            background-repeat: no-repeat;
+            background-position: center right;
+            background-size: 1.2rem;
+            font-size: 2.2rem;
+            font-weight: bold;
+            line-height: 3rem;
+        }
+        .user_join {
+            display: inline-block;
+            margin: 2.4rem 0 2rem;
+            padding-right: 1.2rem;
+            background-image: url("#{$common}/icons_mediumRight.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: .6rem;
+            line-height: 1.9rem;
+            &>span {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: -.2rem;
+                    left: 0;
+                    width: 100%;
+                    height: .1rem;
+                    background-color: $primary;
+                }
+            }
+        }
+        .copy {
+            margin-top: 1.2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+    }
+    .my_info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .user {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            min-height: 5.6rem;
+            margin-right: 1.6rem;
+            padding-left: 6.6rem;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 5.6rem;
+            box-sizing: border-box;
+            .name {
+                position: relative;
+                margin-top: .4rem;
+                padding-right: 1.6rem;
+                font-size: 2.2rem;
+                font-weight: bold;
+                word-break: break-all;
+                &.small_size {
+                    font-size: 1.6rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    margin-top: -.6rem;
+                    background-image: url("#{$common}/icons_smallRight.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    background-size: 1.2rem;
+                }
+            }
+            .unit {
+                display: block;
+                margin-top: .4rem;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+            &.family {
+                background-image: url("#{$mypage}/icons_family.png");
+                .unit {
+                    color: rgb(82, 120, 206);
+                }
+            }
+            &.silver {
+                background-image: url("#{$mypage}/icons_silver.png");
+                .unit {
+                    color: rgb(153, 153, 159);
+                }
+            }
+            &.gold {
+                background-image: url("#{$mypage}/icons_gold.png");
+                .unit {
+                    color: rgb(246, 195, 12);
+                }
+            }
+            &.diamond {
+                background-image: url("#{$mypage}/icons_diamond.png");
+                .unit {
+                    color: rgb(137, 115, 210);
+                }
+            }
+            &.markloven {
+                background-image: url("#{$mypage}/icons_markLoveN.png");
+                .unit {
+                    color: rgb(235, 110, 101);
+                }
+            }
+            &.facebook {
+                background-image: url("#{$common}/sns/icons_facebook.png");
+            }
+        }
+        .user_btn {
+            margin-left: auto;
+            .btn_membership {
+                display: inline-block;
+                padding-top: 3.5rem;
+                background-image: url("#{$common}/icons_membership.png");
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: 3.2rem;
+                font-size: 1.4rem;
+            }
+            .btn_setting {
+                display: inline-block;
+                margin-left: 2.5rem;
+                padding-top: 3.5rem;
+                background-image: url("#{$common}/icons_setting.png");
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: 3.2rem;
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .my_shopping {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2.4rem 0 1.2rem;
+        border-bottom: .1rem solid rgb(240, 240, 240);
+        &>a {
+            flex: 1;
+        }
+        dl {
+            flex: 1;
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        dt {
+            margin-top: .2rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        dd {
+            font-size: 2.4rem;
+            line-height: 3.4rem;
+        }
+    }
+    .my_point {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1.6rem 0;
+        &>a {
+            flex: 1;
+        }
+        dl {
+            flex: 1;
+            text-align: center;
+        }
+        dt {
+            margin-bottom: .2rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: rgb(131, 131, 131);
+        }
+        dd {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            strong {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .my_amount {
+        padding: .8rem 0;
+        box-sizing: border-box;
+    }
+    .amount {
+        width: 100%;
+        margin-bottom: .8rem;
+        padding: 1rem 1.6rem;
+        background-color: rgb(247, 247, 247);
+        border-radius: .5rem;
+        box-sizing: border-box;
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: .6rem 0;
+            dt {
+                font-weight: 500;
+                line-height: 2.4rem;
+            }
+            dd {
+                &>a {
+                    font-size: 1.4rem;
+                    strong {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    .staff_amount {
+        width: 100%;
+        margin-bottom: .8rem;
+        padding: 1.6rem;
+        background-color: rgb(247, 247, 247);
+        border-radius: .5rem;
+        box-sizing: border-box;
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &+dl {
+                margin-top: 1.2rem;
+            }
+            dt {
+                font-weight: 500;
+                line-height: 2.4rem;
+            }
+            dd {
+                &>a {
+                    color: $coral;
+                    font-size: 1.4rem;
+                    strong {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+        .btn_group {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 1rem;
+            .btn_staff {
+                flex: 1;
+                display: block;
+                height: 4rem;
+                background-color: rgb(255, 255, 255);
+                border: .1rem solid $coral;
+                border-radius: .5rem;
+                font-size: 1.5rem;
+                color: $coral;
+                box-sizing: border-box;
+                &+.btn_staff {
+                    margin-left: .8rem;
+                }
+            }
+        }
+        &.bg_none {
+            background: none;
+            padding: 0 0 1.6rem;
+            margin: 0;
+            .btn_group {
+                margin: 0;
+            }
+        }
+    }
+    .order_delivery {
+        border-top: .8rem solid rgb(240, 240, 240);
+        .subject {
+            padding: 1.6rem 1.6rem 1.2rem;
+            font-size: 1.8rem;
+            box-sizing: border-box;
+        }
+    }
+    .order_step_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 1.6rem 1.4rem;
+        li {
+            text-align: center;
+            .count {
+                display: block;
+                color: rgb(204, 204, 204);
+                font-size: 2.6rem;
+                font-weight: bold;
+                line-height: 3.8rem;
+            }
+            &>strong {
+                font-size: 1.4rem;
+                font-weight: normal;
+                line-height: 2rem;
+            }
+            &.selected * {
+                color: $primary;
+            }
+        }
+        &+.delivery_list {
+            border-top: .1rem solid $lightGray;
+        }
+    }
+    .delivery_list {
+        li {
+            margin: 0 1.6rem;
+            &+li {
+                border-top: .1rem solid $lightGray;
+            }
+        }
+        a {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.2rem 0;
+            background-image: url("#{$common}/icons_smallRight.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 1.2rem;
+        }
+        figure {
+            flex: 1;
+            max-width: 7.2rem;
+            max-height: 7.2rem;
+            img {
+                width: 100%;
+                border-radius: .5rem;
+            }
+        }
+        .field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 7.2rem);
+            margin-left: 1.2rem;
+            p {
+                line-height: 2.4rem;
+            }
+            strong{
+                color: rgb(36, 130, 211);
+                line-height: 2.4rem;
+            }
+        }
+        .btn_more {
+            display: block;
+            width: 100%;
+            padding: 1.3rem 0;
+            border-top: .1rem solid $lightGray;
+            text-align: center;
+            &>span {
+                padding-right: 2rem;
+                background-image: url("#{$common}/icons_smallRight.png");
+                background-repeat: no-repeat;
+                background-position: center right;
+                background-size: 1.2rem;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+        }
+    }
+    .menu_list {
+        border-top: .8rem solid rgb(240, 240, 240);
+        li {
+            border-bottom: .1rem solid $lightGray;
+            a {
+                position: relative;
+                display: block;
+                padding: 1.6rem 3.2rem 1.6rem 6.4rem;
+                background-repeat: no-repeat;
+                background-position: left 1.6rem center;
+                background-size: 3.2rem;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: .8rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    margin-top: -.6rem;
+                    background-image: url("#{$common}/icons_arrow_gray.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    background-size: .8rem;
+                    transform: rotate(-90deg);
+                }
+            }
+            .icons_orderlist {
+                background-image: url("#{$mypage}/icons_orderlist.png");
+            }
+            .icons_return {
+                background-image: url("#{$mypage}/icons_return.png");
+            }
+            .icons_written {
+                background-image: url("#{$mypage}/icons_written.png");
+            }
+            .icons_card {
+                background-image: url("#{$mypage}/icons_card.png");
+            }
+            .icons_receipt {
+                background-image: url("#{$mypage}/icons_receipt.png");
+            }
+            .icons_helpdesk {
+                background-image: url("#{$mypage}/icons_helpdesk.png");
+            }
+            .icons_chat {
+                background-image: url("#{$mypage}/icons_chat.png");
+            }
+            .icons_qna {
+                background-image: url("#{$mypage}/icons_qna.png");
+            }
+            .icons_birth {
+                background-image: url("#{$mypage}/icons_birth.png");
+            }
+            .icons_noticebell {
+                background-image: url("#{$mypage}/icons_noticeBell.png");
+            }
+            .icons_nonmember {
+                background-image: url("#{$mypage}/icons_nonmember.png");
+            }
+            .icons_giftcard {
+                background-image: url("#{$mypage}/icons_giftcard.png");
+            }
+            .icons_certcompany {
+                background-image: url("#{$mypage}/icons_certCompany.png");
+            }
+        }
+    }
+}

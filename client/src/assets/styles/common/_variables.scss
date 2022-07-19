@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+$images: "~@/assets/images" !default;
+
+// base color
+$baseRed: rgb(220, 10, 10);
+$coral: rgb(252, 84, 96);
+$mint: rgb(91, 187, 219);
+
+// block color
+$primary: rgb(17, 17, 17);
+$secondary: rgb(131, 131, 131);
+$lightGray: rgb(225, 225, 225);
+
+@mixin blind {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -999.9rem;
+    color: transparent;
+    clip: rect(0 0 0 0);
+}
+@mixin line-clamp($val) {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $val;
+    -webkit-box-orient: vertical;
+}

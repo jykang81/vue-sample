@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.gift_product {
+    .gift_wrap {
+        position: relative;
+        padding: 1.6rem;
+        border-top: .8rem solid rgb(240, 240, 240);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-top: .1rem solid rgb(224, 224, 224);
+        }
+    }
+    .subject {
+        margin-bottom: .8rem;
+        font-size: 2rem;
+        line-height: 2.8rem;
+        text-align: left;
+        .sub {
+            font-size: 1.6rem;
+            font-weight: normal;
+            vertical-align: top;
+        }
+    }
+    .row_group {
+        display: flex;
+        .thumb_img {
+            width: 4.8rem;
+            height: 4.8rem;
+            margin-right: 1rem;
+            img {
+                width: 100%;
+                border-radius: .5rem;
+                background-clip: padding-box;
+            }
+        }
+    }
+    .title {
+        font-weight: normal;
+        line-height: 2.4rem;
+    }
+    .terms {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $secondary;
+    }
+    .select {
+        margin-top: .8rem;
+        select {
+            height: 4rem;
+        }
+    }
+}

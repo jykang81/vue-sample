@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.app_category {
+    z-index: 100;
+    height: 4.3rem;
+    border-bottom: .1rem solid rgb(204, 204, 204);
+    background-color: rgb(255, 255, 255);
+    .category_container {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        transform: translateZ(0);
+        -webkit-touch-callout: none;
+        user-select: none;
+        text-size-adjust: none;
+    }
+    .category_wrapper {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .category_slide {
+        position: relative;
+        flex-shrink: 1;
+        width: auto;
+        height: 100%;
+        &.new {
+            &::after {
+                content: "";
+                position: absolute;
+                top: .8rem;
+                right: .8rem;
+                width: .5rem;
+                height: .5rem;
+                background-color: $coral;
+                border-radius: .5rem;
+                pointer-events: none;
+            }
+        }
+        .cat {
+            position: relative;
+            padding: 1rem 1.2rem;
+            font-size: 1.7rem;
+            line-height: 2.4rem;
+            text-align: center;
+            color: $primary;
+            white-space: nowrap;
+        }
+        .current {
+            font-weight: bold;
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: .4rem;
+                background-color: $primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_cancel_product {
+    .delivery_search_guide {
+        padding: 1.4rem 0;
+        background-color: rgb(247, 247, 247);
+        text-align: center;
+        letter-spacing: 0;
+        line-height: 2.4rem;
+        span {
+            color: $baseRed;
+        }
+    }
+    .subject {
+        position: relative;
+        display: block;
+        margin-bottom: .8rem;
+        font-size: 2.2rem;
+        text-align: left;
+        line-height: 3rem;
+        &.mt32 {
+            margin-top: 3.2rem;
+        }
+    }
+    .product_info {
+        >li {
+            padding-bottom: 1.6rem;
+            border-bottom: .1rem solid rgb(240, 240, 240);
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+                .box {
+                    padding-bottom: 0;
+                }
+            }
+            .box {
+                display: flex;
+                padding: 1.6rem 0;
+            }
+            figure {
+                position: relative;
+                width: 7.2rem;
+                height: 7.2rem;
+                text-align: center;
+                line-height: 0;
+                a {
+                    display: inline-block;
+                }
+                img {
+                    width: 100%;
+                    border-radius: .5rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .5rem;
+                    background-color: rgba(0, 0, 0, .03);
+                    pointer-events: none;
+                }
+            }
+            .field {
+                width: calc(100% - 8.4rem);
+                padding-left: 1.2rem;
+                .price {
+                    padding-top: .4rem;
+                    font-size: 1.6rem;
+                    color: $primary;
+                }
+                .price_product {
+                    padding-top: .4rem;
+                    .price_counsel {
+                        font-weight: bold;
+                        font-size: 1.6rem;
+                    }
+                    .price_current {
+                        font-size: 1.6rem;
+                    }
+                    .price_month {
+                        font-weight: normal;
+                        font-size: 1.2rem;
+                        padding-right: .4rem;
+                    }
+                    .price_unit {
+                        font-weight: normal;
+                        font-size: 1.4rem;
+                    }
+                }
+                .title {
+
+                    @include line-clamp(2);
+                    font-size: 1.6rem;
+                    color: $primary;
+                }
+                .option {
+
+                    @include line-clamp(1);
+                    font-size: 1.4rem;
+                    color: $secondary;
+                    span {
+                        display: inline;
+                    }
+                }
+                .free_gift {
+                    dt {
+                        padding-top: .4rem;
+                        font-size: 1.4rem;
+                    }
+                    dd {
+
+                        @include line-clamp(1);
+                        font-size: 1.4rem;
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+    .order_list {
+        border: .1rem solid rgb(240, 240, 240);
+        border-radius: .5rem;
+        &+.order_list {
+            margin-top: 1.6rem;
+        }
+        .product_info {
+            &>li {
+                padding: 1.6rem 1.2rem 1.6rem 1.6rem;
+                .box {
+                    padding: 0;
+                    &+.box {
+                        padding-top: 1.6rem;
+                        margin-top: 1.6rem;
+                        border-top: .1rem solid $lightGray;
+                    }
+                }
+            }
+        }
+        .order_num {
+            display: block;
+            margin-bottom: .8rem;
+            &>span {
+                font-weight: normal;
+            }
+        }
+    }
+}

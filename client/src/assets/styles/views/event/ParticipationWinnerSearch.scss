@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.participation_winner_search {
+    .search_result_top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        padding: 3.2rem 0 1.6rem 1.6rem;
+        border-top: 0;
+        border-bottom: .1rem solid rgb(229, 229, 229);
+        >div {
+            display: flex;
+            align-items: center;
+            .total {
+                margin-right: .6rem;
+                padding-right: 1.2rem;
+                border-right: .1rem solid rgb(224, 224, 224);
+                font-size: 1.4rem;
+                color: rgb(32, 32, 32);
+                line-height: 1.4rem;
+                .result {
+                    overflow: hidden;
+                    max-width: 23rem;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+    .winnder_announce_list {
+        &.single {
+            li {
+                padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        li {
+            position: relative;
+            padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+            border-bottom: .1rem solid rgb(240, 240, 240);
+            .title {
+                font-weight: bold;
+                font-size: 1.6rem;
+                .vip {
+                    height: 1.4rem;
+                    padding: 0 .4rem;
+                    background-color: $coral;
+                    border-radius: .2rem;
+                    font-style: normal;
+                    font-size: 1.2rem;
+                    color: rgb(255, 255, 255);
+                    letter-spacing: 0;
+                    vertical-align: middle;
+                }
+            }
+            .date {
+                font-size: 1.3rem;
+                color: $secondary;
+                letter-spacing: 0;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 1.6rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-top: -.6rem;
+                background-image: url("#{$common}/icons_arrow_gray.png");
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-size: 1.2rem;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    .nodata {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 25rem);
+        text-align: center;
+        font-size: 1.8rem;
+        color: rgb(32, 32, 32);
+        letter-spacing: 0;
+    }
+}

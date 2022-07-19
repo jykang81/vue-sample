@@ -1,0 +1,385 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.cust_center_board_inquiry_write {
+    padding: 3.2rem 1.6rem 12rem;
+    .list {
+        &>li {
+            &+li {
+                margin-top: 4rem;
+            }
+        }
+    }
+    .subject {
+        display: block;
+        margin-bottom: 1.6rem;
+        font-size: 2rem;
+        line-height: 2.8rem;
+        text-align: left;
+        color: $primary;
+    }
+    .btn_select {
+        display: block;
+        width: 100%;
+        height: 5.6rem;
+        border: .1rem solid $coral;
+        border-radius: .5rem;
+        box-sizing: border-box;
+        color: $coral;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    }
+    .select_product {
+        margin-top: 1.6rem;
+        padding: 1.6rem;
+        box-sizing: border-box;
+        border: .1rem solid rgb(224, 224, 224);
+        &>a {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        figure {
+            position: relative;
+            width: 7.2rem;
+            height: 7.2rem;
+            border-radius: .5rem;
+            &>img {
+                width: 100%;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: .5rem;
+                background-color: rgba(0, 0, 0, .03);
+            }
+        }
+        .title {
+
+            @include line-clamp(2);
+            flex: 1;
+            height: 4.8rem;
+            margin-left: 1.2rem;
+            line-height: 2.4rem;
+        }
+        .btn_delete {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 4.8rem;
+            margin-top: 1.6rem;
+            border: .1rem solid rgb(224, 224, 224);
+            border-radius: .5rem;
+            box-sizing: border-box;
+            &>span {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .select_wrap {
+        .select {
+            display: block;
+            select {
+                display: block;
+                height: 4.8rem;
+                padding: 0 4.2rem 0 1.2rem;
+                margin-bottom: .8rem;
+                background-color: rgb(255, 255, 255);
+                background-image: url("#{$common}/icons_arrow_black.png");
+                background-repeat: no-repeat;
+                background-position: top 50% right 1.6rem;
+                background-size: 1.3rem;
+                font-size: 1.6rem;
+                color: $primary;
+                &:disabled {
+                    background-color: rgb(240, 240, 240);
+                    background-image: url("#{$common}/icons_arrow_darkGray.png");
+                    background-repeat: no-repeat;
+                    color: rgb(204, 204, 204) !important;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .board_box {
+        label {
+            display: none;
+        }
+        .input_group {
+            display: block;
+        }
+        .input_field {
+            .text {
+                width: 100%;
+                height: 4.8rem;
+                padding: 1.3rem 1.2rem;
+                border: .1rem solid $lightGray;
+                box-sizing: border-box;
+                font-size: 1.6rem;
+                &:focus {
+                    border: .1rem solid $coral;
+                }
+            }
+            .text::-webkit-input-placeholder {
+                color: rgb(170, 170, 170);
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+        }
+        .textarea {
+            position: relative;
+            overflow: hidden;
+            height: 17.4rem;
+            margin-top: .8rem;
+            padding: 1.2rem;
+            background-color: rgb(255, 255, 255);
+            border: .1rem solid $lightGray;
+            box-sizing: border-box;
+            textarea {
+                overflow-y: auto;
+                height: 11.2rem;
+                border: none;
+                padding: 0;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                color: rgb(32, 32, 32);
+            }
+            textarea::-webkit-input-placeholder {
+                color: rgb(170, 170, 170);
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+            .fix_num {
+                position: absolute;
+                right: 1.2rem;
+                bottom: 1.2rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                color: rgb(177, 177, 177);
+            }
+        }
+    }
+    .btn_add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 5.6rem;
+        border: .1rem solid $lightGray;
+        border-radius: .5rem;
+        margin: .8rem 0 0;
+        box-sizing: border-box;
+        .icons_photo {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2.4rem;
+            background-image: url("#{$common}/icons_addPhoto.png");
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: 100%;
+        }
+        &>span {
+            margin-left: 1.2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+    }
+    .copy {
+        margin-top: .8rem;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $secondary;
+    }
+    .img_slide {
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex: 1;
+        height: 11.2rem;
+        margin-top: .8rem;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        ul {
+            display: flex;
+            flex: 1;
+            height: 11.2rem;
+            li {
+                position: relative;
+                flex-shrink: 1;
+                background-color: rgb(247, 247, 247);
+                &+li {
+                    margin-left: .8rem;
+                }
+                figure {
+                    width: 11.2rem;
+                    height: 11.2rem;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .btn_delete {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            width: 3.2rem;
+            height: 3.2rem;
+            font-size: 0;
+            &::before {
+                content: "";
+                display: block;
+                width: 3.2rem;
+                height: 3.2rem;
+                background-color: rgba(17, 17, 17, .6);
+                margin: auto;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 1.8rem;
+                height: 1.8rem;
+                background-image: url("#{$common}/icons_close_wht.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                margin: -.9rem 0 0 -.9rem;
+            }
+        }
+        .nodata {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 7.2rem;
+            height: 7.2rem;
+            border-radius: .5rem;
+            font-size: 0;
+            .icons_photo {
+                opacity: .23;
+            }
+        }
+    }
+    .checkbox_wrap {
+        margin-top: .8rem;
+    }
+    .btn_inquiry {
+        display: block;
+        width: 100%;
+        height: 5.6rem;
+        margin-top: 4rem;
+        background-color: $coral;
+        border-radius: .5rem;
+        box-sizing: border-box;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+        &.in_active {
+            border: .1rem solid rgb(224, 224, 224) !important;
+            background-color: rgb(224, 224, 224)  !important;
+            color: rgb(255, 255, 255) !important;
+            &>span {
+                color: rgb(255, 255, 255) !important;
+            }
+        }
+    }
+    .collapse_wrap {
+        margin-top: 4rem;
+        background-color: rgb(247, 247, 247);
+        dl {
+            overflow: hidden;
+            height: 4.8rem;
+            &.active {
+                height: auto;
+                .btn_collapse {
+                    &::before {
+                        content: "접기";
+                    }
+                }
+            }
+            dt {
+                display: flex;
+                align-items: center;
+                position: relative;
+                height: 4.8rem;
+                padding: 0 1.6rem;
+                .title {
+                    flex: 1;
+                    display: block;
+                    font-size: 1.4rem;
+                    line-height: 1.9rem;
+                    color: $primary;
+                }
+                .btn_collapse {
+                    position: relative;
+                    display: inline-block;
+                    color: $primary;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: .1rem;
+                        background-color: $primary;
+                    }
+                }
+            }
+            dd {
+                padding: .8rem 1.6rem 2.4rem;
+                box-sizing: border-box;
+                font-size: 1.2rem;
+            }
+            .btn_collapse {
+                font-size: 0;
+                &::before {
+                    content: "펼치기";
+                    display: inline-block;
+                    font-size: 1.6rem;
+                    line-height: 2.2rem;
+                }
+            }
+        }
+    }
+    .msg_bullet_list {
+        li {
+            position: relative;
+            padding-left: 1.1rem;
+            font-size: 1.4rem;
+            line-height: 1.9rem;
+            color: rgb(119, 119, 119);
+            &+li {
+                margin-top: .8rem;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: .9rem;
+                right: 0;
+                left: 0;
+                width: .4rem;
+                height: .4rem;
+                border-radius: .4rem;
+                background-color: rgb(153, 153, 153);
+            }
+        }
+    }
+    .send_file_form {
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

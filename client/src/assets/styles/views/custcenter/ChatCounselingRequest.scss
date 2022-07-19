@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.chat_counseling_request {
+    section {
+        padding: 0 1.6rem;
+        &+section {
+            border-top: .8rem solid rgb(247, 247, 247);
+        }
+        .chat_info {
+            padding: 2.4rem 0 2.4rem 9.6rem;
+            background-image: url("#{$common}/icons_chat.png");
+            background-repeat: no-repeat;
+            background-position: left .4rem center;
+            background-size: 8rem;
+            dt {
+                font-size: 1.6rem;
+                font-weight: bold;
+                line-height: 2.4rem;
+            }
+            dd {
+                font-size: 1.4rem;
+                line-height: 2rem;
+                &.copy {
+                    margin-top: .6rem;
+                }
+            }
+        }
+        .subject {
+            display: block;
+            padding: 3.2rem 0 1.6rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+        .btn_select {
+            width: 100%;
+            height: 5.6rem;
+            border: .1rem solid $coral;
+            border-radius: .5rem;
+            box-sizing: border-box;
+            color: $coral;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+        }
+        .checkbox_wrap {
+            padding: .8rem 0;
+            .checkbox {
+                width: 2.4rem;
+                height: 2.4rem;
+                margin: 0 .8rem 0 0;
+                border: none;
+                vertical-align: middle;
+                cursor: pointer;
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-color: rgb(255, 255, 255);
+                    background-image: url("#{$common}/bg_checkbox_square_off.png");
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 100%;
+                }
+                &:checked {
+                    &::before {
+                        background-color: rgb(255, 255, 255);
+                        background-image: url("#{$common}/bg_checkbox_square_on.png");
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100%;
+                    }
+                }
+                &+.label_check {
+                    display: inline-block;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    color: $primary;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    &.empty {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+        .select_wrap {
+            .select {
+                display: block;
+                select {
+                    display: block;
+                    height: 4.8rem;
+                    padding: 0 4.2rem 0 1.2rem;
+                    margin-bottom: .8rem;
+                    background-color: rgb(255, 255, 255);
+                    background-image: url("#{$common}/icons_arrow_black.png");
+                    background-repeat: no-repeat;
+                    background-position: top 50% right 1.6rem;
+                    background-size: 1.3rem;
+                    font-size: 1.6rem;
+                    color: $primary;
+                    &:disabled {
+                        background-color: rgb(240, 240, 240);
+                        background-image: url("#{$common}/icons_arrow_darkGray.png");
+                        background-repeat: no-repeat;
+                        color: rgb(204, 204, 204) !important;
+                        opacity: 1;
+                        -webkit-text-fill-color: rgb(204, 204, 204);
+                    }
+                }
+            }
+        }
+        .btn_counsel {
+            display: block;
+            width: 100%;
+            background-color: $coral;
+            border-radius: .5rem;
+            color: rgb(255, 255, 255);
+            &>span {
+                height: 5.4rem;
+                box-sizing: border-box;
+                font-size: 1.8rem;
+                font-weight: bold;
+                line-height: 5.4rem;
+                vertical-align: top;
+            }
+            &.in_active {
+                border: .1rem solid rgb(224, 224, 224) !important;
+                background-color: rgb(224, 224, 224)  !important;
+                color: rgb(255, 255, 255) !important;
+                &>span {
+                    color: rgb(255, 255, 255) !important;
+                }
+            }
+        }
+        .select_product {
+            margin-top: 1.6rem;
+            padding: 1.6rem;
+            box-sizing: border-box;
+            border: .1rem solid rgb(224, 224, 224);
+            .top_box {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            figure {
+                position: relative;
+                width: 7.2rem;
+                height: 7.2rem;
+                border-radius: .5rem;
+                &>img {
+                    width: 100%;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .5rem;
+                    background-color: rgba(0, 0, 0, .03);
+                }
+            }
+            .title {
+
+                @include line-clamp(2);
+                flex: 1;
+                height: 4.8rem;
+                margin-left: 1.2rem;
+                line-height: 2.4rem;
+            }
+            .btn_delete {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 4.8rem;
+                margin-top: 1.6rem;
+                border: .1rem solid rgb(224, 224, 224);
+                border-radius: .5rem;
+                box-sizing: border-box;
+                &>span {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}

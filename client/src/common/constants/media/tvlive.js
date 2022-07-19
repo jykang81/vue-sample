@@ -1,0 +1,19 @@
+// 하단 탭바의 TV LIVE 관련하여 정의된 상수.
+const TVLIVE_CONST = {
+  TV_LIVE_ALL_LIST: [
+    { THING_LIVE: '띵라이브' },
+    { NS_LIVE: 'NS LIVE' },
+    { SHOP_PLUS: 'Shop+' }
+  ],
+  PARAMETERS: {
+    COMMAND_NAME: 'NSSlotShopNoCacheCmd',
+    TARGET_ESPOT_ID: '1699585_MSLOTB_BROADALL_BROADBOXSLIDE',
+    CATEGORY_ID: '1699585',
+    TV: 'TV',
+    SHOPPLUS_THINGLIVE: 'SHOPPLUS||VODINFO',
+    SHOPPLUS: 'SHOPPLUS',
+    THINGLIVE: 'VODINFO'
+  }
+}
+
+export default TVLIVE_CONST

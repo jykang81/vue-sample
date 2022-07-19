@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+#eventPopupContents img {
+    width: 100%;
+}
+.section_intro_popup {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, .6);
+    font-size: 0;
+    text-align: center;
+    z-index: 200;
+}
+.section_intro_popup * {
+    letter-spacing: -.5px;
+    font-family: -apple-system, "Apple SD Gothic Neo", "Helvetica Nenu", "roboto", sans-serif;
+}
+.section_intro_popup .wrapper_intro_popup {
+    overflow: hidden;
+    position: relative;
+    max-width: 340px;
+    min-width: 280px;
+    padding: 0 17.5px;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-container a {
+    display: inline-block;
+    width: 100%;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-container .swiper-wrapper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-container .swiper-wrapper .swiper-slide a {
+    display: block;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-container .swiper-wrapper .swiper-slide a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-container-horizontal>.swiper-pagination {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: -1.9rem;
+    font-size: 0;
+    text-align: center;
+    z-index: 10;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-pagination-bullet {
+    display: inline-block;
+    width: 50px;
+    height: 3px;
+    margin: 0;
+    background: rgba(255, 255, 255, .3);
+    vertical-align: top;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    border: 0;
+    border-radius: 0;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-pagination-bullet-active {
+    width: 50px;
+    background: #111;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-button-next,
+.section_intro_popup .wrapper_intro_popup .swiper-button-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 40px;
+    height: 45px;
+    margin: auto 0;
+    cursor: pointer;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-button-next::before,
+.section_intro_popup .wrapper_intro_popup .swiper-button-prev::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    border: 1px solid #000;
+    border-left-width: 0;
+    border-top-width: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    pointer-events: none;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-button-next {
+    right: 0;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-button-next::before {
+    right: 13px;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-button-prev {
+    left: 0;
+}
+.section_intro_popup .wrapper_intro_popup .swiper-button-prev::before {
+    left: 13px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+.section_intro_popup .wrapper_intro_popup .wrap_button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.section_intro_popup .wrapper_intro_popup .wrap_button a {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    height: 45px;
+    color: #fff;
+    background-color: #222222;
+    text-align: center;
+    font-size: 16px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.section_intro_popup .wrapper_intro_popup .wrap_button a:last-child {
+    border-left: 1px solid rgba(255, 255, 255, .1);
+}

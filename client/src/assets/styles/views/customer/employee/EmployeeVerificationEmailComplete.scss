@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.employee_verification_email_complete {
+    padding: 3.2rem 1.6rem 12rem;
+    .msg_box {
+        margin-bottom: 3.2rem;
+        text-align: center;
+        .msg {
+            font-size: 1.6rem;
+            color: $primary;
+            word-break: keep-all;
+        }
+    }
+    .btn_go_store {
+        width: 100%;
+        background-color: $coral;
+        border-radius: .5rem;
+        margin-top: 2.4rem;
+        text-align: center;
+        &>span {
+            height: 5.4rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            line-height: 5.4rem;
+        }
+    }
+}

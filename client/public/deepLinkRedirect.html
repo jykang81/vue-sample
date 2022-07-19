@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<title>NS홈쇼핑</title>
+		<!-- 앱미설치시 모바일웹으로 랜딩적용 -->
+		
+		<style type="text/css">
+			*{margin:0; padding:0;}
+			html	{height: 100%;}
+			body	{height: auto; overflow-x: hidden;/*  letter-spacing: -1px;  */font-family: AppleSDGothicNeo, 'Droid Sans', dotum, '돋움', sans-serif; font-size:15px; line-height:1.25; color: #555; webkit-text-size-adjust: none;}
+			ul,ol,dl {list-style:none;}
+			.wrap {background-color: #fff; margin:15px; letter-spacing:-1px; }
+			.wrap .cont {text-align:center; font-family:Malgun Gothic; margin-bottom:0}
+			.cont p {padding: 0}
+			.cont .title {font-weight:bold; font-size:17px; color: #343434; line-height:24px}
+			.cont .title span {color:#0ca8d0}
+			.cont .titSub {width: 70%; font-size:14px; color: #8b8b8b; line-height:22px; margin: 0 auto}
+			.cont .img {margin:0; padding:0; line-height:0;}
+			.cont .img img {display:block; width:100%; float:none; clear:none;}
+		</style>
+	</head>
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+
+			<!-- 텍스트 Area -->
+			<div class="cont">
+				<div class="img">
+					<p><img src="http://image.nsmall.com/ec_comimages/nsupload/espot/images/mobile/20_Appdeeplink/appdeeplink_2.jpg" alt="" /></p>
+				</div>
+			</div>
+		</div>
+    <!-- //wrap -->
+	</body>
+
+  <script type="text/javascript">
+    let installCheck = false
+    let mbUrl = ''
+    /**
+     * Onload 시점에서 실행 될 로직
+     **/
+    function init () {
+      /******  접속 도메인에 따른 서버 분기 처리 ******/
+      mbUrl = 'mw.nsmall.com' // 운영
+      if (location.host === 'devm2.nsmall.com') { // 개발
+        mbUrl = 'devm2.nsmall.com'
+      } else if (location.host === 'testm2.nsmall.com') { // 테스트
+        mbUrl = 'testm2.nsmall.com'
+      }
+    }
+    init()
+    /**
+     * 테스트용 Param
+     */
+     function getUrlParams () {
+      const params = window.location.href.slice(window.location.href.indexOf("=") + 1) // 원본 AS-IS
+      // const params = window.location.pathname.slice(1) // TO-BE Path 추출
+      // const params = 'store/theme/happydeal' // 테스트용 임시 Fallback URL
+      return params
+    }
+    const params = getUrlParams()
+    const appSchema = 'nsmall'
+    const userAgent = navigator.userAgent.toLowerCase()
+    const deepLinkUrl = `${appSchema}://sendurl?page=${params}`
+    const AppStoreURL = 'https://itunes.apple.com/kr/app/nshomsyoping/id405015280?mt=8'
+    const fallbackUrl = `https://${mbUrl}/${params}`
+    const androidGate = 'https://mw.nsmall.com/deepLinkRedirect_androidGate.html'
+    const intentUrl = [
+        `intent://sendurl?page=${params}#Intent`,
+        `scheme=${appSchema}`,
+        'package=com.nsmobilehub',
+        `S.browser_fallback_url=${androidGate}`,
+        'end'
+    ].join(';')
+    /**
+     * OS 딥링크 분기 처리
+     * adbrix url 삭제
+     */
+    function checkDevice () {
+      installCheck = true
+      if (userAgent.match('iphone') || userAgent.match('ipad')) { // iOS 딥링크 이동
+        const visitedAt = +new Date()
+        setTimeout(() => {
+          if (+new Date() - visitedAt < 2000) {
+            location.href = AppStoreURL
+          }
+        }, 1500)
+        location.href = deepLinkUrl
+      } else if (userAgent.match('android')) { // AOS 딥링크 이동
+        location.href = intentUrl
+      } else {
+        location.href = fallbackUrl
+      }
+    }
+    setTimeout(() => { this.checkDevice() }, 1000)
+    /**
+     * Fallback (뒤로가기) 모바일 웹으로 URL 연결
+     */
+     function setFallbackURL () {
+      // 마켓 이동 후 뒤로가기 연결
+      let sHidden = 'hidden'
+      let sState = 'visibilityState'
+
+      if (document.webkitVisibilityState) {
+        sHidden = 'webkitHidden'
+        sState = 'webkitVisibilityState'
+      }
+      // Visibility API를 지원하는 경우, visibilitychange 이벤트 리스너를 등록한다.
+      if (document[sState]) {
+        document.addEventListener(`${(document.webkitVisibilityState ? 'webkit' : '')}visibilitychange`, e => {
+          // 페이지가 숨김 상태가 아닌경우
+          if (!document[sHidden] && installCheck) {
+            location.href = fallbackUrl
+          }
+        })
+      }
+    }
+    setFallbackURL()
+	</script>
+</html>

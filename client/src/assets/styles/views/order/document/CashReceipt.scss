@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.cash_receipt {
+    .data_wrap {
+        padding: 0 1.6rem 12rem;
+        box-sizing: border-box;
+    }
+    .month_list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1.6rem;
+        li {
+            flex: 1;
+            button {
+                display: block;
+                width: 100%;
+                padding: .9rem 0;
+                background-color: rgb(255, 255, 255);
+                border: .1rem solid $lightGray;
+                text-align: center;
+                font-size: 1.5rem;
+                &.selected {
+                    background: $primary;
+                    border-color: $primary;
+                    color: rgb(255, 255, 255);
+                }
+            }
+            &:first-child {
+                button {
+                    border-radius: .5rem 0 0 .5rem;
+                }
+            }
+            &:last-child {
+                button {
+                    border-radius: 0 .5rem .5rem 0;
+                }
+            }
+        }
+    }
+    .month_list_message {
+        margin: 0 -1.6rem;
+        padding: .8rem 0 1.6rem;
+        border-bottom: .1rem solid rgb(240, 240, 240);
+        text-align: center;
+        font-size: 1.4rem;
+        color: $secondary;
+        &.border_none {
+            border-bottom: 0;
+        }
+    }
+    .data_list {
+        li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1.6rem 0;
+            &+li {
+                border-top: .1rem solid rgb(240, 240, 240);
+            }
+            &:last-child {
+                border-bottom: .1rem solid rgb(240, 240, 240);
+            }
+            &:first-child {
+                border-bottom: 0;
+            }
+        }
+        .date_state {
+            width: 100%;
+            margin-bottom: .2rem;
+            &>span {
+                margin-right: .6rem;
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+                color: $secondary;
+            }
+        }
+        .title_receipt {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding: .2rem 0 1.2rem;
+            font-size: 1.6rem;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .btn {
+                display: block;
+                box-sizing: border-box;
+                border-radius: .5rem;
+                &.coral_border {
+                    width: 8rem;
+                    border: .1rem solid $coral;
+                    color: $coral;
+                }
+                &.gray_border {
+                    width: 9.6rem;
+                    border: .1rem solid rgb(204, 204, 204);
+                    background-color: rgb(255, 255, 255);
+                    color: $primary;
+                }
+                span {
+                    min-width: 5.8rem;
+                    height: 3rem;
+                    box-sizing: border-box;
+                    font-size: 1.4rem;
+                    line-height: 3rem;
+                    vertical-align: top;
+                }
+            }
+            .total {
+                font-size: 1.4rem;
+            }
+            .complete {
+                font-size: 1.4rem;
+            }
+            .impossible {
+                font-size: 1.4rem;
+                color: $secondary;
+            }
+        }
+    }
+    .nodata {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -1.6rem 0;
+        padding: 12rem 0 0;
+        border: none;
+    }
+}

@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+$font-default: -apple-system, blinkmacsystemfont, "Helvetica", "roboto", sans-serif !default;
+
+// CSS Reset - Richard Clark
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+ul,
+ol {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: "";
+    content: none;
+}
+em,
+dfn,
+i {
+    font-style: normal;
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+}
+ins {
+    text-decoration: none;
+}
+mark {
+    font-style: italic;
+    font-weight: bold;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+hr {
+    display: none;
+}
+input,
+select {
+    vertical-align: middle;
+}
+input {
+    box-shadow: none;
+    outline: none;
+    font-size: 1.6rem;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -webkit-tap-highlight-color: transparent;
+    font-family: $font-default;
+    &:focus {
+        outline: none;
+    }
+}
+input[type="checkbox"] {
+    appearance: none;
+}
+
+// Remove "X" button from input field
+input[type="text"] {
+    border: .1rem solid rgb(204, 204, 204);
+    &::-ms-clear {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    &::-ms-reveal {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+}
+input:disabled {
+    background-color: transparent;
+}
+input[type="search"] {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
+    }
+}
+
+// custom
+* {
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: initial;
+}
+html {
+    font-size: 10px;
+}
+body {
+    overflow-x: hidden;
+    font-size: 1.6rem;
+    font-family: $font-default;
+    line-height: 2.2rem;
+    letter-spacing: -.05rem;
+    color: rgb(17, 17, 17);
+    -webkit-text-size-adjust: none;
+}
+a,
+button {
+    overflow: visible;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    font-family: $font-default;
+    color: rgb(17, 17, 17);
+}
+img {
+    vertical-align: top;
+}
+span,
+label {
+    display: inline-block;
+}
+select {
+    width: 100%;
+    border: .1rem solid rgb(225, 225, 225);
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+address {
+    font-style: normal;
+}

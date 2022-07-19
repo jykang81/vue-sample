@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.employee_verification_email {
+    padding: 1.6rem 1.6rem 12.4rem;
+    .delivery_search_guide {
+        padding: 1.4rem 0;
+        background-color: rgb(247, 247, 247);
+        text-align: center;
+        letter-spacing: 0;
+        line-height: 2.4rem;
+    }
+    .gray_guide {
+        padding: .8rem 0 4rem;
+        text-align: center;
+        font-size: 1.4rem;
+        color: $secondary;
+        letter-spacing: 0;
+        line-height: 2rem;
+    }
+    .btn_certification {
+        margin-top: 4rem;
+        .btn {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: .5rem;
+            border: .1rem solid $coral;
+            background-color: $coral;
+            color: rgb(255, 255, 255);
+            &:disabled {
+                background-color: rgb(224, 224, 224);
+                border: .1rem solid rgb(224, 224, 224);
+                color: rgb(255, 255, 255);
+            }
+            span {
+                min-width: 5.8rem;
+                height: 5.4rem;
+                box-sizing: border-box;
+                font-size: 1.8rem;
+                font-weight: bold;
+                line-height: 5.4rem;
+                vertical-align: top;
+            }
+        }
+    }
+}

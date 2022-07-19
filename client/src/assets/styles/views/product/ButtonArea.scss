@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.button_area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 250;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    background-color: rgb(255, 255, 255);
+    .button_wish {
+        width: 5.6rem;
+        height: 5.6rem;
+        border-top: .1rem solid rgb(204, 204, 204);
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        .icons_wish {
+            display: inline-block;
+            width: 3.8rem;
+            height: 3.8rem;
+            background-color: rgb(255, 255, 255);
+            background-image: url("#{$common}/icons_wish_dark_off.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 3.8rem;
+            &.on {
+                background-image: url("#{$common}/icons_wish_on.png");
+            }
+        }
+    }
+    .button_buy {
+        width: calc(100% - 5.6rem);
+        height: 5.6rem;
+        border: none;
+        background-color: $coral;
+        font-size: 2rem;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        line-height: 5.6rem;
+        text-align: center;
+        box-sizing: border-box;
+        &.in_active {
+            border: .1rem solid rgb(224, 224, 224) !important;
+            background-color: rgb(224, 224, 224)  !important;
+            color: rgb(255, 255, 255) !important;
+            &>span {
+                color: rgb(255, 255, 255) !important;
+            }
+        }
+    }
+}

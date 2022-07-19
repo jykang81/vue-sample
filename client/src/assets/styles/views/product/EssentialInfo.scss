@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.essential_info {
+    position: relative;
+    padding: 1.6rem 1.6rem 3.2rem;
+    border-top: .8rem solid rgb(240, 240, 240);
+    .essential_info_title {
+        display: block;
+        margin-bottom: .8rem;
+        font-size: 2rem;
+        line-height: 2.8rem;
+        text-align: left;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: .1rem;
+        background-color: rgb(224, 224, 224);
+    }
+    .table {
+        overflow: hidden;
+        tbody th {
+            border-bottom: .1rem solid $lightGray;
+            font-size: 1.4rem;
+            font-weight: normal;
+            word-break: break-all;
+        }
+        tbody td {
+            border-top: none;
+            border-bottom: .1rem solid $lightGray;
+            font-size: 1.4rem;
+            color: $primary;
+        }
+        .kc_row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            img {
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+            .kc_txt {
+                flex: 1;
+                margin-left: .6rem;
+                p {
+                    font-size: 1.4rem;
+                    line-height: 1.9rem;
+                    color: $primary;
+                }
+            }
+        }
+        &.active {
+            overflow: visible;
+            &+.collapse {
+                &::after {
+                    transform: rotate(180deg);
+                }
+                span {
+                    &::after {
+                        content: "접기";
+                    }
+                }
+            }
+        }
+    }
+    .table.line {
+        margin-top: 2.4rem;
+    }
+    .collapse {
+        width: 100%;
+        padding: 1.1rem 0 1rem;
+        border: .1rem solid $lightGray;
+        border-width: 0 .1rem .1rem;
+        border-radius: 0;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+        color: rgb(36, 130, 211);
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 1.2rem;
+            height: .8rem;
+            background-image: url("#{$common}/icons_arrow_blue.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 1.2rem;
+            transform: rotate(0);
+            transition: all .5s;
+        }
+        span {
+            padding-right: .8rem;
+            &::after {
+                content: "보기";
+                display: inline-block;
+                margin-left: .4rem;
+                font-size: 1.4rem;
+                color: rgb(36, 130, 211);
+                vertical-align: top;
+            }
+        }
+    }
+}

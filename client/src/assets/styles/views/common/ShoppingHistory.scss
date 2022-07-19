@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.shopping_history {
+    .wish_link {
+        padding: 1rem 1.6rem;
+        background-color: rgb(247, 247, 247);
+        box-sizing: border-box;
+        line-height: 2rem;
+        &>span {
+            padding-right: 1.2rem;
+            background-image: url("#{$common}/icons_smallRight.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: .8rem;
+            font-size: 1.4rem;
+        }
+    }
+    .total_wrap {
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.6rem;
+        .btn_delete {
+            margin-left: auto;
+            padding: .6rem 1.2rem;
+            border: .1rem solid rgb(204, 204, 204);
+            border-radius: .2rem;
+            box-sizing: border-box;
+            &>span {
+                border-radius: .2rem;
+                font-size: 1.4rem;
+                font-weight: bold;
+                line-height: 2rem;
+            }
+        }
+    }
+    .msg_box {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        width: calc(100% - 4.8rem);
+        height: calc(100% - 17.6rem);
+        padding: 0 2.4rem;
+        text-align: center;
+        .msg {
+            font-size: 1.6rem;
+            color: rgb(119, 119, 119);
+            word-break: keep-all;
+        }
+        .btn_go_home {
+            display: block;
+            height: 5.6rem;
+            text-align: center;
+            margin-top: 2.4rem;
+            border-radius: .5rem;
+            background-color: $coral;
+            box-sizing: border-box;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                line-height: 5.6rem;
+            }
+        }
+    }
+    .goods_list {
+        padding: 0 1.6rem 5.6rem;
+        >li {
+            padding-bottom: 2.4rem;
+            background-color: rgb(255, 255, 255);
+            .date {
+                display: block;
+                margin-bottom: 1.2rem;
+                padding: .6rem 0;
+                background-color: rgb(247, 247, 247);
+                text-align: center;
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+    }
+    .product_list {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1.2rem;
+            left: 4.4rem;
+            width: .1rem;
+            height: calc(100% - 2.4rem);
+            background-color: $lightGray;
+        }
+        >li {
+            position: relative;
+            &+li {
+                margin-top: 1.2rem;
+            }
+        }
+        .product_info {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            figure {
+                position: relative;
+                flex: 1;
+                max-width: 8.8rem;
+                max-height: 8.8rem;
+                text-align: center;
+                line-height: 0;
+                img {
+                    width: 100%;
+                    border-radius: .5rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: .5rem;
+                    background-color: rgba(0, 0, 0, .03);
+                }
+            }
+            .price_title {
+                flex: 1;
+                padding: 0 4.4rem 0 1.2rem;
+                .price_product {
+                    display: flex;
+                    align-items: flex-end;
+                    flex-wrap: wrap;
+                    margin-bottom: .4rem;
+                    .price_counsel {
+                        flex: 0 0 100%;
+                        padding-bottom: .8rem;
+                        font-size: 1.6rem;
+                        font-weight: bold;
+                        line-height: 2rem;
+                        color: $primary;
+                    }
+                    .price_month {
+                        padding-right: .4rem;
+                        font-size: 1.4rem;
+                        font-weight: normal;
+                        color: $primary;
+                    }
+                    .price_current {
+                        display: flex;
+                        align-items: flex-end;
+                        height: 2.6rem;
+                        padding-right: .4rem;
+                        font-size: 2rem;
+                        color: $primary;
+                    }
+                    .price_unit {
+                        font-size: 1.7rem;
+                        font-weight: normal;
+                    }
+                    .price_sale {
+                        padding-right: .4rem;
+                        font-size: 1.4rem;
+                        color: $coral;
+                    }
+                    .price_base {
+                        font-size: 1.4rem;
+                        color: rgb(177, 177, 177);
+                    }
+                }
+                .title {
+
+                    @include line-clamp(2);
+                    height: 4rem;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    color: $primary;
+                }
+            }
+            &.soldout {
+                figure {
+                    &::after {
+                        content: "품절";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: .5rem;
+                        background-color: rgba(17, 17, 17, .7);
+                        font-size: 1.4rem;
+                        color: rgb(255, 255, 255);
+                        line-height: 9.6rem;
+                    }
+                }
+                .price_title {
+                    .price {
+                        color: rgb(204, 204, 204);
+                    }
+                    .price_product * {
+                        color: rgb(204, 204, 204);
+                    }
+                    .title {
+                        color: rgb(204, 204, 204);
+                    }
+                }
+            }
+        }
+        .btn_group {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .btn_delete {
+                width: 3.2rem;
+                height: 3.2rem;
+                background-image: url("#{$common}/icons_close_gray.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                font-size: 0;
+                &+.btn_wish {
+                    margin-top: .6rem;
+                }
+            }
+            .btn_wish {
+                width: 3.2rem;
+                height: 3.2rem;
+                background-image: url("#{$common}/icons_wish_dark_off.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                font-size: 0;
+                &.on {
+                    background-image: url("#{$common}/icons_wish_on.png");
+                }
+            }
+        }
+        .category_link {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: calc(100% - 4.4rem);
+            .category {
+                position: relative;
+                z-index: 1;
+                width: 8.8rem;
+                padding: 0;
+                border: .1rem solid rgb(32, 32, 32);
+                border-radius: 1rem;
+                background-color: rgb(255, 255, 255);
+                box-sizing: border-box;
+                font-size: 1.2rem;
+                font-weight: bold;
+                line-height: 1.8rem;
+                text-align: center;
+            }
+            .title {
+                flex: 1;
+                width: calc(100% - 14.4rem);
+                padding-left: 1.2rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                &>span {
+                    display: block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}

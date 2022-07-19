@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_sheet_guest_delivery {
+    .subject {
+        margin: 4rem 0 .8rem;
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+    .form_group {
+        margin-top: 1.6rem;
+        .input_field {
+            .text {
+                height: 4.8rem;
+            }
+            &+.input_field {
+                margin-top: 1.2rem;
+            }
+            &.address {
+                .input_btn {
+                    .text {
+                        margin-top: 0;
+                    }
+                }
+                .text {
+                    margin-top: .8rem;
+                }
+                .btn_address {
+                    display: block;
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 50%;
+                    right: .8rem;
+                    margin-top: -1.6rem;
+                    padding: 0;
+                    border: .1rem solid rgb(204, 204, 204);
+                    border-radius: .5rem;
+                    background-color: rgb(255, 255, 255);
+                    color: $primary;
+                    span {
+                        min-width: 5.8rem;
+                        height: 3rem;
+                        box-sizing: border-box;
+                        font-size: 1.4rem;
+                        line-height: 3rem;
+                        vertical-align: top;
+                    }
+                }
+            }
+            &.msg_box {
+                margin-top: .8rem;
+            }
+            .delivery_box {
+                button {
+                    position: relative;
+                    border-bottom: .1rem solid $primary;
+                    font-size: 1.6rem;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: -1rem;
+                        display: inline-block;
+                        width: .6rem;
+                        height: .6rem;
+                        margin-top: -.25rem;
+                        border-right: .1rem solid $primary;
+                        border-bottom: .1rem solid $primary;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+            .error_msg {
+                padding: 0 0 0 1.2rem;
+            }
+        }
+    }
+}

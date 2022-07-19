@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@constants/*": ["./client/src/common/constants/*"],
+      "@frameworks/*": ["./client/src/common/frameworks/*"],
+      "@utils/*": ["./client/src/common/utils/*"],
+      "@components/*": ["./client/src/components/*"],      
+      "@unit/*": [".client/tests/unit/*"]
+    }
+  },
+  "exclude": [
+    "node_modules", 
+    "**/node_modules/*", 
+    "dist",
+    "**/dist/*"
+  ]
+}

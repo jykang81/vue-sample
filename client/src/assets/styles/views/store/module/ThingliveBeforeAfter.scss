@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.thinglive_before_after {
+    .title_tag {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 2.4rem 1.6rem 0;
+        background-color: rgb(255, 255, 255);
+        border-top: .8rem solid rgb(240, 240, 240);
+        .title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            line-height: 2.4rem;
+        }
+        .label {
+            width: 4.3rem;
+            height: 2.4rem;
+            background-color: $primary;
+            border-radius: 2rem;
+            margin-right: .8rem;
+            color: rgb(255, 255, 255);
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            text-align: center;
+            vertical-align: top;
+            &.prev {
+                background-color: $primary;
+            }
+            &.next {
+                background-color: $mint;
+            }
+        }
+    }
+    .product_list {
+        &.multi {
+            .benefit {
+                margin: 0 -.2rem;
+            }
+        }
+    }
+}

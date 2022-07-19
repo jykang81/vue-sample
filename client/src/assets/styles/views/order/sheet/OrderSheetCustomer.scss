@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_sheet_customer {
+    .subject {
+        margin-bottom: .8rem;
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+    .input_field {
+        &.phone {
+            margin-top: .8rem;
+        }
+        .input_group {
+            .text {
+                height: 4.8rem !important;
+                &:disabled {
+                    color: $primary;
+                    opacity: 1;
+                    -webkit-text-fill-color: $primary;
+                }
+            }
+        }
+        .btn_group {
+            .btn {
+                display: block;
+                box-sizing: border-box;
+                border-radius: .5rem;
+                &.coral_border {
+                    border: .1rem solid $coral;
+                    color: $coral;
+                }
+                &.gray_border {
+                    border: .1rem solid rgb(204, 204, 204);
+                    background-color: rgb(255, 255, 255);
+                    color: $primary;
+                }
+                span {
+                    min-width: 5.8rem;
+                    padding: 0 1.5rem;
+                    height: 3.8rem;
+                    box-sizing: border-box;
+                    font-size: 1.5rem;
+                    line-height: 3.8rem;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+    .default_msg {
+        padding: 1.6rem 0 1.6rem .8rem;
+        color: $primary;
+    }
+    .error_msg {
+        padding: 1.6rem 0 1.6rem .8rem;
+    }
+    .complete_msg {
+        padding: 1.6rem 0 1.6rem .8rem;
+        font-size: 1.5rem;
+        color: rgb(36, 130, 211);
+    }
+}

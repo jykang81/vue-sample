@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.participation_history {
+    padding: 0 0 12rem;
+    .tabs {
+        display: flex;
+        border-bottom: .1rem solid rgb(204, 204, 204);
+        &>.tab {
+            position: relative;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 4.8rem;
+            background-color: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-align: center;
+            color: rgb(135, 135, 135);
+            line-height: 2.4rem;
+            &.active {
+                font-weight: bold;
+                color: $primary;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -.1rem;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: .3rem;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+    .part_detail_list {
+        li {
+            padding: 1.6rem;
+            border-bottom: .1rem solid rgb(240, 240, 240);
+            .title {
+                font-weight: bold;
+                font-size: 1.6rem;
+                letter-spacing: 0;
+            }
+            .date {
+                padding-top: .6rem;
+                font-size: 1.4rem;
+                color: $secondary;
+                letter-spacing: 0;
+            }
+        }
+    }
+    .empty {
+        padding: 26rem 0;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}

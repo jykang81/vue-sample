@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.member_join_select {
+    min-height: calc(100vh - 64.6rem);
+    padding: 3.2rem 1.6rem 12rem;
+    .msg {
+        margin-bottom: 2.4rem;
+        text-align: center;
+    }
+    .btn_join {
+        display: block;
+        height: 5.6rem;
+        background-color: $coral;
+        border-radius: .5rem;
+        text-align: center;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            line-height: 5.6rem;
+        }
+    }
+}
+.join_select_sns {
+    margin-top: 3.2rem;
+    .title {
+        position: relative;
+        text-align: center;
+        color: rgb(33, 33, 33);
+        &::before {
+            content: "";
+            position: absolute;
+            top: .9rem;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: .1rem;
+            background-color: rgb(219, 219, 219);
+        }
+        span {
+            position: relative;
+            z-index: 1;
+            padding: 0 1.6rem;
+            background-color: rgb(255, 255, 255);
+            font-weight: normal;
+        }
+    }
+    ul {
+        margin-top: 2.8rem;
+        li {
+            margin-bottom: .8rem;
+        }
+        .btn_sns {
+            display: block;
+            height: 5.6rem;
+            border: .1rem solid rgb(204, 204, 204);
+            border-radius: .5rem;
+            background-color: rgb(255, 255, 255);
+            box-sizing: border-box;
+            text-align: center;
+            &>span {
+                padding-left: 3.2rem;
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: $primary;
+                line-height: 5.6rem;
+            }
+            &.naver>span {
+                background-image: url("#{$common}/sns/icons_naver.png");
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                background-size: 2.4rem;
+            }
+            &.kakao>span {
+                background-image: url("#{$common}/sns/icons_kakao.png");
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                background-size: 2.4rem;
+            }
+            &.payco>span {
+                background-image: url("#{$common}/sns/icons_payco.png");
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                background-size: 2.4rem;
+            }
+        }
+    }
+}

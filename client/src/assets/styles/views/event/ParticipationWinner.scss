@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.participation_winner {
+    padding: 0 0 12rem;
+    .tabs {
+        display: flex;
+        border-bottom: .1rem solid rgb(204, 204, 204);
+        &>.tab {
+            position: relative;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 4.8rem;
+            background-color: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-align: center;
+            color: rgb(135, 135, 135);
+            line-height: 2.4rem;
+            &.active {
+                font-weight: bold;
+                color: $primary;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -.1rem;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: .3rem;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+    .search {
+        position: relative;
+        margin: 1.6rem;
+        label {
+            width: 100%;
+            height: 4.8rem;
+            background-color: rgb(240, 240, 240);
+            border: 0;
+            border-radius: 4.8rem;
+            input {
+                width: calc(100% - 6.4rem);
+                height: 4.8rem;
+                padding-left: 1.6rem;
+                background-color: transparent;
+                border: 0;
+                font-size: 1.6rem;
+                caret-color: $coral;
+                &::placeholder {
+                    color: rgb(170, 170, 170);
+                }
+                &:valid {
+                    +.btn_reset {
+                        display: block;
+                    }
+                    ~.btn_search {
+                        background-image: url("#{$common}/icons_search.png");
+                    }
+                }
+            }
+        }
+        .btn_reset {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 4.8rem;
+            display: none;
+            width: 3.6rem;
+            height: 3.6rem;
+            margin: auto 0;
+            border-radius: 50%;
+            background-color: transparent;
+            span {
+                position: relative;
+                width: 2.2rem;
+                height: 2.2rem;
+                border-radius: 100%;
+                background-color: rgb(204, 204, 204);
+                text-indent: -999rem;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 1rem;
+                    left: .3rem;
+                    width: 1.5rem;
+                    height: .1rem;
+                    border-top: .2rem solid rgb(255, 255, 255);
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 1rem;
+                    left: .4rem;
+                    width: 1.5rem;
+                    height: .1rem;
+                    border-top: .2rem solid rgb(255, 255, 255);
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .btn_search {
+            position: absolute;
+            top: .8rem;
+            right: 1.6rem;
+            display: block;
+            width: 3.2rem;
+            height: 3.2rem;
+            background-image: url("#{$common}/icons_search_gray.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            text-indent: -999rem;
+        }
+    }
+    .title_sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .4rem 1.6rem 1.2rem;
+        h3 {
+            font-size: 2rem;
+        }
+        .select {
+            select {
+                height: 3.6rem;
+                padding-right: 5rem;
+                border: .1rem solid rgb(177, 177, 177);
+                border-radius: .5rem;
+            }
+        }
+    }
+    .winnder_announce_list {
+        border-top: .1rem solid rgb(240, 240, 240);
+        &.single {
+            li {
+                padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        li {
+            position: relative;
+            padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+            border-bottom: .1rem solid rgb(240, 240, 240);
+            .title {
+                font-weight: bold;
+                font-size: 1.6rem;
+                .vip {
+                    height: 1.4rem;
+                    padding: 0 .4rem;
+                    background-color: $coral;
+                    border-radius: .2rem;
+                    font-style: normal;
+                    font-size: 1.2rem;
+                    color: rgb(255, 255, 255);
+                    letter-spacing: 0;
+                    vertical-align: middle;
+                }
+            }
+            .date {
+                font-size: 1.3rem;
+                color: $secondary;
+                letter-spacing: 0;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 1.6rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-top: -.6rem;
+                background-image: url("#{$common}/icons_arrow_gray.png");
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-size: 1.2rem;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    .empty {
+        padding: 26rem 0;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}

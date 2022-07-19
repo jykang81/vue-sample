@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.intro_popup {
+    position: fixed;
+    right: 0;
+    bottom: -50rem;
+    left: 0;
+    z-index: 600;
+    width: 100%;
+    max-height: 50vh;
+    &.active {
+        bottom: 0;
+    }
+    .exhibit_popup {
+        position: relative;
+        z-index: 400;
+        width: 100%;
+        .exhibit_img {
+            overflow: hidden;
+            border-top-left-radius: 1.8rem;
+            border-top-right-radius: 1.8rem;
+            font-size: 0;
+            img {
+                width: 100%;
+                vertical-align: bottom;
+            }
+            a {
+                display: block;
+            }
+        }
+        .btn_close {
+            position: absolute;
+            top: .8rem;
+            right: .8rem;
+            width: 3.2rem;
+            height: 3.2rem;
+            background-image: url("#{$common}/icons_close_wht.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 100%;
+            font-size: 0;
+        }
+    }
+}

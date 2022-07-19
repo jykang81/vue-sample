@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.mypage_order_list {
+    .order_search {
+        padding-top: 1.6rem;
+    }
+    .order_search_detail {
+        position: relative;
+        padding-bottom: .8rem;
+        .month_list {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 1.6rem;
+            box-sizing: border-box;
+            li {
+                flex: 1;
+                button {
+                    display: block;
+                    width: 100%;
+                    height: 4rem;
+                    background-color: rgb(255, 255, 255);
+                    border: .1rem solid $lightGray;
+                    border-width: .1rem .1rem .1rem 0;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    box-sizing: border-box;
+                    &.selected {
+                        background: $primary;
+                        border-color: $primary;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+                &:first-child {
+                    button {
+                        border-left: .1rem solid $lightGray;
+                        border-radius: .5rem 0 0 .5rem;
+                    }
+                }
+                &:last-child {
+                    button {
+                        border-radius: 0 .5rem .5rem 0;
+                    }
+                }
+            }
+        }
+        .set_option {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: .8rem;
+            padding: 1.6rem;
+            box-sizing: border-box;
+            background-color: rgb(247, 247, 247);
+            .option {
+                flex: 2;
+                margin-right: .8rem;
+            }
+            .input_field  {
+                width: auto;
+                .input_group {
+                    margin-left: auto;
+                }
+            }
+            .label_text {
+                position: absolute;
+                top: .9rem;
+                left: 0;
+                margin: 0;
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+            }
+            .text {
+                height: 4rem;
+                padding: .6rem 1.2rem;
+                border-color: $lightGray;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: 1.5rem;
+                line-height: 2.4rem;
+                caret-color: transparent;
+            }
+            input::-webkit-input-placeholder {
+                font-size: 1.5rem;
+                line-height: 2.4rem;
+                color: rgb(170, 170, 170);
+                text-align: center;
+            }
+            .btn {
+                display: block;
+                box-sizing: border-box;
+                border-radius: .5rem;
+                width: 7.2rem;
+                font-size: 1.5rem;
+                &.coral {
+                    border: .1rem solid $coral;
+                    background-color: $coral;
+                    color: rgb(255, 255, 255);
+                }
+                &.gray_border {
+                    border: .1rem solid rgb(204, 204, 204);
+                    background-color: rgb(255, 255, 255);
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .order_step_list {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1.6rem 1.2rem;
+        li {
+            flex: 1;
+            text-align: center;
+            .count {
+                display: block;
+                color: rgb(204, 204, 204);
+                font-size: 2.6rem;
+                font-weight: bold;
+                line-height: 3.8rem;
+            }
+            &>strong {
+                font-size: 1.4rem;
+                font-weight: normal;
+                line-height: 2rem;
+            }
+            &.selected {
+                * {
+                    color: $coral;
+                }
+            }
+        }
+    }
+    .product_list {
+        padding: 0 1.6rem;
+        >li {
+            position: relative;
+            padding: 2.5rem 0 .8rem;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -1.6rem;
+                left: -1.6rem;
+                border-top: .8rem solid rgb(240, 240, 240);
+            }
+            .top_box {
+                display: flex;
+                justify-content: space-between;
+                .date {
+                    strong {
+                        padding-right: .4rem;
+                        font-size: 1.6rem;
+                        letter-spacing: 0;
+                    }
+                    span {
+                        font-size: 1.4rem;
+                        letter-spacing: 0;
+                    }
+                }
+                .btn {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    box-sizing: border-box;
+                    border-radius: .5rem;
+                    margin-right: 1rem;
+                    font-size: 1.4rem;
+                    text-decoration: underline;
+                    letter-spacing: 0;
+                    span {
+                        text-decoration: underline;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: -1rem;
+                        width: .5rem;
+                        height: .5rem;
+                        margin-top: -.35rem;
+                        border-right: .1rem solid $primary;
+                        border-bottom: .1rem solid $primary;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+            .middle_box {
+                margin: .8rem 0;
+                border: .1rem solid $lightGray;
+                .state_box {
+                    display: flex;
+                    align-items: center;
+                    height: 5rem;
+                    padding: 0 1.6rem;
+                    border-bottom: .1rem solid $lightGray;
+                    .state {
+                        padding-right: 1rem;
+                        font-weight: bold;
+                        font-size: 1.6rem;
+                    }
+                    .date {
+                        flex: 1;
+                        font-weight: bold;
+                        font-size: 1.4rem;
+                        letter-spacing: 0;
+                        &.blue {
+                            color: rgb(36, 130, 211);
+                        }
+                        &.red {
+                            color: $baseRed;
+                        }
+                    }
+                    .btn_chat {
+                        margin-left: auto;
+                        .btn {
+                            display: block;
+                            box-sizing: border-box;
+                            border-radius: .5rem;
+                            border: .1rem solid rgb(177, 177, 177);
+                            color: $primary;
+                            span {
+                                min-width: 5.8rem;
+                                width: 7rem;
+                                height: 3rem;
+                                box-sizing: border-box;
+                                font-size: 1.3rem;
+                                line-height: 3rem;
+                                vertical-align: top;
+                            }
+                        }
+                    }
+                }
+                .box {
+                    display: flex;
+                    padding: 1.6rem;
+                }
+                figure {
+                    position: relative;
+                    width: 6.4rem;
+                    height: 6.4rem;
+                    text-align: center;
+                    line-height: 0;
+                    a {
+                        display: inline-block;
+                    }
+                    img {
+                        width: 100%;
+                        border-radius: .5rem;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: .5rem;
+                        background-color: rgba(0, 0, 0, .03);
+                        pointer-events: none;
+                    }
+                }
+                .field {
+                    width: calc(100% - 7.6rem);
+                    padding-left: 1.2rem;
+                    .price {
+                        padding-top: .4rem;
+                        font-size: 1.6rem;
+                        color: $primary;
+                    }
+                    .title {
+
+                        @include line-clamp(2);
+                        font-size: 1.6rem;
+                        color: $primary;
+                    }
+                    .option {
+
+                        @include line-clamp(1);
+                        font-size: 1.4rem;
+                        color: $secondary;
+                        span {
+                            display: inline;
+                        }
+                    }
+                    .free_gift {
+                        dt {
+                            padding-top: .4rem;
+                            font-size: 1.4rem;
+                        }
+                        dd {
+
+                            @include line-clamp(1);
+                            font-size: 1.4rem;
+                            color: $secondary;
+                        }
+                    }
+                }
+                .btn_buy {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-top: .4rem;
+                    border: 0;
+                    .btn {
+                        box-sizing: border-box;
+                        border-radius: .5rem;
+                        border: .1rem solid $coral;
+                        color: $coral;
+                    }
+                    span {
+                        width: 8.8rem;
+                        min-width: 5.8rem;
+                        height: 3rem;
+                        box-sizing: border-box;
+                        font-size: 1.3rem;
+                        line-height: 3rem;
+                        vertical-align: top;
+                    }
+                }
+                .btn_list {
+                    display: flex;
+                    justify-content: space-around;
+                    border-top: .1rem solid $lightGray;
+                    li {
+                        width: 100%;
+                        border-left: .1rem solid $lightGray;
+                        &:first-child {
+                            border-left: 0;
+                        }
+                        button {
+                            width: 100%;
+                            height: 4.8rem;
+                            font-size: 1.6rem;
+                            letter-spacing: 0;
+                        }
+                    }
+                }
+            }
+            .btn_review {
+                width: 100%;
+                padding-bottom: .8rem;
+                .btn {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: .5rem;
+                    border: .1rem solid rgb(177, 177, 177);
+                    color: $primary;
+                    span {
+                        min-width: 5.8rem;
+                        height: 4.6rem;
+                        box-sizing: border-box;
+                        font-weight: normal;
+                        font-size: 1.6rem;
+                        line-height: 4.6rem;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+    .order_empty {
+        border-top: .1rem solid $lightGray;
+        padding: 21.4rem 0;
+        text-align: center;
+        .guide {
+            font-size: 1.8rem;
+        }
+    }
+}

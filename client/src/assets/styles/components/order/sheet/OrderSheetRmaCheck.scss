@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.order_sheet_rma_check {
+    .contents {
+        padding: 3.2rem 1.6rem 1.6rem;
+        .title {
+            font-size: 2rem;
+            color: $primary;
+        }
+        .guide {
+            padding-bottom: 1.6rem;
+            font-size: 1.6rem;
+            color: rgb(102, 102, 102);
+        }
+        .product_list {
+            padding: 1.2rem 0;
+            border: .1rem solid rgb(221, 221, 221);
+            text-align: left;
+            li {
+                padding: .2rem 1.6rem;
+                font-size: 1.4rem;
+                color: rgb(119, 119, 119);
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: .4rem;
+                    height: .4rem;
+                    margin-right: .8rem;
+                    border-radius: .4rem;
+                    background-color: rgb(153, 153, 153);
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

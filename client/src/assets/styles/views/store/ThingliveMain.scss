@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.thinglive_main {
+    &.live {
+        padding-top: 56%;
+    }
+}

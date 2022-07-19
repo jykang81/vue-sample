@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.quantity_input {
+    position: relative;
+    .btn {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 3.6rem;
+        height: 100%;
+        border: .1rem solid rgb(204, 204, 204);
+        background-color: rgb(240, 240, 240);
+        box-sizing: border-box;
+        border-radius: .5rem;
+        &.delete {
+            left: 0;
+            background-image: url("#{$common}/icons_trash.png");
+            background-repeat: no-repeat;
+            background-size: 3.6rem;
+            background-position: -.1rem -.1rem;
+        }
+        &.minus {
+            left: 0;
+        }
+        &.minus::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1.4rem;
+            height: .2rem;
+            margin: -.1rem 0 0 -.8rem;
+            background-color: $secondary;
+        }
+        &.plus {
+            right: 0;
+        }
+        &.plus::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1.6rem;
+            height: .2rem;
+            margin: -.1rem 0 0 -.8rem;
+            background-color: $secondary;
+            transform: rotate(90deg);
+        }
+        &.plus::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1.6rem;
+            height: .2rem;
+            margin: -.1rem 0 0 -.8rem;
+            background-color: $secondary;
+        }
+        &.mini {
+            border-color: rgb(238, 238, 238);
+            background-color: rgb(247, 247, 247);
+            &.minus::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 1.6rem;
+                height: .2rem;
+                margin: -.1rem 0 0 -.8rem;
+                background-color: $lightGray;
+            }
+        }
+        &.max {
+            border-color: rgb(238, 238, 238);
+            background-color: rgb(247, 247, 247);
+            &.plus::before {
+                background-color: $lightGray;
+            }
+            &.plus::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 1.6rem;
+                height: .2rem;
+                margin: -.1rem 0 0 -.8rem;
+                background-color: $lightGray;
+            }
+        }
+    }
+    input {
+        width: 12.8rem;
+        height: 3.6rem;
+        box-sizing: border-box;
+        border: .1rem solid rgb(238, 238, 238);
+        border-radius: .5rem;
+        font-weight: bold;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}

@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.report_review {
+    .report_guide {
+        margin-top: 2.4rem;
+        padding: 0 2.4rem;
+        font-size: 1.3rem;
+        line-height: 1.9rem;
+        color: $secondary;
+        box-sizing: border-box;
+    }
+    .report_list {
+        margin-top: 2.4rem;
+        padding: 0 2.4rem;
+        dt {
+            display: block;
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            color: rgb(0, 0, 0);
+        }
+        dd {
+            margin-top: 1.6rem;
+            input {
+                display: none;
+            }
+            input+label {
+                position: relative;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                cursor: pointer;
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    margin-right: 1.2rem;
+                    background-image: url("#{$common}/bg_radio_circle_off.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    vertical-align: top;
+                }
+            }
+            input:checked+label {
+                &::before {
+                    background-image: url("#{$common}/bg_radio_circle_on.png");
+                }
+            }
+        }
+        .textarea {
+            position: relative;
+            overflow: hidden;
+            height: 16.4rem;
+            padding: 1.2rem;
+            background-color: rgb(247, 247, 247);
+            border: .1rem solid rgb(204, 204, 204);
+            border-radius: .5rem;
+            box-sizing: border-box;
+            textarea {
+                overflow-y: auto;
+                height: 12rem;
+                background-color: rgb(247, 247, 247);
+                border: none;
+                padding: 0;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                color: rgb(32, 32, 32);
+                outline: none;
+            }
+            textarea::-webkit-input-placeholder {
+                color: rgb(177, 177, 177);
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+            .fix_num {
+                position: absolute;
+                right: 1.2rem;
+                bottom: 0;
+                font-size: 1.4rem;
+                line-height: 3.2rem;
+                color: rgb(177, 177, 177);
+                &>.txt {
+                    color: rgb(32, 32, 32);
+                }
+            }
+        }
+    }
+    .btn_group {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2.4rem 1.6rem;
+        .btn_cancel {
+            flex: 1;
+            height: 5.6rem;
+            border: .1rem solid rgb(204, 204, 204);
+            border-radius: .5rem;
+            background-color: rgb(255, 255, 255);
+            box-sizing: border-box;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: $primary;
+            }
+        }
+        .btn_register {
+            flex: 1;
+            height: 5.6rem;
+            background-color: $coral;
+            border-radius: .5rem;
+            box-sizing: border-box;
+            margin-left: .5rem;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
+            &.in_active {
+                border: .1rem solid rgb(224, 224, 224) !important;
+                background-color: rgb(224, 224, 224)  !important;
+                color: rgb(255, 255, 255) !important;
+                &>span {
+                    color: rgb(255, 255, 255) !important;
+                }
+            }
+        }
+    }
+}

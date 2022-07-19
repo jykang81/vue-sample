@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.guide_tab {
+    display: flex;
+    margin: 0 -1.6rem;
+    .tab {
+        position: relative;
+        flex: 1;
+        align-items: center;
+        height: 4.8rem;
+        background-color: rgb(240, 240, 240);
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: rgb(177, 177, 177);
+        line-height: 2.4rem;
+        &.active {
+            background-color: rgb(255, 255, 255);
+            color: $coral;
+        }
+    }
+}

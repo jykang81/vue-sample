@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.web_view {
+    .toast_message_wrap {
+        bottom: 7.6rem;
+        &.is_nav {
+            bottom: 7.6rem;
+        }
+    }
+}
+.toast_message_wrap {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 600;
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+    &.is_nav {
+        bottom: 7rem;
+    }
+    .toast_message {
+        min-height: 5.6rem;
+        padding: 1.6rem;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, .6);
+        font-size: 1.6rem;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        letter-spacing: 0;
+        line-height: 2.4rem;
+        word-break: keep-all;
+        box-sizing: border-box;
+    }
+    &.toast_wish {
+        .toast_message {
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 3.2rem;
+                height: 3.2rem;
+                background-image: url("#{$common}/icons_wish_off_wht.png");
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-size: 100%;
+                vertical-align: middle;
+            }
+        }
+        &.on {
+            .toast_message {
+                &::before {
+                    background-image: url("#{$common}/icons_wish_on.png");
+                }
+            }
+        }
+    }
+    &.add_cart {
+        position: fixed;
+        top: 5.8rem;
+        right: 2rem;
+        bottom: auto !important;
+        left: 2rem;
+        .toast_message {
+            position: relative;
+            border-radius: 1rem 0 1rem 1rem;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -.8rem;
+                right: 0;
+                display: block;
+                border-top: .4rem solid transparent;
+                border-bottom: .4rem solid rgba(0, 0, 0, .6);
+                border-right: .4rem solid transparent;
+                border-left: .4rem solid rgba(0, 0, 0, .6);
+                pointer-events: none;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

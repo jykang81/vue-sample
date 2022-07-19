@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.web_view {
+    .order_sheet {
+        background-color: rgb(255, 255, 255);
+    }
+}
+.order_sheet {
+    padding: 3.2rem 1.6rem 12.4rem;
+    &.no_member {
+        padding-bottom: 16.6rem;
+    }
+}

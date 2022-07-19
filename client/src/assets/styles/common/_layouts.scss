@@ -1,0 +1,594 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+body {
+    &.no_scroll {
+        overflow-y: hidden;
+    }
+    &.app {
+        .app_header {
+            padding-top: 2rem;
+            &.sub_page {
+                .header {
+                    &.over {
+                        height: 6.8rem;
+                        padding-top: 2rem;
+                        .back_btn {
+                            top: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .app_container {
+            padding-top: 6.8rem;
+        }
+    }
+    &.live_talk {
+        min-height: 100vh;
+        background-color: rgb(240, 240, 240);
+        .full_layer {
+            background-color: rgb(240, 240, 240);
+        }
+    }
+}
+.wrap {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+#app {
+    &.hide {
+        .app_header {
+            &.main {
+                top: -5.2rem;
+                +.app_category {
+                    top: 0;
+                }
+            }
+            &.search_page {
+                top: -4.8rem;
+            }
+        }
+        .full_layer {
+            .app_header {
+                &.search_page {
+                    top: 0;
+                }
+            }
+        }
+        .app_top_button {
+            bottom: 1.6rem;
+        }
+        .sub_categories {
+            top: 0;
+            &.icon {
+                .swiper-slide {
+                    background-image: none;
+                    a {
+                        padding: 1.6rem 0;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+        .shopping_history {
+            .goods_list {
+                padding: 0 1.6rem;
+            }
+        }
+        .happy_deal {
+            .sub_categories {
+                top: 4.4rem;
+            }
+        }
+        .tv_schedule_table {
+            padding: 11.2rem 0 0;
+            .tv_schedule_top {
+                top: 4.4rem;
+            }
+            .time_table_floating {
+                bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+        .thema_cate_slide {
+            &.fixed {
+                top: 4.4rem;
+            }
+        }
+        .benefit_category_menu {
+            top: 4.4rem;
+        }
+        .category_store_fixed {
+            top: 0;
+        }
+        .category_box {
+            top: 4.4rem;
+        }
+        .has_layout_lnb {
+            .category_box {
+                top: 4.8rem;
+            }
+        }
+        .search_fixed {
+            top: -11.4rem;
+            &.has_keyword {
+                top: -16.1rem;
+            }
+        }
+        .search.faq {
+            .app_header {
+                &.search_page {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+.app_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 250;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .3s;
+    &.height_100 {
+        height: 100%;
+    }
+    &.border_none {
+        .header {
+            border-bottom: 0;
+        }
+    }
+    .header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 4.8rem;
+        background-color: rgb(255, 255, 255);
+        border-bottom: .1rem solid rgb(219, 219, 219);
+        box-sizing: border-box;
+        .search_wrap {
+            position: relative;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            height: 4.8rem;
+            .search_inner {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 3.6rem;
+                padding: .7rem 1.2rem .5rem;
+                border-radius: 1.8rem;
+                background-color: rgb(240, 240, 240);
+                box-sizing: border-box;
+                .tag_label {
+                    display: none;
+                    position: relative;
+                    min-width: 3.6rem;
+                    margin-right: .6rem;
+                    padding: .2rem 2rem 0 .8rem;
+                    background-color: rgb(255, 255, 255);
+                    border: .1rem solid $coral;
+                    font-size: 1.3rem;
+                    line-height: 1.8rem;
+                    color: $coral;
+                    &.active {
+                        display: block;
+                    }
+                    .btn_delete {
+                        position: absolute;
+                        top: 50%;
+                        right: .6rem;
+                        margin-top: -.6rem;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        font-size: 0;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: 1rem;
+                            height: .1rem;
+                            background: $coral;
+                            transform: rotate(45deg);
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: 1rem;
+                            height: .1rem;
+                            background: $coral;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+                label {
+                    display: block;
+                    border: 0;
+                }
+            }
+            button.search_input {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 3.6rem;
+                background-image: url("#{$common}/icons_searchLink.png");
+                background-repeat: no-repeat;
+                background-position: right .8rem center;
+                background-size: 3.2rem;
+                font-size: 0;
+            }
+            .reset_btn {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: .4rem;
+                width: 3.6rem;
+                height: 3.6rem;
+                margin: auto 0;
+                border-radius: 50%;
+                background-color: transparent;
+                span {
+                    position: relative;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    border-radius: 100%;
+                    background-color: rgb(204, 204, 204);
+                    text-indent: -999rem;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 1rem;
+                        left: .3rem;
+                        width: 1.5rem;
+                        height: .1rem;
+                        border-top: .2rem solid rgb(255, 255, 255);
+                        transform: rotate(45deg);
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 1rem;
+                        left: .4rem;
+                        width: 1.5rem;
+                        height: .1rem;
+                        border-top: .2rem solid rgb(255, 255, 255);
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        .right_wrap {
+            .icons {
+                position: relative;
+                display: inline-block;
+                width: 4.8rem;
+                flex-shrink: 0;
+                height: 4.8rem;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: 3.2rem;
+                vertical-align: top;
+                span {
+                    font-size: 0;
+                    &.count {
+                        position: absolute;
+                        top: .4rem;
+                        right: .4rem;
+                        z-index: 0;
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 50%;
+                        background-color: $coral;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        line-height: 2rem;
+                        text-align: center;
+                        text-indent: 0;
+                        color: #fff;
+                    }
+                }
+                &.cart {
+                    background-image: url("#{$common}/icons_cart.png");
+                }
+                &.home {
+                    background-image: url("#{$common}/icons_home.png");
+                    &.pressed {
+                        background-image: url("#{$common}/icons_homeActive.png");
+                    }
+                }
+            }
+        }
+    }
+    &.main {
+        .header {
+            height: 5.2rem;
+            padding: 0 .8rem 0 1.6rem;
+            border-bottom: none;
+            background-color: rgb(255, 255, 255);
+            .right_wrap {
+                margin: 0 0 0 .4rem;
+            }
+        }
+        .logo_title_wrap {
+            display: flex;
+            height: 4.8rem;
+            margin: 0 1.9rem 0 0;
+            a {
+                display: block;
+                &.logo {
+                    width: 8.2rem;
+                    height: 100%;
+                    background-image: url("#{$common}/ns_logo.png");
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-size: 7.9rem;
+                    span {
+
+                        @include blind;
+                    }
+                }
+            }
+        }
+        +.app_category {
+            position: fixed;
+            top: 5.2rem;
+            left: 0;
+            z-index: 150;
+            width: 100%;
+            transition: all .3s;
+        }
+    }
+    &.sub_page {
+        .header {
+            &.non_over {
+                background: transparent;
+                border-bottom: none;
+                .back_btn {
+                    background-image: url("#{$common}/icons_arrowLarge_wht.png");
+                    &.pressed {
+                        opacity: .5;
+                    }
+                }
+                .search_wrap {
+                    .search_inner {
+                        background-color: transparent;
+                    }
+                    button.search_input {
+                        background-image: url("#{$common}/icons_search_wht.png");
+                        &.pressed {
+                            opacity: .5;
+                        }
+                    }
+                }
+                .right_wrap {
+                    .icons {
+                        &.cart {
+                            background-image: url("#{$common}/icons_cart_wht.png");
+                            &.pressed {
+                                opacity: .5;
+                            }
+                        }
+                        &.home {
+                            background-image: url("#{$common}/icons_home_wht.png");
+                            &.pressed {
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+            }
+            &.over {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1;
+                height: 4.8rem;
+                background-color: rgb(255, 255, 255);
+                opacity: 0;
+                .back_btn {
+                    background-image: url("#{$common}/icons_backBtn.png");
+                }
+                .search_wrap {
+                    .search_inner {
+                        background-color: transparent;
+                    }
+                    button.search_input {
+                        background-image: url("#{$common}/icons_search.png");
+                    }
+                }
+                .right_wrap {
+                    .icons {
+                        &.cart {
+                            background-image: url("#{$common}/icons_cart.png");
+                        }
+                        &.home {
+                            background-image: url("#{$common}/icons_home.png");
+                            &.pressed {
+                                background-image: url("#{$common}/icons_homeActive.png");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .back_btn {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 4.8rem;
+            height: 4.8rem;
+            background-image: url("#{$common}/icons_backBtn.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 4.8rem;
+            font-size: 0;
+        }
+        .sub_title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: calc(100% - 15.2rem);
+            margin-right: 3.6rem;
+            margin-left: 5.6rem;
+            font-size: 2.1rem;
+            font-weight: normal;
+            &+.search_wrap {
+                .search_inner {
+                    height: .8rem;
+                    background-color: transparent;
+                }
+            }
+            &.center {
+                position: absolute;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+        .search_wrap {
+            align-items: flex-start;
+            height: 4.8rem;
+            margin: 0 0 0 auto;
+            button.search_input  {
+                right: 0;
+                bottom: auto;
+                left: auto;
+                width: 4.8rem;
+                height: 4.8rem;
+                background-color: transparent;
+                background-image: url("#{$common}/icons_search.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 3.2rem;
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+    &.search_page {
+        .header {
+            background-color: rgb(255, 255, 255);
+            &.non_over {
+                border-bottom: 0;
+            }
+            .back_btn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: 4.8rem;
+                height: 4.8rem;
+                background-image: url("#{$common}/icons_backBtn.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 4.8rem;
+                font-size: 0;
+            }
+            .search_wrap {
+                display: block;
+                flex: 1;
+                height: 3.6rem;
+                align-items: center;
+                margin: 0 4.8rem;
+                .search_input {
+                    position: relative;
+                    flex: 1;
+                    display: block;
+                    width: 100%;
+                    padding-right: 3rem;
+                    box-sizing: border-box;
+                    background-color: transparent;
+                    border: 0;
+                    color: $primary;
+                    outline: none;
+                    appearance: none;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    line-height: 2.4rem;
+                    caret-color: $coral;
+
+                    // placeholder
+                    &::-webkit-input-placeholder {
+                        font-size: 1.6rem;
+                        font-weight: normal;
+                        line-height: 2.4rem;
+                        color: rgb(177, 177, 177);
+                    }
+                }
+            }
+            .right_wrap {
+                position: absolute;
+                top: 0;
+                right: 0;
+                line-height: 1;
+                .search_input {
+                    display: block;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    padding: 0;
+                    background-color: transparent;
+                    background-image: url("#{$common}/icons_search.png");
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 3.2rem;
+                    text-indent: -999rem;
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+        }
+        .auto_complete {
+            position: fixed;
+            top: 4.8rem;
+            left: 0;
+            z-index: 10;
+            overflow: auto;
+            width: calc(100% - 4.8rem);
+            height: calc(100% - 6.8rem);
+            padding: 1rem 2.4rem;
+            background-color: rgb(255, 255, 255);
+            li {
+                padding: 1rem 0;
+                strong {
+                    color: $coral;
+                }
+            }
+        }
+    }
+}
+.app_container {
+    padding-top: 4.8rem;
+    &.has_layout_lnb {
+        padding-top: 0;
+        .category_box {
+            top: 4.8rem;
+        }
+    }
+    &+.app_top_button {
+        bottom: 1.6rem;
+    }
+}

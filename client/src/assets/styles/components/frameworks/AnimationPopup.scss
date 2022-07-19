@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.animation_popup {
+    .dimmed_all {
+        visibility: hidden;
+        opacity: 0;
+        background-color: rgb(0, 0, 0);
+        transition: visibility .4s, opacity .4s ease;
+        &.active {
+            visibility: visible;
+            opacity: .6;
+            transition: opacity .4s ease;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0%,
+    30% {
+        opacity: 0;
+    }
+}
+@keyframes slidein {
+    from {
+        bottom: -50rem;
+    }
+    to {
+        bottom: 0;
+    }
+}
+@keyframes slideOut {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: -50rem;
+    }
+}

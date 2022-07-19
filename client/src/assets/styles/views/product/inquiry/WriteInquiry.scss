@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.write_inquiry {
+    padding: 1.6rem 1.6rem 12rem;
+    box-sizing: border-box;
+    .product_item {
+        &>a {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        figure {
+            position: relative;
+            width: 7.2rem;
+            height: 7.2rem;
+            img {
+                width: 100%;
+                border-radius: .5rem;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .03);
+                border-radius: .5rem;
+            }
+        }
+        .title {
+
+            @include line-clamp(2);
+            flex: 1;
+            height: 4.8rem;
+            margin-left: 1.2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+    }
+    .board_box {
+        margin-top: 1.6rem;
+        .textarea {
+            position: relative;
+            overflow: hidden;
+            height: 17.4rem;
+            padding: 1.2rem;
+            background-color: rgb(255, 255, 255);
+            border: .1rem solid $lightGray;
+            box-sizing: border-box;
+            &.placeholder_multiline {
+                textarea {
+                    position: relative;
+                    z-index: 1;
+                    overflow-y: auto;
+                    height: 12rem;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    color: rgb(17, 17, 17);
+                    outline: none;
+                }
+                .placeholder {
+                    position: absolute;
+                    top: 1.2rem;
+                    right: 1.2rem;
+                    left: 1.2rem;
+                    color: rgb(170, 170, 170);
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+            }
+        }
+        .fix_num {
+            position: absolute;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: rgb(177, 177, 177);
+            .txt {
+                color: rgb(17, 17, 17);
+            }
+        }
+    }
+    .checkbox_wrap {
+        margin-top: .8rem;
+        label+label {
+            margin-left: 1.6rem;
+        }
+    }
+    .btn_inquiry {
+        display: block;
+        width: 100%;
+        height: 5.6rem;
+        margin-top: 4rem;
+        background-color: $coral;
+        border-radius: .5rem;
+        box-sizing: border-box;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+        &.in_active {
+            border: .1rem solid rgb(224, 224, 224) !important;
+            background-color: rgb(224, 224, 224)  !important;
+            color: rgb(255, 255, 255) !important;
+            &>span {
+                color: rgb(255, 255, 255) !important;
+            }
+        }
+    }
+    .customer_box {
+        margin-top: 4rem;
+    }
+    .copy {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $secondary;
+    }
+    .btn_counsel {
+        position: relative;
+        display: inline-block;
+        margin: .8rem 0 0 auto;
+        padding-right: 1.2rem;
+        background-image: url("#{$common}/icons_mediumRight.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: .6rem;
+        line-height: 1.9rem;
+        &>span {
+            position: relative;
+            font-size: 1.4rem;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -.1rem;
+                left: 0;
+                width: 100%;
+                height: .1rem;
+                background-color: $primary;
+            }
+        }
+    }
+}

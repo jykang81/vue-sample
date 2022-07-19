@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta content="언제 어디서나 특별한 가격을 만나 볼 수 있는 이지쇼핑의 공간 NS홈쇼핑" name="description">
+  <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
+  <title>NS홈쇼핑 모바일</title>
+  <script type="text/javascript" src="/js/fetch-jsonp.js"></script>
+  <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+</head>
+
+<body onload="cocdChk()">
+  <script type="text/javascript">
+    // 도메인에 따른 접속 서버 분기 처리
+    let hpUrl = 'www.nsmall.com' // 홈페이지 도메인 주소
+    let mbUrl = 'mw.nsmall.com' // 모바일 도메인 주소
+    const host = window.location.host
+    if (host === 'devm2.nsmall.com' || host.includes('local.nsmall.com')) {
+      hpUrl = `dev${hpUrl}`
+    } else if (host === 'testm2.nsmall.com') {
+      hpUrl = `bk${hpUrl}`
+    }
+
+    // mtype에 따른 처리
+    const mtype = getUrlParameter('mtype') // gotopc : 무조건 pc url 홈으로 이동 시킴, pc : pc환경에서 진입 시 pc url로 변경
+    if (mtype === 'gotopc') {
+      // mtype이 gotopc로 값이 들어오면 쿠키에 특정값을 세팅하고 홈페이지로 이동한다.
+      setCookie('MOB_CHK', 'PC', null, '/', 'nsmall.com')
+      // 앱인경우
+      if (window.NSHub !== undefined) {
+        window.NSHub.naGotoDeepLinkUrl(`http://${hpUrl}/`)
+      } else {
+        location.replace(`http://${hpUrl}/`)
+      }
+    }
+
+    // 제휴사 key값 저장 (230: 세이브뱅크, 340: 아이라이크클릭)
+    const coKey = getUrlParameter('co_key')
+    setCookie('co_key', coKey, null, '/', 'nsmall.com')
+
+    // NHN 네이버 유입 추적 스크립트의 mac_ad_key(모바일에 전달)
+    const macAdKey = getUrlParameter('mac_ad_key', '')
+    if (macAdKey !== '') {
+      setCookie('mac_ad_key', macAdKey, null, '/', 'nsmall.com')
+    }
+
+    // payco 추적키 쿠키 세팅
+    const trackingKey = getUrlParameter('trackingKey')
+    if (trackingKey !== '') {
+      setCookie('trackingKey', trackingKey, null, '/', 'nsmall.com')
+    }
+
+    if (!window.wcs_add) {
+      window.wcs_add = {}
+    }
+    window.wcs_add.wa = 's_2115fbeeef'
+
+    if (!window._nasa) {
+      window._nasa = {}
+    }
+    window.wcs.inflow()
+    window.wcs_do(window._nasa)
+
+    // target의 '?' 뒤로 값을 꺼내기 위한 처리
+    let getUrl = getUrlParameter('target', '/')
+    if (getUrl.indexOf('/mjsp') > -1) {
+      const partNumber = getUrlParameter('good_id', '', getUrl.substring(getUrl.indexOf('?')))
+      if (getUrl.includes('/mjsp/item/itemview.jsp') && getUrl.includes('?') && partNumber) {
+        getUrl = `/product/${partNumber}`
+      } else {
+        getUrl = '/'
+      }
+    } else if (getUrl.includes('/ProductDisplay')) {
+      if (getUrl.includes('?')) {
+        const partNumber = getUrlParameter('partNumber', '', getUrl.substring(getUrl.indexOf('?')))
+        if (partNumber) {
+          getUrl = `/product/${partNumber}`
+        } else {
+          getUrl = '/'
+        }
+      }
+    } else if (getUrl.includes('/NSSearchList')) {
+      if (getUrl.includes('?')) {
+        const keyword = getUrlParameter('searchTerm', '', getUrl.substring(getUrl.indexOf('?')))
+        if (keyword) {
+          getUrl = `/search/result/${keyword}`
+        } else {
+          getUrl = '/'
+        }
+      }
+    } else if (getUrl.includes('/NSTimesEvent')) {
+      if (getUrl.includes('?')) {
+        const offerId = getUrlParameter('offer_id', '', getUrl.substring(getUrl.indexOf('?')))
+        if (offerId) {
+          getUrl = `/event/application/${offerId}`
+        } else {
+          getUrl = '/'
+        }
+      }
+    }
+
+    // gate 통과 후 이동할 page 를 조립
+    if (!getUrl.startsWith('http')) {
+      if (!getUrl.startsWith('/')) {
+        getUrl = '/' + getUrl
+      }
+      
+      getUrl = window.location.origin + getUrl
+    }
+    getUrl += `${getUrl.indexOf('?') > 1 ? '&' : '?'}catalogId=13001&langId=-9&storeId=13001`
+
+    // 멀티코드
+    const multiCd = getUrlParameter('multiCd')
+    if (multiCd) {
+      getUrl += `&multiCd=${multiCd}`
+    }
+
+    // 110 : Default, 120 : Dreamwiz,  130 : Naver, 140 : yahoo, 150  : coreana,
+    // 160 :  KoreaLife,  170 :  Joylink, 180  : Gajai,  190 :  enuri, 310 : nate
+    // 137 : 네이버 브랜드 검색,  138 : 네이버 기획전 소배너,  139 : 네이버 쿠폰
+    let coCd = getUrlParameter('co_cd', '110')
+
+    // 134 : 네이버 쇼핑검색광고
+    if (getUrlParameter('nv_ad') === 'pla') {
+      coCd = '134'
+    }
+
+    // NSSR-42234 홈빠 인입시 홈빠 회원번호 셋팅
+    let ptnCustNum = getUrlParameter('userNo')
+    if(coCd === '693' || coCd === '694') {
+      setCookie('ptnCustNum', ptnCustNum, null, '/', 'nsmall.com')
+    }
+
+    // 위메프 원더쇼핑일 때 coCd 파라미터 추가
+    if (coCd !== null && coCd === '985') {
+      getUrl += `&wonderY=${coCd}`
+    }
+
+    // GA 360 파라미터 + cocd 파라미터
+    getUrl += `${getGa360Param()}&co_cd=${coCd}`
+
+    /**
+     * GA 360 파라미터 가져오기
+     *
+     * @return {string} GA 360 파라미터
+     */
+    function getGa360Param () {
+      const gaReferrer = document.referrer
+      const gaUtmCampaign = getUrlParameter('utm_campaign')
+      const gaUtmTerm = getUrlParameter('utm_term')
+      const gaUtmSource = getUrlParameter('utm_source')
+      const gaUtmMedium = getUrlParameter('utm_medium')
+      const gaUtmContent = getUrlParameter('utm_content')
+
+      let resultUrl = ''
+      // 레퍼러 정보가 있을 경우 resultUrl 변수에 레퍼러 정보 추가
+      resultUrl += gaReferrer ? `&referrer=${gaReferrer}` : ''
+
+      // resultUrl 변수에 utm_source 정보 추가
+      resultUrl += gaUtmSource ? `&utm_source=${gaUtmSource}` : ''
+
+      // resultUrl 변수에 utm_medium 정보 추가
+      resultUrl += gaUtmMedium ? `&utm_medium=${gaUtmMedium}` : ''
+
+      // resultUrl 변수에 utm_campaign 정보 추가
+      resultUrl += gaUtmCampaign ? `&utm_campaign=${gaUtmCampaign}` : ''
+
+      // resultUrl 변수에 utm_content 정보 추가
+      resultUrl += gaUtmContent ? `&utm_content=${gaUtmContent}` : ''
+
+      // resultUrl 변수에 utm_term 정보 추가
+      resultUrl += gaUtmTerm ? `&utm_term=${gaUtmTerm}` : ''
+
+      if (coCd === '134') {
+        if (resultUrl !== '') {
+          const lastChar = resultUrl.charAt(resultUrl.length - 1)
+          resultUrl += lastChar === '&' ? '' : '&'
+        }
+        resultUrl += 'utm_source=naver_shop_searchad&utm_medium=display'
+      }
+
+      return resultUrl
+    }
+
+    /**
+     * 쿠키를 저장
+     *
+     * @param {string} name 쿠키 이름
+     * @param {string} value 쿠키 값
+     * @param {string} [expires] 쿠키의 유효 일
+     * @param {string} [path] 경로
+     * @param {string} [domain] 도메인
+     * @param {string} [secure] 보안 옵션
+     */
+    function setCookie (name, value, expires, path = '/', domain, secure) {
+      value = escape(value)
+      expires = expires ? `; expires=${expires}` : ''
+      path = `; path=${path}`
+      domain = domain ? `; domain=${domain}` : '; domain=nsmall.com'
+      secure = secure ? '; secure' : ''
+      document.cookie = `${name}=${value}${expires}${path}${domain}${secure}`
+    }
+
+    /**
+     * cocd값 사용가능 여부 체크
+     *
+     */
+    function cocdChk () {
+      if (coCd !== '110') { // 기본 110이 아닐경우 체크 시작
+        fetchJsonp(`//${hpUrl}/jsp/epg/NSCheckCocd.jsp?input_co_cd=${coCd}`, {
+          jsonpCallback: 'returnSus'
+        }).catch(() => {
+          nextPrs()
+        })
+      } else {
+        nextPrs()
+      }
+    }
+
+    /**
+     * 통신 결과 처리
+     *
+     * @param {object} data 통신 결과
+     */
+    function returnSus (data) {
+      // 사용여부 Y 인 것만
+      if (data.useyn === 'Y' || data.useyn === 'y') {
+        // 빈스트링일 경우 정상으로 판단하여 별도 처리 하지 않음
+        if (data.cocdDomain !== '') {
+          // 레퍼러가 없거나 레퍼러에 cocdDomain에 설정된 도메인이 포함돼있지 않으면 기본값 처리
+          if (!document.referrer || !document.referrer.includes(data.cocdDomain)) {
+            coCd = '110'
+          }
+        }
+      } else {
+        // 기본값 처리
+        coCd = '110'
+      }
+
+      nextPrs()
+    }
+
+    /**
+     * URL 파라미터 가져오기
+     *
+     * @param {string} name 파라미터 Key
+     * @param {string} [defaultValue] 기본값
+     * @param {string} [queryString] queryString
+     * @return {string} 파라미터 값
+     */
+    function getUrlParameter (name, defaultValue = '', queryString = location.search) {
+      name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]')
+      const regex = new RegExp(`[\\?&]${name}=([^&#]*)`)
+      const results = regex.exec(queryString)
+      return results === null ? defaultValue : decodeURIComponent(results[1].replace(/\+/g, ' '))
+    }
+
+    /**
+     * 최종 후속 처리
+     *
+     */
+    function nextPrs () {
+      // coCd 값 쿠키 저장
+      setCookie('co_cd', coCd, null, '/', 'nsmall.com')
+
+      // 앱인경우
+      if (window.NSHub !== undefined) {
+        window.NSHub.naGotoDeepLinkUrl(getUrl)
+      } else {
+        // 페이지 이동
+        location.replace(getUrl)
+      }
+    }
+
+    // NSSR-20110 NSSR-19184 의 추가 작업 요청의 건
+    (function () {
+      const nl = document.createElement('script')
+      nl.type = 'text/javascript'
+      nl.src = '//image.nsmall.com/ec_comimages/nsdesign/javascript/wlo_ns.js'
+      const s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(nl, s)
+      let done = false
+      nl.onload = nl.onreadystatechange = () => {
+        if (!done && (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete')) {
+          done = true
+          window._n_sid = 'mwebns'
+          window._n_uid_cookie = 'UID'
+          window._n_c_field1 = 'co_cd'
+          window._n_c_field2 = 'p_bannerid'
+          window._n_c_field3 = 'p_espotid'
+          window._n_c_field4 = 'accpt_path_cd'
+          window.n_logging()
+          nl.onload = nl.onreadystatechange = null
+        }
+      }
+    })();
+
+    // DTSI 시작
+    /*
+    * brand_id - brand별 고유 ID (dtsi에서 brand에 대한 고유 ID 전달 : 3)
+    */
+    window.brand_id = 3;
+
+    (function () {
+      // dtsi Advertiser Brand ID setup
+      const d = document
+      const scr = d.createElement('script')
+      const pro = d.location.protocol
+      const tar = d.getElementsByTagName('head')[0]
+      scr.type = 'text/javascript'
+      scr.async = true
+      scr.src = `${(pro === 'https:') ? 'https' : 'http'}://track.d-light.kr/dlight.min.js`
+      scr.charset = 'utf-8'
+
+      const dlight = window.dlight || {}
+      if (!dlight.l) {
+        dlight.l = true
+        tar.insertBefore(scr, tar.firstChild)
+      }
+    })();
+  </script>
+</body>
+
+</html>

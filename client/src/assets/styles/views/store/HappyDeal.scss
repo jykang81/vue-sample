@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$main: $images + "/main";
+.happy_deal {
+    padding: 13.1rem 0 3.2rem;
+    .sub_categories {
+        position: fixed;
+        top: 9.6rem;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-bottom: .1rem solid rgb(240, 240, 240);
+        transition: all .3s;
+        &.relative {
+            position: relative;
+            top: 0;
+        }
+        &.icon {
+            .swiper-container {
+                padding: 0;
+                .swiper-slide {
+                    width: 6.4rem;
+                    background-image: url("#{$main}/icons_happydeal_default_off.png");
+                    &.active {
+                        background-image: url("#{$main}/icons_happydeal_default_on.png");
+                        a {
+                            font-weight: normal;
+                        }
+                    }
+                    a {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        padding: 4.8rem 0 1.6rem;
+                        font-size: 1.3rem;
+                    }
+                    &.today {
+                        background-image: url("#{$main}/icons_happydeal_today_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_today_on.png");
+                        }
+                    }
+                    &.week {
+                        background-image: url("#{$main}/icons_happydeal_week_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_week_on.png");
+                        }
+                    }
+                    &.fresh {
+                        background-image: url("#{$main}/icons_happydeal_fresh_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_fresh_on.png");
+                        }
+                    }
+                    &.processed {
+                        background-image: url("#{$main}/icons_happydeal_processed_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_processed_on.png");
+                        }
+                    }
+                    &.health {
+                        background-image: url("#{$main}/icons_happydeal_health_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_health_on.png");
+                        }
+                    }
+                    &.fashion {
+                        background-image: url("#{$main}/icons_happydeal_fashion_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_fashion_on.png");
+                        }
+                    }
+                    &.beauty {
+                        background-image: url("#{$main}/icons_happydeal_beauty_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_beauty_on.png");
+                        }
+                    }
+                    &.interior {
+                        background-image: url("#{$main}/icons_happydeal_interior_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_interior_on.png");
+                        }
+                    }
+                    &.living {
+                        background-image: url("#{$main}/icons_happydeal_living_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_living_on.png");
+                        }
+                    }
+                    &.baby {
+                        background-image: url("#{$main}/icons_happydeal_baby_off.png");
+                        &.active {
+                            background-image: url("#{$main}/icons_happydeal_baby_on.png");
+                        }
+                    }
+                }
+            }
+        }
+        .swiper-container {
+            padding: 0 1.6rem;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 1rem;
+                height: 100%;
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 100;
+                width: 1rem;
+                height: 100%;
+                background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            }
+            .swiper-slide {
+                width: auto;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                text-align: center;
+                background-repeat: no-repeat;
+                background-position: center 1.6rem;
+                background-size: 2.4rem;
+                a {
+                    display: block;
+                    padding: 1.6rem 0;
+                    font-size: 1.4rem;
+                    transition: all .3s;
+                }
+                &.active {
+                    font-weight: bold;
+                    color: $coral;
+                    a {
+                        font-weight: bold;
+                        color: $coral;
+                    }
+                }
+            }
+        }
+    }
+}

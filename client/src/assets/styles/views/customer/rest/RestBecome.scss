@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+$member: $images + "/member";
+.rest_become {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.6rem 2.4rem;
+    .rest_become_contents {
+        height: calc(100vh - 13.8rem);
+    }
+    .rest_become_title {
+        padding: 4.4rem 0 1.6rem;
+    }
+    .icons_logo {
+        display: block;
+        width: 8.8rem;
+        height: 2.1rem;
+        margin: 0 auto;
+        background-image: url("#{$common}/ns_logo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .icons_lock {
+        display: block;
+        width: 5.6rem;
+        height: 5.6rem;
+        margin: 4rem auto 0;
+        background-image: url("#{$member}/icons_lock.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .title {
+        display: block;
+        margin-top: 2.4rem;
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        text-align: center;
+    }
+    .rest_become_guide {
+        padding: 2.4rem 1.6rem;
+        background-color: rgb(247, 247, 247);
+        box-sizing: border-box;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        text-align: center;
+    }
+    .copy {
+        margin-top: 1.6rem;
+        padding: 0 1.6rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: rgb(119, 119, 119);
+        text-align: center;
+    }
+    .btn_cancel {
+        width: 100%;
+        height: 5.6rem;
+        background-color: $coral;
+        border-radius: .5rem;
+        text-align: center;
+        &>span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+    }
+}

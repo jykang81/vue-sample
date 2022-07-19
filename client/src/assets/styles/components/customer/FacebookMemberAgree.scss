@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.facebook_member_agree {
+    .terms_frame {
+        h4 {
+            padding-bottom: .5rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: rgb(51, 51, 51);
+            letter-spacing: -.05rem;
+        }
+        h5 {
+            padding-bottom: .5rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: rgb(51, 51, 51);
+            letter-spacing: -.05rem;
+        }
+        p {
+            padding-bottom: 2rem;
+            font-size: 1.3rem;
+            color: rgb(51, 51, 51);
+            line-height: 1.9rem;
+            letter-spacing: -.05rem;
+        }
+        ol {
+            padding-bottom: 2rem;
+            font-size: 1.3rem;
+            color: rgb(51, 51, 51);
+            line-height: 1.9rem;
+            letter-spacing: -.05rem;
+        }
+        ol li {
+            padding-bottom: 2rem;
+            font-size: 1.3rem;
+            color: rgb(51, 51, 51);
+            line-height: 1.9rem;
+            letter-spacing: -.05rem;
+        }
+        .num_list li {
+            padding-bottom: 2rem;
+            font-size: 1.3rem;
+            color: rgb(51, 51, 51);
+            line-height: 1.9rem;
+            letter-spacing: -.05rem;
+        }
+        .num_list1 li {
+            padding-left: .9rem;
+            text-indent: -.9rem;
+            line-height: 1.7rem;
+        }
+        .num_list2 li {
+            padding-left: .6rem;
+            text-indent: -.6rem;
+            line-height: 1.7rem;
+        }
+        .num_sublist1 li {
+            padding-left: 5.3rem;
+            text-indent: -5.3rem;
+        }
+        .num_sublist2 li {
+            padding-left: .6rem;
+            text-indent: -.6rem;
+        }
+        .num_sublist3 {
+            padding-top: .2rem;
+        }
+        .num_sublist3 li {
+            margin-left: .5rem;
+            padding-top: .1rem;
+            padding-bottom: .1rem;
+            padding-left: .1rem;
+            text-indent: -.1rem;
+        }
+    }
+    .btn_cancel {
+        background-color: rgb(224, 224, 224);
+        color: $primary;
+    }
+}

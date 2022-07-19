@@ -1,0 +1,488 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.mypage_benefit {
+    .tabs {
+        display: flex;
+        padding: 0 1rem;
+        border-bottom: .1rem solid rgb(204, 204, 204);
+        &>.tab {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4.8rem;
+            background-color: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-align: center;
+            color: rgb(135, 135, 135);
+            line-height: 2.4rem;
+            &.active {
+                font-weight: bold;
+                color: $primary;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -.1rem;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: .3rem;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+    .data_info {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1.6rem 1.6rem;
+        background-color: rgb(247, 247, 247);
+        box-sizing: border-box;
+        .copy {
+            padding: 1.6rem 1.6rem 0;
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            color: $secondary;
+            a {
+                display: inline-block;
+                color: rgb(36, 130, 211);
+                text-decoration: underline;
+            }
+        }
+    }
+    .top_box {
+        flex: none;
+        width: 100%;
+        margin-top: 1.6rem;
+        padding: 1.6rem;
+        border-radius: .5rem;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        &+.top_box {
+            margin-top: .4rem;
+        }
+    }
+    .usable {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        dt {
+            &>strong {
+                color: $primary;
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+            }
+        }
+        dd {
+            font-size: 1.7rem;
+            color: $coral;
+            strong {
+                font-size: 2rem;
+                line-height: 2.4rem;
+            }
+        }
+    }
+    .useless {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: .8rem;
+        dt {
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+            color: $secondary;
+        }
+        dd {
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+            color: $secondary;
+            strong {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+    }
+    .button_tooltip {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: .4rem 0 0 .6rem;
+        background-color: transparent;
+        background-image: url("#{$common}/icon_exclaim.png");
+        background-size: 100%;
+        font-size: 0;
+        vertical-align: top;
+    }
+    .coupon_register {
+        display: inline-block;
+        margin: .9rem 0 0;
+        padding: 0 1rem 0 0;
+        background-image: url("#{$common}/icons_mediumRight.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: .5rem;
+        line-height: 1.9rem;
+        &>span {
+            position: relative;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: .1rem;
+                background-color: $primary;
+            }
+        }
+    }
+    .grade_benefit {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-right: -.4rem;
+        .family {
+            .unit {
+                color: rgb(82, 120, 206);
+            }
+        }
+        .silver {
+            .unit {
+                color: rgb(153, 153, 159);
+            }
+        }
+        .gold {
+            .unit {
+                color: rgb(246, 195, 12);
+            }
+        }
+        .diamond {
+            .unit {
+                color: rgb(137, 115, 210);
+            }
+        }
+        .markloven {
+            .unit {
+                color: rgb(235, 110, 101);
+            }
+        }
+        .user {
+            flex: 1;
+            strong {
+                font-size: 1.4rem;
+                line-height: 2rem;
+                letter-spacing: -.1rem;
+            }
+            p {
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+            }
+        }
+        .btn {
+            display: block;
+            box-sizing: border-box;
+            height: 3.2rem;
+            margin-left: auto;
+            border-radius: .5rem;
+            border: .1rem solid rgb(204, 204, 204);
+            background-color: rgb(255, 255, 255);
+            color: $primary;
+            span {
+                min-width: 5.8rem;
+                height: 3rem;
+                padding: 0 1rem;
+                box-sizing: border-box;
+                font-size: 1.4rem;
+                line-height: 3rem;
+                vertical-align: top;
+            }
+        }
+    }
+    .data_wrap {
+        min-height: calc(100vh - 28rem);
+        padding: 0 1.6rem 12rem;
+        box-sizing: border-box;
+    }
+    .month_list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1.6rem;
+        li {
+            flex: 1;
+            button {
+                display: block;
+                width: 100%;
+                height: 3.8rem;
+                background-color: rgb(255, 255, 255);
+                border: .1rem solid $lightGray;
+                text-align: center;
+                font-size: 1.5rem;
+                &.selected {
+                    background: $primary;
+                    border-color: $primary;
+                    color: rgb(255, 255, 255);
+                }
+            }
+            &:first-child {
+                button {
+                    border-radius: .5rem 0 0 .5rem;
+                }
+            }
+            &:last-child {
+                button {
+                    border-radius: 0 .5rem .5rem 0;
+                }
+            }
+        }
+    }
+    .data_list {
+        li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1.6rem 0;
+            &+li {
+                border-top: .1rem solid rgb(240, 240, 240);
+            }
+            &:last-child {
+                border-bottom: .1rem solid rgb(240, 240, 240);
+            }
+            &:first-child {
+                border-bottom: 0;
+            }
+        }
+        .date_state {
+            width: 100%;
+            margin-bottom: .2rem;
+            &>span {
+                margin-right: .6rem;
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+                color: $secondary;
+            }
+        }
+        .title {
+            flex: 1;
+            width: calc(100% - 8.6rem);
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            color: $primary;
+            .number {
+                display: block;
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+        .rate {
+            width: 100%;
+            margin-top: .2rem;
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            color: $secondary;
+        }
+        .price {
+            margin-left: auto;
+            &.plus {
+                color: $coral;
+            }
+        }
+        .expiration_date {
+            width: 100%;
+            margin-top: .6rem;
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            color: $secondary;
+        }
+    }
+    .coupon_list {
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1.6rem 0;
+            border-bottom: .1rem solid rgb(240, 240, 240);
+        }
+        .item {
+            position: relative;
+            width: 13.6rem;
+            height: 7.7rem;
+            padding: 1.6rem 0 0 1.6rem;
+            background-image: url("#{$common}/bg_coupon.png");
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 1.4rem;
+            em {
+                display: block;
+                margin-bottom: .4rem;
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+            }
+            strong {
+                font-size: 2rem;
+                line-height: 2.4rem;
+                vertical-align: bottom;
+            }
+            &.tv {
+                background-image: url("#{$common}/bg_coupon_tv.png");
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background-image: url("#{$common}/icons_tv.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 100%;
+                }
+            }
+            &.toll_point {
+                background-image: url("#{$common}/bg_coupon_tollPoint.png");
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background-image: url("#{$common}/icons_point.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 100%;
+                }
+            }
+        }
+        dd {
+            flex: 1;
+            margin-left: 1.2rem;
+        }
+        .title {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            color: $primary;
+        }
+        .terms {
+            margin-top: .2rem;
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            color: $secondary;
+        }
+        .date_state {
+            margin-top: .5rem;
+            span {
+                position: relative;
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+                color: $secondary;
+                vertical-align: top;
+                &+span {
+                    padding-left: 1.2rem;
+                    margin-left: 1.2rem;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        width: .1rem;
+                        height: 1.4rem;
+                        margin-top: -.7rem;
+                        background-color: $secondary;
+                    }
+                }
+            }
+            .state {
+                color: $coral;
+            }
+        }
+    }
+    .collapse_wrap {
+        width: 100%;
+        margin-top: 1.2rem;
+        .btn_collapse {
+            display: inline-block;
+            font-size: 1.4rem;
+            &>span {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: .1rem;
+                    background-color: $primary;
+                }
+            }
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 1.1rem;
+                height: .7rem;
+                background-image: url("#{$common}/icons_medium.png");
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                background-size: 100%;
+                transition: all .5s;
+                margin-left: .4rem;
+            }
+            &.active {
+                &::after {
+                    transform: rotate(180deg);
+                }
+                &+.table {
+                    display: block;
+                }
+            }
+        }
+        .table {
+            display: none;
+            margin-top: 1.6rem;
+            table {
+                border: none;
+                th {
+                    border: none;
+                    color: $primary;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+                td {
+                    padding: 1.2rem 0;
+                    border-top: none;
+                    border-bottom: .1rem solid rgb(240, 240, 240);
+                    text-align: center;
+                    color: $primary;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    &+td {
+                        border-left: none;
+                    }
+                    &.subject {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+    .nodata {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 28rem);
+        margin-bottom: -12rem;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+}

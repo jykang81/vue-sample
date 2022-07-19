@@ -1,0 +1,47 @@
+service: ${self:custom.baseDomain}-${self:custom.subDomain}
+
+custom:
+  baseDomain: ui
+  subDomain: mobile
+  currentStage: ${opt:stage, self:provider.stage}
+  currentRegion: ${opt:region, self:provider.region}
+  domain:
+    base: ${self:custom.currentStage}-nsmall.com
+    name: m.${self:custom.domain.base}
+  client:
+    bucketName: ${self:custom.domain.name}
+    distributionFolder: dist
+    indexDocument: index.html # default index.html
+    errorDocument: index.html # default error.html
+    objectHeaders:
+      'js/index.*.js':
+        - name: Cache-Control
+          value: max-age=43200
+      'js/storeHome.*.js':
+        - name: Cache-Control
+          value: max-age=43200
+      'js/BaseLayout.*.js':
+        - name: Cache-Control
+          value: max-age=43200
+      'css/index.*.css':
+        - name: Cache-Control
+          value: max-age=43200
+      'css/storeHome.*.css':
+        - name: Cache-Control
+          value: max-age=43200
+      'css/BaseLayout.*.css':
+        - name: Cache-Control
+          value: max-age=43200
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ap-northeast-2
+
+package:
+  include:
+    - ../node_modules
+
+plugins:
+  - serverless-finch

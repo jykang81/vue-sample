@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+      - npm i -g serverless --no-optional
+      - npm i --no-optional
+      - export NODE_OPTIONS=--max_old_space_size=4096
+      - echo ${NODE_OPTIONS}
+
+  pre_build:
+    commands:
+      # dev/test/prod 모두 dev쪽 S3로 Report를 업로드하도록 임시 조치
+      # 각 스테이지별로 버킷을 다르게 업로드를 하려면 sts:assumeRole 진행을 해야한다
+      - npm run cicd:sonar:$STAGE
+      - npm run cicd:lint
+      - npm run cicd:stylelint
+
+  build:
+    commands:
+      - npm run cicd:build:$STAGE
+
+artifacts:
+  files:
+    - client/dist/**/*
+    - client/serverless.yml
+    - deployspec.yml
+    - package.json
+    - package-lock.json
+  discard-paths: no
+
+cache:
+  paths:
+    - node_modules

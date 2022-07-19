@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.cirlce_slide_list {
+    .exhibition {
+        padding: 1.6rem 0;
+        .splide__slide {
+            width: 7.2rem;
+            text-align: center;
+            &.new {
+                &::after {
+                    content: "N";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    background-color: $coral;
+                    border-radius: .5rem .5rem .5rem 0;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    color: rgb(255, 255, 255);
+                    line-height: 1.6rem;
+                }
+            }
+            .banner_box {
+                display: block;
+                text-decoration: none;
+                font-size: 0;
+                line-height: 0;
+                figure {
+                    line-height: 0;
+                    img {
+                        width: 7.2rem;
+                        height: 7.2rem;
+                        border-radius: 3rem;
+                    }
+                }
+                span {
+                    display: block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    height: 2.2rem;
+                    padding-top: .8rem;
+                    font-size: 1.3rem;
+                    color: $primary;
+                    line-height: 2.2rem;
+                }
+            }
+        }
+    }
+}

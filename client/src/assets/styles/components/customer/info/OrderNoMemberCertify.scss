@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.order_no_member_certify {
+    .adult_certify {
+        margin-top: 4rem;
+        padding: 8rem 1.6rem 0;
+        background-image: url("#{$common}/icons_adult.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 6.4rem;
+        font-size: 1.3rem;
+        text-align: center;
+        line-height: 1.9rem;
+    }
+    .order_no_member_certify_head {
+        padding: 1.6rem 1.6rem 0;
+        box-sizing: border-box;
+        p {
+            padding: 1.4rem 0;
+            background-color: rgb(247, 247, 247);
+            text-align: center;
+            letter-spacing: 0;
+            line-height: 2.4rem;
+        }
+    }
+    .order_no_member_certify_contents {
+        padding: 2.4rem 1.6rem 12rem;
+        .btn_certify_phone {
+            width: 100%;
+            height: 5.6rem;
+            border: .1rem solid rgb(177, 177, 177);
+            border-radius: .5rem;
+            text-align: center;
+            box-sizing: border-box;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+        }
+        .btn_certify_ipin {
+            width: 100%;
+            height: 5.6rem;
+            border: .1rem solid rgb(177, 177, 177);
+            border-radius: .5rem;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: .8rem;
+            &>span {
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+        }
+        .guide {
+            margin: 4rem 0 0;
+            text-align: left;
+            dt {
+                font-size: 1.3rem;
+                font-weight: bold;
+                line-height: 1.9rem;
+                color: $primary;
+            }
+            dd {
+                margin: .6rem 0 0;
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+                &+dt {
+                    margin-top: 1.2rem;
+                }
+            }
+        }
+    }
+}

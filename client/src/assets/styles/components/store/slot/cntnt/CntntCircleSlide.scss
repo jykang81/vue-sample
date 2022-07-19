@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.cntnt_circle_slide {
+    .title_tag {
+        padding: 2.4rem 1.6rem 0;
+        &.border_bold {
+            border-top: .8rem solid rgb(240, 240, 240);
+        }
+        img {
+            width: 100%;
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 2.2rem;
+            letter-spacing: 0;
+            line-height: 3.4rem;
+            &:only-child {
+                padding-bottom: 0;
+            }
+        }
+        .tag {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 1.6rem;
+            color: $secondary;
+            letter-spacing: 0;
+            span {
+                padding-right: .5rem;
+            }
+        }
+    }
+    .exhibition {
+        padding: 1.6rem 1.6rem;
+        .swiper-slide {
+            width: 7.2rem;
+            text-align: center;
+            &.new {
+                &::after {
+                    content: "N";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    background-color: $coral;
+                    border-radius: .5rem .5rem .5rem 0;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    color: rgb(255, 255, 255);
+                    line-height: 1.6rem;
+                }
+            }
+            .espot_item {
+                figure {
+                    line-height: 0;
+                    img {
+                        width: 7.2rem;
+                        height: 7.2rem;
+                        border-radius: 3rem;
+                    }
+                }
+                span {
+                    display: block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    height: 2.2rem;
+                    padding-top: .8rem;
+                    font-size: 1.3rem;
+                    color: $primary;
+                    line-height: 2.2rem;
+                }
+            }
+        }
+    }
+    .btn_total_view {
+        margin-bottom: 1.6rem;
+        border-top: .1rem solid rgb(240, 240, 240);
+        text-align: right;
+        button {
+            display: inline-block;
+            height: 4.8rem;
+            padding: 0 1.6rem;
+            font-size: 1.4rem;
+            letter-spacing: 0;
+            color: $secondary;
+            line-height: 4.8rem;
+            i {
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: .4rem;
+                background-image: url("#{$common}/icons_smallRight.png");
+                background-repeat: no-repeat;
+                background-size: 1.2rem;
+                vertical-align: -2%;
+            }
+        }
+    }
+}

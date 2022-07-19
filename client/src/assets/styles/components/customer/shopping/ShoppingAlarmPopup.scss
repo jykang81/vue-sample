@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+
+$common: $images + "/common";
+.shopping_alarm_popup {
+    .shopping_alarm {
+        overflow: auto;
+        max-height: 80vh;
+        border-radius: .5rem .5rem 0 0;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+    }
+    .product_info {
+        position: relative;
+        padding: 1.6rem 1.6rem 0;
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        figure {
+            position: relative;
+            width: 4.4rem;
+            height: 4.4rem;
+            img {
+                width: 100%;
+                border-radius: .5rem;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .03);
+                border-radius: .5rem;
+            }
+        }
+        .field {
+            width: calc(100% - 5.6rem);
+            max-height: 4.4rem;
+            margin-left: auto;
+            .title {
+
+                @include line-clamp(2);
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+                color: $primary;
+            }
+        }
+    }
+    .check_list {
+        padding: 1.6rem 1.6rem 0;
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            &+dl {
+                margin-top: 1.2rem;
+            }
+            dt {
+                width: 4rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                color: $secondary;
+            }
+            dd {
+                &+dd {
+                    margin-left: .6rem;
+                }
+                input {
+                    display: none;
+                }
+                input+label {
+                    position: relative;
+                    min-width: 5.6rem;
+                    height: 2.4rem;
+                    padding: 0 .8rem;
+                    border: .05rem solid rgb(177, 177, 177);
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    line-height: 2.4rem;
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    text-align: center;
+                }
+                input:checked+label {
+                    border-color: currentColor;
+                    color: $coral;
+                }
+            }
+        }
+    }
+    .agree_content {
+        margin-top: 1.6rem;
+        padding: 0 1.6rem 1.6rem;
+        border-top: .1rem solid rgb(204, 204, 204);
+        .label_checkbox {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            .checkbox {
+                position: relative;
+                width: 2rem;
+                height: 2rem;
+                margin-right: .8rem;
+                border: .1rem solid rgb(204, 204, 204);
+                border-radius: .4rem;
+                background-color: rgb(255, 255, 255);
+                background-image: url("#{$common}/icons_check.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 1.6rem;
+                box-sizing: border-box;
+                vertical-align: top;
+                &:checked {
+                    background-image: url("#{$common}/icons_check_coral.png");
+                }
+                &+.check_label {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    vertical-align: top;
+                }
+            }
+        }
+        .sms {
+            padding: 1.5rem 0 1.2rem;
+            box-sizing: border-box;
+            .phone {
+                margin-left: .8rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                color: rgb(0, 0, 0);
+            }
+            .copy {
+                margin-top: .6rem;
+                font-size: 1.1rem;
+                line-height: 1.5rem;
+            }
+        }
+        .txt_list {
+            padding-top: 1.2rem;
+            border-top: .1rem solid rgb(204, 204, 204);
+            li {
+                font-size: 1.1rem;
+                line-height: 1.5rem;
+                color: $secondary;
+            }
+        }
+    }
+}

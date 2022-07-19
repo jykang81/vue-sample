@@ -1,0 +1,42 @@
+m
+
+[
+	{
+		"pageId": "M_M1133401P",
+		"tranId": "webapp/wcs/stores/servlet/AjaxNSOrderSheet4Worklight",
+		"content": {
+			// "orderId": 300084876874,
+			// "orderItemsIds": "278964657",
+			"productCategoryName": {
+				// "haveAdultItem": "N",
+				"partNum_28440657": {
+					// "success": true,
+					// "cateCdFull": "306008@/638556",
+					// "cateNmFull": "해피딜@/단하루 특가",
+					// "cateCdEnd": "638556",
+					// "cateNmEnd": "단하루 특가",
+					// "cate1Code": "306008",
+					// "cate1Nm": "해피딜",
+					// "cate2Code": "638556",
+					// "cate2Nm": "단하루 특가",
+					// "cate3Code": "",
+					// "cate3Nm": "",
+					// "cate4Code": "",
+					// "cate4Nm": "",
+					// "cate5Code": "",
+					// "cate5Nm": ""
+				}
+			},
+			"mobAPI": "AjaxNSOrderSheet4Worklight",
+			"accessTm": "20210115094807547",
+			"storeId": 13001,
+			"langId": -9,
+			"uuid": "4e029224-b76b-415f-98b1-f7bdc1428f5a",
+			// "accptPath": 500,
+			// "accptPathCd": 500,
+			// "req_co_cd": "110",
+			// "userId": "671991387",
+			// "catalogId": 97001
+		}
+	}
+]

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.chat_counseling_history {
+    min-height: 55rem;
+    iframe {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+}

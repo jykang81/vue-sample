@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+@import "~@/assets/styles/common/variables";
+.cooperative_companies {
+    margin: 0 1rem 4rem;
+    font-size: 1.2rem;
+    h5 {
+        margin-top: 3rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: rgb(102, 102, 102);
+    }
+    p {
+        margin-top: 1rem;
+        color: rgb(138, 140, 145);
+        line-height: 1.7rem;
+    }
+    .num_list li {
+        padding-left: 1.3rem;
+        color: rgb(138, 140, 145);
+        text-indent: -1.3rem;
+        line-height: 1.7rem;
+    }
+    .num_list1 li {
+        padding-left: .9rem;
+        color: rgb(138, 140, 145);
+        text-indent: -.9rem;
+        line-height: 1.7rem;
+    }
+    .num_list2 li {
+        padding-left: .6rem;
+        color: rgb(138, 140, 145);
+        text-indent: -.6rem;
+        line-height: 1.7rem;
+    }
+    .num_sublist1 li {
+        padding-left: 5.3rem;
+        text-indent: -5.3rem;
+    }
+    .num_sublist2 li {
+        padding-left: .6rem;
+        text-indent: -.6rem;
+    }
+    .num_sublist3 li {
+        margin-left: .5rem;
+        padding-left: 1rem;
+        text-indent: -1rem;
+    }
+    table {
+        width: 100%;
+        margin-top: 1rem;
+        border: .1rem solid rgb(204, 204, 204);
+        text-indent: 0;
+        border-collapse: collapse;
+        caption {
+            overflow: hidden;
+            visibility: hidden;
+            margin: 0;
+            padding: 0;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+        }
+        th {
+            padding: .9rem 1rem .6rem;
+            color: rgb(119, 119, 119);
+            font-weight: bold;
+            text-align: center;
+            background: rgb(234, 234, 234);
+            border-left: .1rem solid rgb(204, 204, 204);
+        }
+        td {
+            padding: .7rem 1rem .4rem;
+            color: rgb(138, 140, 145);
+            line-height: 1.7rem;
+            border-left: .1rem solid rgb(204, 204, 204);
+            border-top: .1rem solid rgb(204, 204, 204);
+        }
+    }
+    a {
+        color: rgb(102, 102, 102);
+        text-decoration: none;
+    }
+    .enforcement_date {
+        margin-top: 1rem;
+        p {
+            margin: 0;
+            line-height: 1.7rem;
+        }
+        a {
+            font-weight: bold;
+            color: rgb(102, 102, 102);
+            text-decoration: none;
+        }
+    }
+    .partner_wrap .partner_info {
+        margin-top: 1.5rem;
+        color: rgb(153, 153, 153);
+    }
+    .partner_wrap table tr th {
+        padding: .8rem 1rem .6rem;
+        font-weight: bold;
+        color: rgb(17, 17, 17);
+        text-align: left;
+    }
+    .partner_wrap table tr td {
+        padding: .8rem 1rem .6rem;
+        color: rgb(119, 119, 119);
+    }
+}
