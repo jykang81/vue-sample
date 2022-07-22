@@ -1,12 +1,12 @@
 {
-  "name": "ui-mobile",
+  "name": "vue-sample",
   "version": "3.0.0",
   "description": "UI Mobile",
   "license": "ISC",
   "author": "NS",
   "repository": {
     "type": "git",
-    "url": "https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/ui-mobile"
+    "url": "https://github.com/jykang81/vue-sample.git"
   },
   "sideEffects": [
     "**/*.vue",
